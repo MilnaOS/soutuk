@@ -1,0 +1,5 @@
+name = "soutuk-worker"
+main = "src/index.ts"
+compatibility_date = "2026-07-01"
+
+# Set with: wrangler secret put OLLAMA_API_KEY
