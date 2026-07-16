@@ -1,17 +1,36 @@
-# soutuk
+# Soutuk
 
-A new Flutter project.
+A real-time universal translator grounded in linguistic typology data — not a language model guessing sentence-by-sentence. An AIM Studio product.
 
-## Getting Started
+**[Live site](https://milnaos.github.io/soutuk/)** · **[Latest release](https://github.com/MilnaOS/soutuk/releases/latest)**
 
-This project is a starting point for a Flutter application.
+## What makes this different
 
-A few resources to get you started if this is your first Flutter project:
+Most translation apps ask a language model to just produce an answer. Soutuk gives it real reference material first:
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- **DOT-grounded translation** — every language pair is backed by real per-language grammar cards (word order, case systems, phoneme hazards, honorific/evidentiality rules), sourced from linguistic typology research (WALS), not just what a model happened to learn during training. 188 of 206 catalog languages have verified grammar data as of this release — languages without real coverage are excluded from the picker entirely rather than silently faked.
+- **Safety gating** — high-stakes medical and legal terms are flagged automatically, with a signature-confirmation gate before translation in those domains is trusted.
+- **Dual-isolate arbitration** — for ancient/low-resource languages where a single model is unreliable, two independent translation attempts are cross-checked against each other.
+- **Conversation Mode** — a two-person interpreter flow: introduce yourself, and Soutuk identifies the other person's language automatically from their introduction, then settles into turn-based translation.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Setup
+
+**Push-to-Talk needs zero setup.** Speech recognition is fully on-device (your OS's native recognizer) — no API key, no account, no cost.
+
+**Conversation Mode needs one thing**: identifying the other person's unknown language requires a brief cloud transcription call (on-device recognizers can't identify a language they haven't been told to listen for). Add your own OpenAI API key in Settings to use this mode — it's only used for that one handshake moment per conversation, not for every turn. Typed text translation and Push-to-Talk never need this key.
+
+Translation itself always routes through a free, hosted backend (no key needed) — see `cloudflare/soutuk-worker/` if you want to see how.
+
+## License
+
+Free for personal and non-profit use. A one-time commercial license exists for organizations that need it. Donations welcome, never required — see the [website](https://milnaos.github.io/soutuk/) for details.
+
+## Building from source
+
+Standard Flutter project:
+
+```
+flutter pub get
+flutter pub run build_runner build --delete-conflicting-outputs
+flutter build windows --release   # or: flutter build apk --release
+```
