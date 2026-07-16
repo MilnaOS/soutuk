@@ -1,0 +1,754 @@
+[
+    {
+        "name":  "Aleut",
+        "iso":  "ale"
+    },
+    {
+        "name":  "Anufo",
+        "iso":  "cko"
+    },
+    {
+        "name":  "Arabic",
+        "iso":  "ara"
+    },
+    {
+        "name":  "Aramaic",
+        "iso":  "arc"
+    },
+    {
+        "name":  "Armenian",
+        "iso":  "hye"
+    },
+    {
+        "name":  "Atakapa",
+        "iso":  "aqp"
+    },
+    {
+        "name":  "Awyi",
+        "iso":  "auw"
+    },
+    {
+        "name":  "Ayiwo",
+        "iso":  "nfl"
+    },
+    {
+        "name":  "Bai",
+        "iso":  "bca"
+    },
+    {
+        "name":  "Baragaunle",
+        "iso":  "bgc"
+    },
+    {
+        "name":  "Basque",
+        "iso":  "eus"
+    },
+    {
+        "name":  "Bengali",
+        "iso":  "ben"
+    },
+    {
+        "name":  "Bilua",
+        "iso":  "blb"
+    },
+    {
+        "name":  "Boko",
+        "iso":  "bqc"
+    },
+    {
+        "name":  "Bulgarian",
+        "iso":  "bul"
+    },
+    {
+        "name":  "Burmese",
+        "iso":  "mya"
+    },
+    {
+        "name":  "Cahuilla",
+        "iso":  "chl"
+    },
+    {
+        "name":  "Chichimeca-Jonaz",
+        "iso":  "pei"
+    },
+    {
+        "name":  "Chinantec",
+        "iso":  "cnl"
+    },
+    {
+        "name":  "Choctaw",
+        "iso":  "cho"
+    },
+    {
+        "name":  "Classical Greek",
+        "iso":  "grc"
+    },
+    {
+        "name":  "Cocama",
+        "iso":  "cod"
+    },
+    {
+        "name":  "Dhaasanac",
+        "iso":  "dsh"
+    },
+    {
+        "name":  "Dhargari",
+        "iso":  "dhg"
+    },
+    {
+        "name":  "Dinka",
+        "iso":  "din"
+    },
+    {
+        "name":  "Egyptian Hieroglyphs",
+        "iso":  "egy"
+    },
+    {
+        "name":  "English",
+        "iso":  "eng"
+    },
+    {
+        "name":  "Epena Pedee",
+        "iso":  "sja"
+    },
+    {
+        "name":  "Finnish",
+        "iso":  "fin"
+    },
+    {
+        "name":  "French",
+        "iso":  "fra"
+    },
+    {
+        "name":  "Ga\u0027anda",
+        "iso":  "gqa"
+    },
+    {
+        "name":  "Georgian",
+        "iso":  "kat"
+    },
+    {
+        "name":  "Gooniyandi",
+        "iso":  "gni"
+    },
+    {
+        "name":  "Great Andamanese",
+        "iso":  "gac"
+    },
+    {
+        "name":  "Grebo",
+        "iso":  "grb"
+    },
+    {
+        "name":  "Greenlandic",
+        "iso":  "kal"
+    },
+    {
+        "name":  "Guajajara",
+        "iso":  "gub"
+    },
+    {
+        "name":  "Gujarati",
+        "iso":  "guj"
+    },
+    {
+        "name":  "Gula",
+        "iso":  "kcm"
+    },
+    {
+        "name":  "Gurung",
+        "iso":  "gvr"
+    },
+    {
+        "name":  "Hawaiian",
+        "iso":  "haw"
+    },
+    {
+        "name":  "Hebrew",
+        "iso":  "heb"
+    },
+    {
+        "name":  "Hidatsa",
+        "iso":  "hid"
+    },
+    {
+        "name":  "Himba",
+        "iso":  "her"
+    },
+    {
+        "name":  "Hindi",
+        "iso":  "hin"
+    },
+    {
+        "name":  "Hmar",
+        "iso":  "hmr"
+    },
+    {
+        "name":  "Hmong Njua",
+        "iso":  "hnj"
+    },
+    {
+        "name":  "Hopi",
+        "iso":  "hop"
+    },
+    {
+        "name":  "Hungarian",
+        "iso":  "hun"
+    },
+    {
+        "name":  "Iban",
+        "iso":  "iba"
+    },
+    {
+        "name":  "Icelandic",
+        "iso":  "isl"
+    },
+    {
+        "name":  "Igbo",
+        "iso":  "ibo"
+    },
+    {
+        "name":  "Ika",
+        "iso":  "arh"
+    },
+    {
+        "name":  "Inanwatan",
+        "iso":  "szp"
+    },
+    {
+        "name":  "Indonesian",
+        "iso":  "ind"
+    },
+    {
+        "name":  "Inuktitut",
+        "iso":  "iku"
+    },
+    {
+        "name":  "Iraqw",
+        "iso":  "irk"
+    },
+    {
+        "name":  "Italian",
+        "iso":  "ita"
+    },
+    {
+        "name":  "Japanese",
+        "iso":  "jpn"
+    },
+    {
+        "name":  "Jingpho",
+        "iso":  "kac"
+    },
+    {
+        "name":  "Kaingang",
+        "iso":  "kgp"
+    },
+    {
+        "name":  "Kaluli",
+        "iso":  "bco"
+    },
+    {
+        "name":  "Kamba",
+        "iso":  "kam"
+    },
+    {
+        "name":  "Kanakuru",
+        "iso":  "kwl"
+    },
+    {
+        "name":  "Kanashi",
+        "iso":  "xns"
+    },
+    {
+        "name":  "Kanuri",
+        "iso":  "kau"
+    },
+    {
+        "name":  "Karo",
+        "iso":  "arr"
+    },
+    {
+        "name":  "Karok",
+        "iso":  "kyh"
+    },
+    {
+        "name":  "Kasong",
+        "iso":  "kzt"
+    },
+    {
+        "name":  "Kewa",
+        "iso":  "kew"
+    },
+    {
+        "name":  "Khalkha",
+        "iso":  "khk"
+    },
+    {
+        "name":  "Kham",
+        "iso":  "kfx"
+    },
+    {
+        "name":  "Khasi",
+        "iso":  "kha"
+    },
+    {
+        "name":  "Khmer",
+        "iso":  "khm"
+    },
+    {
+        "name":  "Kiliwa",
+        "iso":  "klb"
+    },
+    {
+        "name":  "Kirghiz",
+        "iso":  "kir"
+    },
+    {
+        "name":  "Konni",
+        "iso":  "kma"
+    },
+    {
+        "name":  "Korean",
+        "iso":  "kor"
+    },
+    {
+        "name":  "Koromfe",
+        "iso":  "kfz"
+    },
+    {
+        "name":  "Kosraean",
+        "iso":  "kos"
+    },
+    {
+        "name":  "Kutenai",
+        "iso":  "kut"
+    },
+    {
+        "name":  "Labu",
+        "iso":  "lbu"
+    },
+    {
+        "name":  "Ladakhi",
+        "iso":  "lbj"
+    },
+    {
+        "name":  "Lahu",
+        "iso":  "lhu"
+    },
+    {
+        "name":  "Lakhota",
+        "iso":  "lkt"
+    },
+    {
+        "name":  "Latin",
+        "iso":  "lat"
+    },
+    {
+        "name":  "Lavukaleve",
+        "iso":  "lvk"
+    },
+    {
+        "name":  "Lega",
+        "iso":  "lea"
+    },
+    {
+        "name":  "Lithuanian",
+        "iso":  "lit"
+    },
+    {
+        "name":  "Makah",
+        "iso":  "myh"
+    },
+    {
+        "name":  "Malay",
+        "iso":  "msa"
+    },
+    {
+        "name":  "Mandarin",
+        "iso":  "cmn"
+    },
+    {
+        "name":  "Mangap-Mbula",
+        "iso":  "mpx"
+    },
+    {
+        "name":  "Maori",
+        "iso":  "mri"
+    },
+    {
+        "name":  "Marathi",
+        "iso":  "mar"
+    },
+    {
+        "name":  "Maru",
+        "iso":  "mhx"
+    },
+    {
+        "name":  "Mayan",
+        "iso":  "myn"
+    },
+    {
+        "name":  "Mian",
+        "iso":  "mpt"
+    },
+    {
+        "name":  "Mien",
+        "iso":  "ium"
+    },
+    {
+        "name":  "Mumuye",
+        "iso":  "mzm"
+    },
+    {
+        "name":  "Muna",
+        "iso":  "mnb"
+    },
+    {
+        "name":  "Mungaka",
+        "iso":  "muc"
+    },
+    {
+        "name":  "Mussau",
+        "iso":  "emi"
+    },
+    {
+        "name":  "Nahuatl",
+        "iso":  "nah"
+    },
+    {
+        "name":  "Nama",
+        "iso":  "naq"
+    },
+    {
+        "name":  "Navajo",
+        "iso":  "nav"
+    },
+    {
+        "name":  "Newari",
+        "iso":  "new"
+    },
+    {
+        "name":  "Ngadjumaja",
+        "iso":  "nna"
+    },
+    {
+        "name":  "Nias",
+        "iso":  "nia"
+    },
+    {
+        "name":  "Norwegian",
+        "iso":  "nor"
+    },
+    {
+        "name":  "Nung",
+        "iso":  "nut"
+    },
+    {
+        "name":  "Nuosu",
+        "iso":  "iii"
+    },
+    {
+        "name":  "Ordos",
+        "iso":  "mvf"
+    },
+    {
+        "name":  "Orokaiva",
+        "iso":  "okv"
+    },
+    {
+        "name":  "Osage",
+        "iso":  "osa"
+    },
+    {
+        "name":  "Paamese",
+        "iso":  "ppo"
+    },
+    {
+        "name":  "Paiute",
+        "iso":  "pao"
+    },
+    {
+        "name":  "Paiwan",
+        "iso":  "pwn"
+    },
+    {
+        "name":  "Panjabi",
+        "iso":  "pan"
+    },
+    {
+        "name":  "Paumari",
+        "iso":  "pad"
+    },
+    {
+        "name":  "Persian",
+        "iso":  "fas"
+    },
+    {
+        "name":  "Piraha",
+        "iso":  "myp"
+    },
+    {
+        "name":  "Polish",
+        "iso":  "pol"
+    },
+    {
+        "name":  "Quechua",
+        "iso":  "que"
+    },
+    {
+        "name":  "Rapanui",
+        "iso":  "rap"
+    },
+    {
+        "name":  "rGyalrong",
+        "iso":  "jya"
+    },
+    {
+        "name":  "Runyankore",
+        "iso":  "nyn"
+    },
+    {
+        "name":  "Russian",
+        "iso":  "rus"
+    },
+    {
+        "name":  "Sa\u0027a",
+        "iso":  "apb"
+    },
+    {
+        "name":  "Sango",
+        "iso":  "sag"
+    },
+    {
+        "name":  "Sanskrit",
+        "iso":  "san"
+    },
+    {
+        "name":  "Sema",
+        "iso":  "nsm"
+    },
+    {
+        "name":  "Seme",
+        "iso":  "sqm"
+    },
+    {
+        "name":  "Shona",
+        "iso":  "sna"
+    },
+    {
+        "name":  "Simeulue",
+        "iso":  "smr"
+    },
+    {
+        "name":  "Skou",
+        "iso":  "skb"
+    },
+    {
+        "name":  "Slovenian",
+        "iso":  "slv"
+    },
+    {
+        "name":  "So",
+        "iso":  "sob"
+    },
+    {
+        "name":  "Soninke",
+        "iso":  "snk"
+    },
+    {
+        "name":  "Spanish",
+        "iso":  "spa"
+    },
+    {
+        "name":  "Suki",
+        "iso":  "skv"
+    },
+    {
+        "name":  "Sumerian",
+        "iso":  "sux"
+    },
+    {
+        "name":  "Supyire",
+        "iso":  "spp"
+    },
+    {
+        "name":  "Swahili",
+        "iso":  "swa"
+    },
+    {
+        "name":  "Tagalog",
+        "iso":  "tgl"
+    },
+    {
+        "name":  "Taiof",
+        "iso":  "tie"
+    },
+    {
+        "name":  "Tamabo",
+        "iso":  "tmb"
+    },
+    {
+        "name":  "Tamil",
+        "iso":  "tam"
+    },
+    {
+        "name":  "Tausug",
+        "iso":  "tsg"
+    },
+    {
+        "name":  "Telugu",
+        "iso":  "tel"
+    },
+    {
+        "name":  "Tepehua",
+        "iso":  "tee"
+    },
+    {
+        "name":  "Thakali",
+        "iso":  "ths"
+    },
+    {
+        "name":  "Thompson",
+        "iso":  "thp"
+    },
+    {
+        "name":  "Tibetan",
+        "iso":  "bod"
+    },
+    {
+        "name":  "Tirmaga",
+        "iso":  "suq"
+    },
+    {
+        "name":  "Tiwi",
+        "iso":  "tiw"
+    },
+    {
+        "name":  "Tonkawa",
+        "iso":  "tqw"
+    },
+    {
+        "name":  "Tshangla",
+        "iso":  "tsj"
+    },
+    {
+        "name":  "Tukang Besi",
+        "iso":  "txn"
+    },
+    {
+        "name":  "Turkish",
+        "iso":  "tur"
+    },
+    {
+        "name":  "Tutelo",
+        "iso":  "tta"
+    },
+    {
+        "name":  "Twi",
+        "iso":  "twi"
+    },
+    {
+        "name":  "Udmurt",
+        "iso":  "udm"
+    },
+    {
+        "name":  "Una",
+        "iso":  "mtg"
+    },
+    {
+        "name":  "Ura",
+        "iso":  "uur"
+    },
+    {
+        "name":  "Urdu",
+        "iso":  "urd"
+    },
+    {
+        "name":  "Vatican Latin",
+        "iso":  "vat"
+    },
+    {
+        "name":  "Vietnamese",
+        "iso":  "vie"
+    },
+    {
+        "name":  "Wakhi",
+        "iso":  "wbl"
+    },
+    {
+        "name":  "Warao",
+        "iso":  "wba"
+    },
+    {
+        "name":  "Warluwara",
+        "iso":  "wrx"
+    },
+    {
+        "name":  "Watam",
+        "iso":  "wat"
+    },
+    {
+        "name":  "Wedau",
+        "iso":  "wed"
+    },
+    {
+        "name":  "Western Armenian",
+        "iso":  "hyw"
+    },
+    {
+        "name":  "Wichi",
+        "iso":  "mzh"
+    },
+    {
+        "name":  "Wichita",
+        "iso":  "wic"
+    },
+    {
+        "name":  "Wolof",
+        "iso":  "wol"
+    },
+    {
+        "name":  "Xasonga",
+        "iso":  "kao"
+    },
+    {
+        "name":  "Xhosa",
+        "iso":  "xho"
+    },
+    {
+        "name":  "Yagaria",
+        "iso":  "ygr"
+    },
+    {
+        "name":  "Yao",
+        "iso":  "yao"
+    },
+    {
+        "name":  "Yaruro",
+        "iso":  "yae"
+    },
+    {
+        "name":  "Yimas",
+        "iso":  "yee"
+    },
+    {
+        "name":  "Yoruba",
+        "iso":  "yor"
+    },
+    {
+        "name":  "Yucuna",
+        "iso":  "ycn"
+    },
+    {
+        "name":  "Yulu",
+        "iso":  "yul"
+    },
+    {
+        "name":  "Zapotec",
+        "iso":  "zap"
+    },
+    {
+        "name":  "Zulu",
+        "iso":  "zul"
+    }
+]

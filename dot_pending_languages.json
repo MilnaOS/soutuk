@@ -1,0 +1,77 @@
+{
+    "_note":  "Languages removed from assets/data/languages.json\u0027s picker on 2026-07-16 because they had zero real DOT coverage (no dot_language_cards.json entry, no LinguisticsMemoryAlpha hand-written stub, and dot_family_cards.json\u0027s family-level fallback is dead code — never wired into DotIndexQueryManager\u0027s lookup chain). Previously these silently fell back to a generic \u0027SVO structure, standard morphological constraints.\u0027 string, misrepresenting them as supported. Re-add to languages.json once a real dot_language_cards.json entry exists for the iso code — see soutuk_dot_knowledge_rebuild memory for the re-harvest process (dedupe_memory_alpha.py -\u003e extract_languages.py -\u003e diff against this list).",
+    "pending":  [
+                    {
+                        "name":  "Akkadian",
+                        "iso":  "akk"
+                    },
+                    {
+                        "name":  "Albanian",
+                        "iso":  "sqi"
+                    },
+                    {
+                        "name":  "Amharic",
+                        "iso":  "amh"
+                    },
+                    {
+                        "name":  "Cantonese",
+                        "iso":  "yue"
+                    },
+                    {
+                        "name":  "Czech",
+                        "iso":  "ces"
+                    },
+                    {
+                        "name":  "Dutch",
+                        "iso":  "nld"
+                    },
+                    {
+                        "name":  "German",
+                        "iso":  "deu"
+                    },
+                    {
+                        "name":  "Greek",
+                        "iso":  "ell"
+                    },
+                    {
+                        "name":  "Kazakh",
+                        "iso":  "kaz"
+                    },
+                    {
+                        "name":  "Khmu",
+                        "iso":  "kjg"
+                    },
+                    {
+                        "name":  "Mongolian",
+                        "iso":  "mon"
+                    },
+                    {
+                        "name":  "Ndumu",
+                        "iso":  "nmd"
+                    },
+                    {
+                        "name":  "Portuguese",
+                        "iso":  "por"
+                    },
+                    {
+                        "name":  "Somali",
+                        "iso":  "som"
+                    },
+                    {
+                        "name":  "Swedish",
+                        "iso":  "swe"
+                    },
+                    {
+                        "name":  "Thai",
+                        "iso":  "tha"
+                    },
+                    {
+                        "name":  "Xam",
+                        "iso":  "xam"
+                    },
+                    {
+                        "name":  "Yiddish",
+                        "iso":  "yid"
+                    }
+                ]
+}
