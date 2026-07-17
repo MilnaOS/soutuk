@@ -25,7 +25,7 @@ class DotIndexQueryManager {
     final tokens = normalizedText.split(RegExp(r'[^a-zA-Z\u00C0-\u017F\u0250-\u02AF\[\]\(\)\?]+')).where((t) => t.isNotEmpty).toSet();
 
     // 2. Fetch grammar/hazard reference content. Priority: real blade-sourced
-    // per-language card (182 of 188 picker languages, WALS-derived) ->
+    // per-language card (183 of 189 picker languages, WALS-derived) ->
     // hand-written stub (covers ancient/liturgical languages WALS doesn't
     // catalog, e.g. Latin, Classical Greek) -> generic default. The generic
     // default should be unreachable now that languages with neither a card
