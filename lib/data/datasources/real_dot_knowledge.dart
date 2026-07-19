@@ -4,8 +4,8 @@ import 'package:flutter/services.dart' show rootBundle;
 /// The real per-language/family translation reference, generated from the
 /// linguistics_blade pipeline's Memory Alpha knowledge base (WALS-sourced
 /// typology data, curated and indexed by ISO code). Replaces reliance on the
-/// AI model's own training knowledge with an actual lookup — 1189 of the
-/// app's 1194 languages have direct cards; the rest fall back through
+/// AI model's own training knowledge with an actual lookup — 1216 of the
+/// app's 1221 languages have direct cards; the rest fall back through
 /// [LinguisticsMemoryAlpha]'s hand-written entries (fra, lat, vat, grc, arc,
 /// egy). Languages with neither were removed from the picker entirely
 /// rather than silently served a generic default — see

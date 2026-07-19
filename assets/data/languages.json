@@ -436,6 +436,10 @@
         "iso": "bft"
     },
     {
+        "name": "Baluchi",
+        "iso": "bgn"
+    },
+    {
         "name": "Bambara",
         "iso": "bam"
     },
@@ -582,6 +586,10 @@
     {
         "name": "Bimoba",
         "iso": "bim"
+    },
+    {
+        "name": "Bini",
+        "iso": "bin"
     },
     {
         "name": "Binukid",
@@ -784,6 +792,10 @@
         "iso": "cha"
     },
     {
+        "name": "Chang",
+        "iso": "nbc"
+    },
+    {
         "name": "Chantyal",
         "iso": "chx"
     },
@@ -826,6 +838,10 @@
     {
         "name": "Chichimeca-Jonaz",
         "iso": "pei"
+    },
+    {
+        "name": "Chickasaw",
+        "iso": "cic"
     },
     {
         "name": "Chimariko",
@@ -878,6 +894,10 @@
     {
         "name": "Chipewyan",
         "iso": "chp"
+    },
+    {
+        "name": "Chiquitano",
+        "iso": "cax"
     },
     {
         "name": "Chitimacha",
@@ -966,6 +986,10 @@
     {
         "name": "Creek",
         "iso": "mus"
+    },
+    {
+        "name": "Crimean Tatar",
+        "iso": "crh"
     },
     {
         "name": "Cubeo",
@@ -1140,6 +1164,10 @@
         "iso": "etu"
     },
     {
+        "name": "Ekari",
+        "iso": "ekg"
+    },
+    {
         "name": "Ekoti",
         "iso": "eko"
     },
@@ -1278,6 +1306,10 @@
     {
         "name": "Gahuku",
         "iso": "gah"
+    },
+    {
+        "name": "Galician",
+        "iso": "glg"
     },
     {
         "name": "Gamilaraay",
@@ -1708,6 +1740,10 @@
         "iso": "izr"
     },
     {
+        "name": "Jakaltek",
+        "iso": "jac"
+    },
+    {
         "name": "Jaminjung",
         "iso": "djd"
     },
@@ -1730,6 +1766,10 @@
     {
         "name": "Jivaro",
         "iso": "jiv"
+    },
+    {
+        "name": "Juang",
+        "iso": "jun"
     },
     {
         "name": "Ju|'hoan",
@@ -1896,6 +1936,10 @@
         "iso": "kzt"
     },
     {
+        "name": "Kata Kolok",
+        "iso": "bqy"
+    },
+    {
         "name": "Kati (in Afghanistan)",
         "iso": "bsh"
     },
@@ -2046,6 +2090,10 @@
     {
         "name": "Kobon",
         "iso": "kpw"
+    },
+    {
+        "name": "Kodava",
+        "iso": "kfa"
     },
     {
         "name": "Koiali (Mountain)",
@@ -2208,6 +2256,10 @@
         "iso": "kxv"
     },
     {
+        "name": "Kwaio",
+        "iso": "kwd"
+    },
+    {
         "name": "Kwakw'ala",
         "iso": "kwk"
     },
@@ -2226,6 +2278,10 @@
     {
         "name": "Kwoma",
         "iso": "kmo"
+    },
+    {
+        "name": "Kwomtari",
+        "iso": "kwo"
     },
     {
         "name": "Kxoe",
@@ -2596,6 +2652,10 @@
         "iso": "mqy"
     },
     {
+        "name": "Mankon",
+        "iso": "nge"
+    },
+    {
         "name": "Mano",
         "iso": "mev"
     },
@@ -2654,6 +2714,10 @@
     {
         "name": "Maringarr",
         "iso": "zmt"
+    },
+    {
+        "name": "Marshallese",
+        "iso": "mah"
     },
     {
         "name": "Maru",
@@ -2772,6 +2836,10 @@
         "iso": "mmy"
     },
     {
+        "name": "Miju",
+        "iso": "mxj"
+    },
+    {
         "name": "Mikasuki",
         "iso": "mik"
     },
@@ -2790,6 +2858,10 @@
     {
         "name": "Miskito",
         "iso": "miq"
+    },
+    {
+        "name": "Miwok (Bodega)",
+        "iso": "csi"
     },
     {
         "name": "Mixe (Coatlán)",
@@ -2898,6 +2970,10 @@
     {
         "name": "Motuna",
         "iso": "siw"
+    },
+    {
+        "name": "Mufian",
+        "iso": "aoj"
     },
     {
         "name": "Muinane",
@@ -3228,6 +3304,10 @@
         "iso": "nuf"
     },
     {
+        "name": "Nyamwezi",
+        "iso": "nym"
+    },
+    {
         "name": "Nyimang",
         "iso": "nyi"
     },
@@ -3262,6 +3342,10 @@
     {
         "name": "Ogbia",
         "iso": "ogb"
+    },
+    {
+        "name": "Okanagan",
+        "iso": "oka"
     },
     {
         "name": "Olo",
@@ -3804,6 +3888,10 @@
         "iso": "snc"
     },
     {
+        "name": "Sindhi",
+        "iso": "snd"
+    },
+    {
         "name": "Sinhala",
         "iso": "sin"
     },
@@ -4068,6 +4156,10 @@
         "iso": "tel"
     },
     {
+        "name": "Tem",
+        "iso": "kdh"
+    },
+    {
         "name": "Temein",
         "iso": "teq"
     },
@@ -4106,6 +4198,10 @@
     {
         "name": "Teso",
         "iso": "teo"
+    },
+    {
+        "name": "Tetela",
+        "iso": "tll"
     },
     {
         "name": "Tetun Dili",
@@ -4476,6 +4572,10 @@
         "iso": "wap"
     },
     {
+        "name": "Wappo",
+        "iso": "wao"
+    },
+    {
         "name": "Warao",
         "iso": "wba"
     },
@@ -4580,6 +4680,10 @@
         "iso": "wiy"
     },
     {
+        "name": "Woisika",
+        "iso": "woi"
+    },
+    {
         "name": "Wolaytta",
         "iso": "wal"
     },
@@ -4598,6 +4702,10 @@
     {
         "name": "Wu",
         "iso": "wuu"
+    },
+    {
+        "name": "Wéménugbé",
+        "iso": "wem"
     },
     {
         "name": "Xasonga",
