@@ -1,7 +1,31 @@
 [
     {
+        "name": "'Are'are",
+        "iso": "alu"
+    },
+    {
         "name": "//Ani",
         "iso": "hnh"
+    },
+    {
+        "name": "/Xam",
+        "iso": "xam"
+    },
+    {
+        "name": "=|Hoan",
+        "iso": "huc"
+    },
+    {
+        "name": "A-Pucikwar",
+        "iso": "apq"
+    },
+    {
+        "name": "Aari",
+        "iso": "aiw"
+    },
+    {
+        "name": "Abidji",
+        "iso": "abi"
     },
     {
         "name": "Abkhaz",
@@ -16,8 +40,36 @@
         "iso": "aca"
     },
     {
+        "name": "Achang",
+        "iso": "acn"
+    },
+    {
+        "name": "Acholi",
+        "iso": "ach"
+    },
+    {
+        "name": "Achuar",
+        "iso": "acu"
+    },
+    {
+        "name": "Achumawi",
+        "iso": "acv"
+    },
+    {
+        "name": "Aché",
+        "iso": "guq"
+    },
+    {
+        "name": "Acoma",
+        "iso": "kjq"
+    },
+    {
         "name": "Adang",
         "iso": "adn"
+    },
+    {
+        "name": "Adioukrou",
+        "iso": "adj"
     },
     {
         "name": "Adyghe (Temirgoy)",
@@ -28,20 +80,76 @@
         "iso": "adz"
     },
     {
+        "name": "Aghem",
+        "iso": "agq"
+    },
+    {
         "name": "Agta (Central)",
         "iso": "agt"
+    },
+    {
+        "name": "Agta (Dupaningan)",
+        "iso": "duo"
+    },
+    {
+        "name": "Ahtna",
+        "iso": "aht"
     },
     {
         "name": "Aikaná",
         "iso": "tba"
     },
     {
+        "name": "Ainu",
+        "iso": "ain"
+    },
+    {
+        "name": "Aja",
+        "iso": "aja"
+    },
+    {
         "name": "Ajagbe",
         "iso": "ajg"
     },
     {
+        "name": "Ajië",
+        "iso": "aji"
+    },
+    {
+        "name": "Aka-Cari",
+        "iso": "aci"
+    },
+    {
+        "name": "Akan",
+        "iso": "aka"
+    },
+    {
+        "name": "Akawaio",
+        "iso": "ake"
+    },
+    {
+        "name": "Akha",
+        "iso": "ahk"
+    },
+    {
+        "name": "Akhvakh",
+        "iso": "akv"
+    },
+    {
+        "name": "Alabama",
+        "iso": "akz"
+    },
+    {
+        "name": "Alamblak",
+        "iso": "amp"
+    },
+    {
         "name": "Alawa",
         "iso": "alh"
+    },
+    {
+        "name": "Albanian",
+        "iso": "sqi"
     },
     {
         "name": "Aleut",
@@ -52,8 +160,16 @@
         "iso": "aes"
     },
     {
+        "name": "Alune",
+        "iso": "alp"
+    },
+    {
         "name": "Alyawarra",
         "iso": "aly"
+    },
+    {
+        "name": "Amanab",
+        "iso": "amn"
     },
     {
         "name": "Ambai",
@@ -64,12 +180,56 @@
         "iso": "abt"
     },
     {
+        "name": "Amele",
+        "iso": "aey"
+    },
+    {
+        "name": "American Sign Language",
+        "iso": "ase"
+    },
+    {
+        "name": "Amharic",
+        "iso": "amh"
+    },
+    {
+        "name": "Amis",
+        "iso": "ami"
+    },
+    {
         "name": "Amo",
         "iso": "amo"
     },
     {
+        "name": "Ampeeli",
+        "iso": "apz"
+    },
+    {
+        "name": "Amuesha",
+        "iso": "ame"
+    },
+    {
+        "name": "Amuzgo",
+        "iso": "amu"
+    },
+    {
         "name": "Andi",
         "iso": "ani"
+    },
+    {
+        "name": "Angami",
+        "iso": "njm"
+    },
+    {
+        "name": "Anggor",
+        "iso": "agg"
+    },
+    {
+        "name": "Anindilyakwa",
+        "iso": "aoi"
+    },
+    {
+        "name": "Anong",
+        "iso": "nun"
     },
     {
         "name": "Anufo",
@@ -80,24 +240,72 @@
         "iso": "any"
     },
     {
+        "name": "Anywa",
+        "iso": "anu"
+    },
+    {
         "name": "Ao",
         "iso": "njo"
+    },
+    {
+        "name": "Apache (Western)",
+        "iso": "apw"
     },
     {
         "name": "Apalaí",
         "iso": "apy"
     },
     {
+        "name": "Apatani",
+        "iso": "apt"
+    },
+    {
+        "name": "Apinayé",
+        "iso": "apn"
+    },
+    {
+        "name": "Arabana",
+        "iso": "ard"
+    },
+    {
         "name": "Arabic",
         "iso": "ara"
+    },
+    {
+        "name": "Arabic (Bani-Hassan)",
+        "iso": "mey"
+    },
+    {
+        "name": "Arabic (Beirut)",
+        "iso": "apc"
+    },
+    {
+        "name": "Arabic (Chadian)",
+        "iso": "shu"
     },
     {
         "name": "Arabic (Egyptian)",
         "iso": "arz"
     },
     {
+        "name": "Arabic (Hijazi)",
+        "iso": "acw"
+    },
+    {
         "name": "Arabic (Iraqi)",
         "iso": "acm"
+    },
+    {
+        "name": "Arabic (Modern Standard)",
+        "iso": "arb"
+    },
+    {
+        "name": "Arabic (Moroccan)",
+        "iso": "ary"
+    },
+    {
+        "name": "Arabic (Tunisian)",
+        "iso": "aeb"
     },
     {
         "name": "Aramaic",
@@ -108,12 +316,40 @@
         "iso": "aro"
     },
     {
+        "name": "Arapaho",
+        "iso": "arp"
+    },
+    {
+        "name": "Arapesh (Abu)",
+        "iso": "aah"
+    },
+    {
+        "name": "Arapesh (Mountain)",
+        "iso": "ape"
+    },
+    {
         "name": "Archi",
         "iso": "aqc"
     },
     {
+        "name": "Aribwatsa",
+        "iso": "laz"
+    },
+    {
         "name": "Armenian",
         "iso": "hye"
+    },
+    {
+        "name": "Arop-Lokep",
+        "iso": "apr"
+    },
+    {
+        "name": "Arosi",
+        "iso": "aia"
+    },
+    {
+        "name": "Arrernte (Mparntwe)",
+        "iso": "aer"
     },
     {
         "name": "Assamese",
@@ -124,6 +360,10 @@
         "iso": "aqp"
     },
     {
+        "name": "Athpare",
+        "iso": "aph"
+    },
+    {
         "name": "Avar",
         "iso": "ava"
     },
@@ -132,12 +372,32 @@
         "iso": "avu"
     },
     {
+        "name": "Awa",
+        "iso": "awb"
+    },
+    {
+        "name": "Awa Pit",
+        "iso": "kwi"
+    },
+    {
+        "name": "Awadhi",
+        "iso": "awa"
+    },
+    {
         "name": "Awyi",
         "iso": "auw"
     },
     {
         "name": "Ayiwo",
         "iso": "nfl"
+    },
+    {
+        "name": "Aymara (Central)",
+        "iso": "ayr"
+    },
+    {
+        "name": "Ayoreo",
+        "iso": "ayo"
     },
     {
         "name": "Azari (Iranian)",
@@ -152,28 +412,92 @@
         "iso": "bfd"
     },
     {
+        "name": "Bagirmi",
+        "iso": "bmi"
+    },
+    {
         "name": "Bai",
         "iso": "bca"
+    },
+    {
+        "name": "Bajau (West Coast)",
+        "iso": "bdr"
     },
     {
         "name": "Bakueri",
         "iso": "bri"
     },
     {
+        "name": "Bakundu",
+        "iso": "bdu"
+    },
+    {
         "name": "Balti",
         "iso": "bft"
+    },
+    {
+        "name": "Bambara",
+        "iso": "bam"
     },
     {
         "name": "Bandi",
         "iso": "bza"
     },
     {
+        "name": "Bandjalang (Casino)",
+        "iso": "bdy"
+    },
+    {
+        "name": "Banoni",
+        "iso": "bcm"
+    },
+    {
+        "name": "Baoulé",
+        "iso": "bci"
+    },
+    {
         "name": "Baragaunle",
         "iso": "bgc"
     },
     {
+        "name": "Bargam",
+        "iso": "mlp"
+    },
+    {
+        "name": "Bari",
+        "iso": "bfa"
+    },
+    {
+        "name": "Bariba",
+        "iso": "bba"
+    },
+    {
+        "name": "Baré",
+        "iso": "bae"
+    },
+    {
+        "name": "Barí",
+        "iso": "mot"
+    },
+    {
+        "name": "Basari",
+        "iso": "bsc"
+    },
+    {
+        "name": "Basaá",
+        "iso": "bas"
+    },
+    {
+        "name": "Bashkir",
+        "iso": "bak"
+    },
+    {
         "name": "Basque",
         "iso": "eus"
+    },
+    {
+        "name": "Batak",
+        "iso": "bya"
     },
     {
         "name": "Batak (Karo)",
@@ -196,6 +520,22 @@
         "iso": "blc"
     },
     {
+        "name": "Belorussian",
+        "iso": "bel"
+    },
+    {
+        "name": "Bemba",
+        "iso": "bem"
+    },
+    {
+        "name": "Bena-Lulua",
+        "iso": "lua"
+    },
+    {
+        "name": "Benga",
+        "iso": "bng"
+    },
+    {
         "name": "Bengali",
         "iso": "ben"
     },
@@ -204,20 +544,104 @@
         "iso": "tzm"
     },
     {
+        "name": "Berber (Rif)",
+        "iso": "rif"
+    },
+    {
         "name": "Berbice Dutch Creole",
         "iso": "brc"
+    },
+    {
+        "name": "Bhili",
+        "iso": "bhb"
+    },
+    {
+        "name": "Bhojpuri",
+        "iso": "bho"
     },
     {
         "name": "Bhumij",
         "iso": "unr"
     },
     {
+        "name": "Bidiya",
+        "iso": "bid"
+    },
+    {
+        "name": "Bikol",
+        "iso": "bcl"
+    },
+    {
+        "name": "Biloxi",
+        "iso": "bll"
+    },
+    {
         "name": "Bilua",
         "iso": "blb"
     },
     {
+        "name": "Bimoba",
+        "iso": "bim"
+    },
+    {
+        "name": "Binukid",
+        "iso": "bkd"
+    },
+    {
+        "name": "Bislama",
+        "iso": "bis"
+    },
+    {
+        "name": "Blackfoot",
+        "iso": "bla"
+    },
+    {
+        "name": "Boazi (Kuni)",
+        "iso": "kvg"
+    },
+    {
+        "name": "Bobangi",
+        "iso": "bni"
+    },
+    {
+        "name": "Bobo Madaré (Northern)",
+        "iso": "bbo"
+    },
+    {
+        "name": "Bodo",
+        "iso": "brx"
+    },
+    {
         "name": "Boko",
         "iso": "bqc"
+    },
+    {
+        "name": "Bole",
+        "iso": "bol"
+    },
+    {
+        "name": "Bolia",
+        "iso": "bli"
+    },
+    {
+        "name": "Bongo",
+        "iso": "bot"
+    },
+    {
+        "name": "Bontok",
+        "iso": "lbk"
+    },
+    {
+        "name": "Bori",
+        "iso": "adi"
+    },
+    {
+        "name": "Bororo",
+        "iso": "bor"
+    },
+    {
+        "name": "Boruca",
+        "iso": "brn"
     },
     {
         "name": "Brahui",
@@ -228,32 +652,144 @@
         "iso": "brb"
     },
     {
+        "name": "Breton",
+        "iso": "bre"
+    },
+    {
+        "name": "Brokskat",
+        "iso": "bkk"
+    },
+    {
+        "name": "Buduma",
+        "iso": "bdm"
+    },
+    {
+        "name": "Bugis",
+        "iso": "bug"
+    },
+    {
+        "name": "Bujeba",
+        "iso": "nmg"
+    },
+    {
+        "name": "Bukusu",
+        "iso": "bxk"
+    },
+    {
         "name": "Bulgarian",
         "iso": "bul"
+    },
+    {
+        "name": "Bulu",
+        "iso": "bum"
+    },
+    {
+        "name": "Buma",
+        "iso": "tkw"
+    },
+    {
+        "name": "Bunuba",
+        "iso": "bck"
     },
     {
         "name": "Burmese",
         "iso": "mya"
     },
     {
+        "name": "Burunge",
+        "iso": "bds"
+    },
+    {
         "name": "Burushaski",
         "iso": "bsk"
+    },
+    {
+        "name": "Cabécar",
+        "iso": "cjp"
+    },
+    {
+        "name": "Caddo",
+        "iso": "cad"
     },
     {
         "name": "Cahuilla",
         "iso": "chl"
     },
     {
+        "name": "Cakchiquel",
+        "iso": "cak"
+    },
+    {
+        "name": "Camling",
+        "iso": "rab"
+    },
+    {
         "name": "Campa Pajonal Asheninca",
         "iso": "cjo"
+    },
+    {
+        "name": "Canela",
+        "iso": "ram"
+    },
+    {
+        "name": "Cantonese",
+        "iso": "yue"
+    },
+    {
+        "name": "Carib",
+        "iso": "car"
+    },
+    {
+        "name": "Carib (De'kwana)",
+        "iso": "mch"
+    },
+    {
+        "name": "Catalan",
+        "iso": "cat"
+    },
+    {
+        "name": "Catawba",
+        "iso": "chc"
+    },
+    {
+        "name": "Cavineña",
+        "iso": "cav"
+    },
+    {
+        "name": "Cayapa",
+        "iso": "cbi"
     },
     {
         "name": "Cayuga",
         "iso": "cay"
     },
     {
+        "name": "Cebuano",
+        "iso": "ceb"
+    },
+    {
+        "name": "Cham (Eastern)",
+        "iso": "cjm"
+    },
+    {
+        "name": "Cham (Western)",
+        "iso": "cja"
+    },
+    {
+        "name": "Chambri",
+        "iso": "can"
+    },
+    {
         "name": "Chamorro",
         "iso": "cha"
+    },
+    {
+        "name": "Chantyal",
+        "iso": "chx"
+    },
+    {
+        "name": "Chasta Costa",
+        "iso": "tuu"
     },
     {
         "name": "Chatino (Nopala)",
@@ -264,12 +800,40 @@
         "iso": "ctp"
     },
     {
+        "name": "Chechen",
+        "iso": "che"
+    },
+    {
+        "name": "Chehalis (Upper)",
+        "iso": "cjh"
+    },
+    {
+        "name": "Chemakum",
+        "iso": "xch"
+    },
+    {
+        "name": "Chemehuevi",
+        "iso": "ute"
+    },
+    {
         "name": "Cherokee",
         "iso": "chr"
     },
     {
+        "name": "Chichewa",
+        "iso": "nya"
+    },
+    {
         "name": "Chichimeca-Jonaz",
         "iso": "pei"
+    },
+    {
+        "name": "Chimariko",
+        "iso": "cid"
+    },
+    {
+        "name": "Chin (Mara)",
+        "iso": "mrh"
     },
     {
         "name": "Chinantec",
@@ -284,6 +848,22 @@
         "iso": "cle"
     },
     {
+        "name": "Chinantec (Palantla)",
+        "iso": "cpa"
+    },
+    {
+        "name": "Chinantec (Quiotepec)",
+        "iso": "chq"
+    },
+    {
+        "name": "Chinantec (San Felipe Usila)",
+        "iso": "cuc"
+    },
+    {
+        "name": "Chinantec (Sochiapan)",
+        "iso": "cso"
+    },
+    {
         "name": "Chinese Sign Language",
         "iso": "csl"
     },
@@ -296,6 +876,10 @@
         "iso": "wac"
     },
     {
+        "name": "Chipewyan",
+        "iso": "chp"
+    },
+    {
         "name": "Chitimacha",
         "iso": "ctm"
     },
@@ -304,12 +888,24 @@
         "iso": "cho"
     },
     {
+        "name": "Chol",
+        "iso": "ctu"
+    },
+    {
         "name": "Cholón",
         "iso": "cht"
     },
     {
+        "name": "Chontal (Huamelultec Oaxaca)",
+        "iso": "clo"
+    },
+    {
         "name": "Chontal Maya",
         "iso": "chf"
+    },
+    {
+        "name": "Chrau",
+        "iso": "crw"
     },
     {
         "name": "Chru",
@@ -318,6 +914,14 @@
     {
         "name": "Chukchi",
         "iso": "ckt"
+    },
+    {
+        "name": "Chuukese",
+        "iso": "chk"
+    },
+    {
+        "name": "Chuvash",
+        "iso": "chv"
     },
     {
         "name": "Classical Greek",
@@ -332,8 +936,68 @@
         "iso": "coc"
     },
     {
+        "name": "Coeur d'Alene",
+        "iso": "crd"
+    },
+    {
+        "name": "Comanche",
+        "iso": "com"
+    },
+    {
+        "name": "Comox",
+        "iso": "coo"
+    },
+    {
+        "name": "Coptic",
+        "iso": "cop"
+    },
+    {
+        "name": "Cora",
+        "iso": "crn"
+    },
+    {
+        "name": "Cornish",
+        "iso": "cor"
+    },
+    {
+        "name": "Cree (Plains)",
+        "iso": "crk"
+    },
+    {
+        "name": "Creek",
+        "iso": "mus"
+    },
+    {
+        "name": "Cubeo",
+        "iso": "cub"
+    },
+    {
+        "name": "Cuiba",
+        "iso": "cui"
+    },
+    {
+        "name": "Curripaco",
+        "iso": "kpc"
+    },
+    {
+        "name": "Czech",
+        "iso": "ces"
+    },
+    {
+        "name": "Dagaare",
+        "iso": "dga"
+    },
+    {
         "name": "Dagbani",
         "iso": "dag"
+    },
+    {
+        "name": "Dagur",
+        "iso": "dta"
+    },
+    {
+        "name": "Dangaléat (Western)",
+        "iso": "daa"
     },
     {
         "name": "Dani (Lower Grand Valley)",
@@ -344,8 +1008,36 @@
         "iso": "dan"
     },
     {
+        "name": "Darai",
+        "iso": "dry"
+    },
+    {
         "name": "Dargwa",
         "iso": "dar"
+    },
+    {
+        "name": "Dari",
+        "iso": "prs"
+    },
+    {
+        "name": "Day",
+        "iso": "dai"
+    },
+    {
+        "name": "Degexit'an",
+        "iso": "ing"
+    },
+    {
+        "name": "Dení",
+        "iso": "dny"
+    },
+    {
+        "name": "Desano",
+        "iso": "des"
+    },
+    {
+        "name": "Deuri",
+        "iso": "der"
     },
     {
         "name": "Dhaasanac",
@@ -360,6 +1052,18 @@
         "iso": "dhi"
     },
     {
+        "name": "Didinga",
+        "iso": "did"
+    },
+    {
+        "name": "Dimasa",
+        "iso": "dis"
+    },
+    {
+        "name": "Dime",
+        "iso": "dim"
+    },
+    {
         "name": "Ding",
         "iso": "diz"
     },
@@ -368,8 +1072,20 @@
         "iso": "din"
     },
     {
+        "name": "Diola-Fogny",
+        "iso": "dyo"
+    },
+    {
+        "name": "Diyari",
+        "iso": "dif"
+    },
+    {
         "name": "Djambarrpuyngu",
         "iso": "djr"
+    },
+    {
+        "name": "Djinang",
+        "iso": "dji"
     },
     {
         "name": "Dogri",
@@ -378,6 +1094,10 @@
     {
         "name": "Domaaki",
         "iso": "dmk"
+    },
+    {
+        "name": "Domari",
+        "iso": "rmt"
     },
     {
         "name": "Dongo",
@@ -392,8 +1112,16 @@
         "iso": "dua"
     },
     {
+        "name": "Dulong",
+        "iso": "duu"
+    },
+    {
         "name": "Dutch (Brabantic)",
         "iso": "nld"
+    },
+    {
+        "name": "Dyimini",
+        "iso": "dyi"
     },
     {
         "name": "Ega",
@@ -404,12 +1132,56 @@
         "iso": "egy"
     },
     {
+        "name": "Eipo",
+        "iso": "eip"
+    },
+    {
+        "name": "Ejagham",
+        "iso": "etu"
+    },
+    {
+        "name": "Ekoti",
+        "iso": "eko"
+    },
+    {
+        "name": "Embaloh",
+        "iso": "emb"
+    },
+    {
+        "name": "Embera Chami",
+        "iso": "cmi"
+    },
+    {
+        "name": "Emberá (Northern)",
+        "iso": "emp"
+    },
+    {
+        "name": "Enga",
+        "iso": "enq"
+    },
+    {
+        "name": "Engenni",
+        "iso": "enn"
+    },
+    {
+        "name": "Enggano",
+        "iso": "eno"
+    },
+    {
         "name": "English",
         "iso": "eng"
     },
     {
         "name": "Epena Pedee",
         "iso": "sja"
+    },
+    {
+        "name": "Ese Ejja",
+        "iso": "ese"
+    },
+    {
+        "name": "Even",
+        "iso": "eve"
     },
     {
         "name": "Evenki",
@@ -420,8 +1192,16 @@
         "iso": "ewe"
     },
     {
+        "name": "Ewondo",
+        "iso": "ewo"
+    },
+    {
         "name": "Fasu",
         "iso": "faa"
+    },
+    {
+        "name": "Fe'fe'",
+        "iso": "fmp"
     },
     {
         "name": "Fijian",
@@ -436,16 +1216,88 @@
         "iso": "kng"
     },
     {
+        "name": "Foe",
+        "iso": "foi"
+    },
+    {
+        "name": "Fongbe",
+        "iso": "fon"
+    },
+    {
+        "name": "Fordata",
+        "iso": "frd"
+    },
+    {
+        "name": "Fore",
+        "iso": "for"
+    },
+    {
+        "name": "Fox",
+        "iso": "sac"
+    },
+    {
         "name": "French",
         "iso": "fra"
+    },
+    {
+        "name": "Frisian",
+        "iso": "fry"
+    },
+    {
+        "name": "Fulfulde (Adamawa)",
+        "iso": "fub"
     },
     {
         "name": "Fur",
         "iso": "fvr"
     },
     {
+        "name": "Futuna-Aniwa",
+        "iso": "fut"
+    },
+    {
+        "name": "Fuzhou",
+        "iso": "cdo"
+    },
+    {
+        "name": "Fyem",
+        "iso": "pym"
+    },
+    {
         "name": "Ga'anda",
         "iso": "gqa"
+    },
+    {
+        "name": "Gaelic (Scots)",
+        "iso": "gla"
+    },
+    {
+        "name": "Gagauz",
+        "iso": "gag"
+    },
+    {
+        "name": "Gahuku",
+        "iso": "gah"
+    },
+    {
+        "name": "Gamilaraay",
+        "iso": "kld"
+    },
+    {
+        "name": "Gamo",
+        "iso": "gmv"
+    },
+    {
+        "name": "Garo",
+        "iso": "grt"
+    },
+    {
+        "name": "Garrwa",
+        "iso": "wrk"
+    },
+    {
+        "name": "Garífuna",
+        "iso": "cab"
     },
     {
         "name": "Gbaya (Northwest)",
@@ -460,8 +1312,36 @@
         "iso": "deu"
     },
     {
+        "name": "German (Upper Austrian)",
+        "iso": "bar"
+    },
+    {
+        "name": "Gilaki",
+        "iso": "glk"
+    },
+    {
+        "name": "Gitksan",
+        "iso": "git"
+    },
+    {
         "name": "Giziga",
         "iso": "gis"
+    },
+    {
+        "name": "Goajiro",
+        "iso": "guc"
+    },
+    {
+        "name": "Godoberi",
+        "iso": "gdo"
+    },
+    {
+        "name": "Gokana",
+        "iso": "gkn"
+    },
+    {
+        "name": "Gola",
+        "iso": "gol"
     },
     {
         "name": "Gooniyandi",
@@ -476,8 +1356,16 @@
         "iso": "grb"
     },
     {
+        "name": "Grebo",
+        "iso": "grj"
+    },
+    {
         "name": "Greek (Cypriot)",
         "iso": "ell"
+    },
+    {
+        "name": "Greek Sign Language",
+        "iso": "gss"
     },
     {
         "name": "Greenlandic",
@@ -492,6 +1380,22 @@
         "iso": "gub"
     },
     {
+        "name": "Guambiano",
+        "iso": "gum"
+    },
+    {
+        "name": "Guaraní",
+        "iso": "gug"
+    },
+    {
+        "name": "Guarijío",
+        "iso": "var"
+    },
+    {
+        "name": "Gude",
+        "iso": "gde"
+    },
+    {
         "name": "Gujarati",
         "iso": "guj"
     },
@@ -500,20 +1404,76 @@
         "iso": "kcm"
     },
     {
+        "name": "Gumatj",
+        "iso": "gnn"
+    },
+    {
+        "name": "Gumuz",
+        "iso": "guk"
+    },
+    {
+        "name": "Gunbalang",
+        "iso": "wlg"
+    },
+    {
         "name": "Gupapuyngu",
         "iso": "guf"
+    },
+    {
+        "name": "Gurr-goni",
+        "iso": "gge"
     },
     {
         "name": "Gurung",
         "iso": "gvr"
     },
     {
+        "name": "Gusii",
+        "iso": "guz"
+    },
+    {
+        "name": "Guugu Yimidhirr",
+        "iso": "kky"
+    },
+    {
+        "name": "Gã",
+        "iso": "gaa"
+    },
+    {
+        "name": "Gününa Küne",
+        "iso": "pue"
+    },
+    {
         "name": "Haida",
         "iso": "hai"
     },
     {
+        "name": "Haitian Creole",
+        "iso": "hat"
+    },
+    {
+        "name": "Hakka",
+        "iso": "hak"
+    },
+    {
+        "name": "Halang",
+        "iso": "hal"
+    },
+    {
+        "name": "Halkomelem (Island)",
+        "iso": "hur"
+    },
+    {
         "name": "Hamtai",
         "iso": "hmt"
+    },
+    {
+        "name": "Hanga Hundi",
+        "iso": "wos"
+    },
+    {
+        "name": "Hatam",
+        "iso": "had"
     },
     {
         "name": "Hausa",
@@ -524,8 +1484,16 @@
         "iso": "haw"
     },
     {
+        "name": "Haya",
+        "iso": "hay"
+    },
+    {
         "name": "Hebrew",
         "iso": "heb"
+    },
+    {
+        "name": "Hehe",
+        "iso": "heh"
     },
     {
         "name": "Heiltsuk",
@@ -534,6 +1502,10 @@
     {
         "name": "Hidatsa",
         "iso": "hid"
+    },
+    {
+        "name": "Hiligaynon",
+        "iso": "hil"
     },
     {
         "name": "Himba",
@@ -556,8 +1528,24 @@
         "iso": "hnj"
     },
     {
+        "name": "Hoava",
+        "iso": "hoa"
+    },
+    {
+        "name": "Holoholo",
+        "iso": "hoo"
+    },
+    {
+        "name": "Hong Kong Sign Language",
+        "iso": "hks"
+    },
+    {
         "name": "Hopi",
         "iso": "hop"
+    },
+    {
+        "name": "Huave (San Mateo del Mar)",
+        "iso": "huv"
     },
     {
         "name": "Huichol",
@@ -568,12 +1556,32 @@
         "iso": "huu"
     },
     {
+        "name": "Hunde",
+        "iso": "hke"
+    },
+    {
         "name": "Hungarian",
         "iso": "hun"
     },
     {
         "name": "Hunzib",
         "iso": "huz"
+    },
+    {
+        "name": "Hupa",
+        "iso": "hup"
+    },
+    {
+        "name": "I'saka",
+        "iso": "ksi"
+    },
+    {
+        "name": "Iaai",
+        "iso": "iai"
+    },
+    {
+        "name": "Iau",
+        "iso": "tmu"
     },
     {
         "name": "Iban",
@@ -588,16 +1596,48 @@
         "iso": "idu"
     },
     {
+        "name": "Ifira-Mele",
+        "iso": "mxe"
+    },
+    {
         "name": "Ifugao (Batad)",
         "iso": "ifb"
+    },
+    {
+        "name": "Ifumu",
+        "iso": "ifm"
     },
     {
         "name": "Igbo",
         "iso": "ibo"
     },
     {
+        "name": "Igede",
+        "iso": "ige"
+    },
+    {
+        "name": "Ignaciano",
+        "iso": "ign"
+    },
+    {
+        "name": "Ijo (Kolokuma)",
+        "iso": "ijc"
+    },
+    {
+        "name": "Ik",
+        "iso": "ikx"
+    },
+    {
         "name": "Ika",
         "iso": "arh"
+    },
+    {
+        "name": "Ilocano",
+        "iso": "ilo"
+    },
+    {
+        "name": "Imonda",
+        "iso": "imn"
     },
     {
         "name": "Inanwatan",
@@ -612,12 +1652,36 @@
         "iso": "ind"
     },
     {
+        "name": "Ingush",
+        "iso": "inh"
+    },
+    {
         "name": "Inuktitut",
         "iso": "iku"
     },
     {
+        "name": "Iquito",
+        "iso": "iqu"
+    },
+    {
         "name": "Iraqw",
         "iso": "irk"
+    },
+    {
+        "name": "Irish (Donegal)",
+        "iso": "gle"
+    },
+    {
+        "name": "Ishkashimi",
+        "iso": "isk"
+    },
+    {
+        "name": "Isirawa",
+        "iso": "srl"
+    },
+    {
+        "name": "Isnag",
+        "iso": "isd"
     },
     {
         "name": "Italian",
@@ -628,12 +1692,32 @@
         "iso": "itl"
     },
     {
+        "name": "Itonama",
+        "iso": "ito"
+    },
+    {
+        "name": "Iwam",
+        "iso": "iwm"
+    },
+    {
+        "name": "Ixil",
+        "iso": "ixl"
+    },
+    {
+        "name": "Izere",
+        "iso": "izr"
+    },
+    {
         "name": "Jaminjung",
         "iso": "djd"
     },
     {
         "name": "Japanese",
         "iso": "jpn"
+    },
+    {
+        "name": "Jaqaru",
+        "iso": "jqr"
     },
     {
         "name": "Jebero",
@@ -648,20 +1732,48 @@
         "iso": "jiv"
     },
     {
+        "name": "Ju|'hoan",
+        "iso": "ktz"
+    },
+    {
+        "name": "Júma",
+        "iso": "jua"
+    },
+    {
         "name": "K'ekchí",
         "iso": "kek"
+    },
+    {
+        "name": "Kabardian",
+        "iso": "kbd"
     },
     {
         "name": "Kabiyé",
         "iso": "kbp"
     },
     {
+        "name": "Kabyle",
+        "iso": "kab"
+    },
+    {
+        "name": "Kagoma",
+        "iso": "kdm"
+    },
+    {
         "name": "Kaingang",
         "iso": "kgp"
     },
     {
+        "name": "Kairiru",
+        "iso": "kxa"
+    },
+    {
         "name": "Kaiwá",
         "iso": "kgk"
+    },
+    {
+        "name": "Kalkatungu",
+        "iso": "ktg"
     },
     {
         "name": "Kalmyk (Issyk-Kul)",
@@ -672,32 +1784,96 @@
         "iso": "bco"
     },
     {
+        "name": "Kamaiurá",
+        "iso": "kay"
+    },
+    {
         "name": "Kamba",
         "iso": "kam"
+    },
+    {
+        "name": "Kambot",
+        "iso": "kbx"
+    },
+    {
+        "name": "Kami",
+        "iso": "kcu"
+    },
+    {
+        "name": "Kamoro",
+        "iso": "kgq"
     },
     {
         "name": "Kanakuru",
         "iso": "kwl"
     },
     {
+        "name": "Kanakuru",
+        "iso": "kna"
+    },
+    {
         "name": "Kanashi",
         "iso": "xns"
+    },
+    {
+        "name": "Kanembu",
+        "iso": "kbl"
+    },
+    {
+        "name": "Kanjobal (Western)",
+        "iso": "knj"
     },
     {
         "name": "Kannada",
         "iso": "kan"
     },
     {
+        "name": "Kanoê",
+        "iso": "kxo"
+    },
+    {
         "name": "Kanuri",
         "iso": "kau"
+    },
+    {
+        "name": "Kanuri",
+        "iso": "knc"
+    },
+    {
+        "name": "Kanyok",
+        "iso": "kny"
+    },
+    {
+        "name": "Kapampangan",
+        "iso": "pam"
     },
     {
         "name": "Kara (in Papua New Guinea)",
         "iso": "leu"
     },
     {
+        "name": "Karachay-Balkar",
+        "iso": "krc"
+    },
+    {
+        "name": "Karajá",
+        "iso": "kpj"
+    },
+    {
         "name": "Karakalpak",
         "iso": "kaa"
+    },
+    {
+        "name": "Karao",
+        "iso": "kyj"
+    },
+    {
+        "name": "Karen (Bwe)",
+        "iso": "bwe"
+    },
+    {
+        "name": "Karen (Pwo)",
+        "iso": "kjp"
     },
     {
         "name": "Karen (Sgaw)",
@@ -712,16 +1888,44 @@
         "iso": "kyh"
     },
     {
+        "name": "Kashmiri",
+        "iso": "kas"
+    },
+    {
         "name": "Kasong",
         "iso": "kzt"
+    },
+    {
+        "name": "Kati (in Afghanistan)",
+        "iso": "bsh"
+    },
+    {
+        "name": "Katla",
+        "iso": "kcr"
     },
     {
         "name": "Kato",
         "iso": "ktw"
     },
     {
+        "name": "Kaulong",
+        "iso": "pss"
+    },
+    {
+        "name": "Kaytej",
+        "iso": "gbb"
+    },
+    {
+        "name": "Kei",
+        "iso": "kei"
+    },
+    {
         "name": "Kemtuik",
         "iso": "kmt"
+    },
+    {
+        "name": "Kenga",
+        "iso": "kyq"
     },
     {
         "name": "Kera",
@@ -736,8 +1940,20 @@
         "iso": "ket"
     },
     {
+        "name": "Kete",
+        "iso": "kcv"
+    },
+    {
         "name": "Kewa",
         "iso": "kew"
+    },
+    {
+        "name": "Khalaj",
+        "iso": "klj"
+    },
+    {
+        "name": "Khaling",
+        "iso": "klr"
     },
     {
         "name": "Khalkha",
@@ -756,6 +1972,10 @@
         "iso": "kca"
     },
     {
+        "name": "Kharia",
+        "iso": "khr"
+    },
+    {
         "name": "Khasi",
         "iso": "kha"
     },
@@ -772,12 +1992,32 @@
         "iso": "kjg"
     },
     {
+        "name": "Khowar",
+        "iso": "khw"
+    },
+    {
+        "name": "Khün",
+        "iso": "kkh"
+    },
+    {
+        "name": "Kikuyu",
+        "iso": "kik"
+    },
+    {
         "name": "Kilivila",
         "iso": "kij"
     },
     {
         "name": "Kiliwa",
         "iso": "klb"
+    },
+    {
+        "name": "Kiluba",
+        "iso": "lub"
+    },
+    {
+        "name": "Kinyarwanda",
+        "iso": "kin"
     },
     {
         "name": "Kiowa",
@@ -788,8 +2028,36 @@
         "iso": "kir"
     },
     {
+        "name": "Kiribati",
+        "iso": "gil"
+    },
+    {
         "name": "Kiwai (Southern)",
         "iso": "kjd"
+    },
+    {
+        "name": "Klamath",
+        "iso": "kla"
+    },
+    {
+        "name": "Koasati",
+        "iso": "cku"
+    },
+    {
+        "name": "Kobon",
+        "iso": "kpw"
+    },
+    {
+        "name": "Koiali (Mountain)",
+        "iso": "kpx"
+    },
+    {
+        "name": "Kokborok",
+        "iso": "trp"
+    },
+    {
+        "name": "Koluri",
+        "iso": "shm"
     },
     {
         "name": "Komi-Permyak",
@@ -800,16 +2068,36 @@
         "iso": "kpv"
     },
     {
+        "name": "Konkani",
+        "iso": "knn"
+    },
+    {
+        "name": "Konkow",
+        "iso": "mjd"
+    },
+    {
         "name": "Konni",
         "iso": "kma"
+    },
+    {
+        "name": "Konua",
+        "iso": "kyx"
     },
     {
         "name": "Korana",
         "iso": "kqz"
     },
     {
+        "name": "Koranko",
+        "iso": "knk"
+    },
+    {
         "name": "Korean",
         "iso": "kor"
+    },
+    {
+        "name": "Korku",
+        "iso": "kfq"
     },
     {
         "name": "Koromfe",
@@ -828,12 +2116,40 @@
         "iso": "khq"
     },
     {
+        "name": "Koyraboro Senni",
+        "iso": "ses"
+    },
+    {
+        "name": "Koyukon",
+        "iso": "koy"
+    },
+    {
         "name": "Kresh",
         "iso": "krs"
     },
     {
+        "name": "Krongo",
+        "iso": "kgo"
+    },
+    {
         "name": "Kryz",
         "iso": "kry"
+    },
+    {
+        "name": "Kui (in India)",
+        "iso": "kxu"
+    },
+    {
+        "name": "Kui (in Indonesia)",
+        "iso": "kvd"
+    },
+    {
+        "name": "Kuikúro",
+        "iso": "kui"
+    },
+    {
+        "name": "Kulamanen",
+        "iso": "mbt"
     },
     {
         "name": "Kulung",
@@ -842,6 +2158,10 @@
     {
         "name": "Kumauni",
         "iso": "kfy"
+    },
+    {
+        "name": "Kumyk",
+        "iso": "kum"
     },
     {
         "name": "Kunama",
@@ -856,6 +2176,18 @@
         "iso": "ckb"
     },
     {
+        "name": "Kurmanji",
+        "iso": "kmr"
+    },
+    {
+        "name": "Kurukh",
+        "iso": "kru"
+    },
+    {
+        "name": "Kusunda",
+        "iso": "kgg"
+    },
+    {
         "name": "Kutchin",
         "iso": "gwi"
     },
@@ -866,6 +2198,42 @@
     {
         "name": "Kuuk Thaayorre",
         "iso": "thd"
+    },
+    {
+        "name": "Kuuku Ya'u",
+        "iso": "kuy"
+    },
+    {
+        "name": "Kuvi",
+        "iso": "kxv"
+    },
+    {
+        "name": "Kwakw'ala",
+        "iso": "kwk"
+    },
+    {
+        "name": "Kwamera",
+        "iso": "tnk"
+    },
+    {
+        "name": "Kwangali",
+        "iso": "kwn"
+    },
+    {
+        "name": "Kwerba",
+        "iso": "kwe"
+    },
+    {
+        "name": "Kwoma",
+        "iso": "kmo"
+    },
+    {
+        "name": "Kxoe",
+        "iso": "xuu"
+    },
+    {
+        "name": "Kyuquot",
+        "iso": "nuk"
     },
     {
         "name": "Laal",
@@ -880,12 +2248,28 @@
         "iso": "lac"
     },
     {
+        "name": "Lachi",
+        "iso": "lbt"
+    },
+    {
         "name": "Ladakhi",
         "iso": "lbj"
     },
     {
+        "name": "Ladino",
+        "iso": "lad"
+    },
+    {
+        "name": "Lagwan",
+        "iso": "kot"
+    },
+    {
         "name": "Lahu",
         "iso": "lhu"
+    },
+    {
+        "name": "Lai",
+        "iso": "cnh"
     },
     {
         "name": "Lak",
@@ -894,6 +2278,42 @@
     {
         "name": "Lakhota",
         "iso": "lkt"
+    },
+    {
+        "name": "Lalo",
+        "iso": "ywt"
+    },
+    {
+        "name": "Lamang",
+        "iso": "hia"
+    },
+    {
+        "name": "Lamani",
+        "iso": "lmn"
+    },
+    {
+        "name": "Lamba",
+        "iso": "lam"
+    },
+    {
+        "name": "Lamnso'",
+        "iso": "lns"
+    },
+    {
+        "name": "Lampung",
+        "iso": "ljp"
+    },
+    {
+        "name": "Langi",
+        "iso": "lag"
+    },
+    {
+        "name": "Lango",
+        "iso": "laj"
+    },
+    {
+        "name": "Langue des Signes Française",
+        "iso": "fsl"
     },
     {
         "name": "Lao",
@@ -916,6 +2336,10 @@
         "iso": "lvk"
     },
     {
+        "name": "Lebeo",
+        "iso": "agh"
+    },
+    {
         "name": "Lega",
         "iso": "lea"
     },
@@ -924,12 +2348,24 @@
         "iso": "agb"
     },
     {
+        "name": "Lenakel",
+        "iso": "tnl"
+    },
+    {
         "name": "Lendu",
         "iso": "led"
     },
     {
+        "name": "Lengua de Señas Española",
+        "iso": "ssp"
+    },
+    {
         "name": "Lepcha",
         "iso": "lep"
+    },
+    {
+        "name": "Lese",
+        "iso": "les"
     },
     {
         "name": "Leti",
@@ -940,12 +2376,32 @@
         "iso": "lez"
     },
     {
+        "name": "Lhomi",
+        "iso": "lhm"
+    },
+    {
         "name": "Lillooet",
         "iso": "lil"
     },
     {
+        "name": "Limbu",
+        "iso": "lif"
+    },
+    {
+        "name": "Limilngan",
+        "iso": "lmc"
+    },
+    {
         "name": "Lingala",
         "iso": "lin"
+    },
+    {
+        "name": "Lingua Italiana dei Segni",
+        "iso": "ise"
+    },
+    {
+        "name": "Lisu",
+        "iso": "lis"
     },
     {
         "name": "Lithuanian",
@@ -964,6 +2420,14 @@
         "iso": "lgu"
     },
     {
+        "name": "Loniu",
+        "iso": "los"
+    },
+    {
+        "name": "Lotha",
+        "iso": "njh"
+    },
+    {
         "name": "Luganda",
         "iso": "lug"
     },
@@ -972,16 +2436,84 @@
         "iso": "lgg"
     },
     {
+        "name": "Luiseño",
+        "iso": "lui"
+    },
+    {
+        "name": "Lunda",
+        "iso": "lun"
+    },
+    {
         "name": "Luo",
         "iso": "luo"
+    },
+    {
+        "name": "Luvale",
+        "iso": "lue"
+    },
+    {
+        "name": "Lyele",
+        "iso": "lee"
+    },
+    {
+        "name": "Ma",
+        "iso": "msj"
+    },
+    {
+        "name": "Ma'anyan",
+        "iso": "mhy"
     },
     {
         "name": "Ma'di",
         "iso": "mhi"
     },
     {
+        "name": "Maasai",
+        "iso": "mas"
+    },
+    {
+        "name": "Maca",
+        "iso": "mca"
+    },
+    {
+        "name": "Macedonian",
+        "iso": "mkd"
+    },
+    {
+        "name": "Mada (in Nigeria)",
+        "iso": "mda"
+    },
+    {
+        "name": "Madurese",
+        "iso": "mad"
+    },
+    {
+        "name": "Magahi",
+        "iso": "mag"
+    },
+    {
+        "name": "Magar",
+        "iso": "mgp"
+    },
+    {
         "name": "Maidu (Northeast)",
         "iso": "nmu"
+    },
+    {
+        "name": "Maisin",
+        "iso": "mbq"
+    },
+    {
+        "name": "Maithili",
+        "iso": "mai"
+    },
+    {
+        "name": "Majang",
+        "iso": "mpe"
+    },
+    {
+        "name": "Makaa",
+        "iso": "mcp"
     },
     {
         "name": "Makah",
@@ -992,6 +2524,14 @@
         "iso": "mak"
     },
     {
+        "name": "Makonde",
+        "iso": "kde"
+    },
+    {
+        "name": "Makua",
+        "iso": "mgh"
+    },
+    {
         "name": "Malay",
         "iso": "msa"
     },
@@ -1000,8 +2540,36 @@
         "iso": "mal"
     },
     {
+        "name": "Maleu",
+        "iso": "mgl"
+    },
+    {
+        "name": "Maltese",
+        "iso": "mlt"
+    },
+    {
         "name": "Mam",
         "iso": "mam"
+    },
+    {
+        "name": "Mamanwa",
+        "iso": "mmn"
+    },
+    {
+        "name": "Mamasa",
+        "iso": "mqj"
+    },
+    {
+        "name": "Manam",
+        "iso": "mva"
+    },
+    {
+        "name": "Manchu",
+        "iso": "mnc"
+    },
+    {
+        "name": "Mandan",
+        "iso": "mhq"
     },
     {
         "name": "Mandarin",
@@ -1016,8 +2584,28 @@
         "iso": "mpx"
     },
     {
+        "name": "Mangap-Mbula",
+        "iso": "mna"
+    },
+    {
+        "name": "Mangarrayi",
+        "iso": "mpc"
+    },
+    {
+        "name": "Manggarai",
+        "iso": "mqy"
+    },
+    {
+        "name": "Mano",
+        "iso": "mev"
+    },
+    {
         "name": "Manobo (Western Bukidnon)",
         "iso": "mbb"
+    },
+    {
+        "name": "Mansi",
+        "iso": "mns"
     },
     {
         "name": "Mantjiltjara",
@@ -1036,12 +2624,32 @@
         "iso": "arn"
     },
     {
+        "name": "Maranao",
+        "iso": "mrw"
+    },
+    {
+        "name": "Maranungku",
+        "iso": "zmr"
+    },
+    {
         "name": "Marathi",
         "iso": "mar"
     },
     {
+        "name": "Margi",
+        "iso": "mrt"
+    },
+    {
         "name": "Maricopa",
         "iso": "mrc"
+    },
+    {
+        "name": "Marind",
+        "iso": "mrz"
+    },
+    {
+        "name": "Maring",
+        "iso": "mbw"
     },
     {
         "name": "Maringarr",
@@ -1052,8 +2660,24 @@
         "iso": "mhx"
     },
     {
+        "name": "Massachusett",
+        "iso": "wam"
+    },
+    {
+        "name": "Matsés",
+        "iso": "mcf"
+    },
+    {
         "name": "Matuumbi",
         "iso": "mgw"
+    },
+    {
+        "name": "Mauritian Creole",
+        "iso": "mfe"
+    },
+    {
+        "name": "Mawchi",
+        "iso": "mke"
     },
     {
         "name": "Mayan",
@@ -1064,8 +2688,20 @@
         "iso": "ayz"
     },
     {
+        "name": "Mayogo",
+        "iso": "mdm"
+    },
+    {
         "name": "Mazahua",
         "iso": "maz"
+    },
+    {
+        "name": "Mazanderani",
+        "iso": "mzn"
+    },
+    {
+        "name": "Mazatec (Chiquihuitlán)",
+        "iso": "maq"
     },
     {
         "name": "Mazatec (Huautla)",
@@ -1076,8 +2712,20 @@
         "iso": "myb"
     },
     {
+        "name": "Mbere",
+        "iso": "mdt"
+    },
+    {
+        "name": "Mbili",
+        "iso": "baw"
+    },
+    {
         "name": "Me'en",
         "iso": "mym"
+    },
+    {
+        "name": "Mehek",
+        "iso": "nux"
     },
     {
         "name": "Mehri",
@@ -1088,6 +2736,10 @@
         "iso": "mni"
     },
     {
+        "name": "Mekeo",
+        "iso": "mek"
+    },
+    {
         "name": "Mende",
         "iso": "men"
     },
@@ -1096,20 +2748,84 @@
         "iso": "mez"
     },
     {
+        "name": "Meyah",
+        "iso": "mej"
+    },
+    {
         "name": "Mian",
         "iso": "mpt"
+    },
+    {
+        "name": "Micmac",
+        "iso": "mic"
+    },
+    {
+        "name": "Midob",
+        "iso": "mei"
     },
     {
         "name": "Mien",
         "iso": "ium"
     },
     {
+        "name": "Migama",
+        "iso": "mmy"
+    },
+    {
+        "name": "Mikasuki",
+        "iso": "mik"
+    },
+    {
+        "name": "Mikir",
+        "iso": "mjw"
+    },
+    {
+        "name": "Min (Southern)",
+        "iso": "nan"
+    },
+    {
+        "name": "Minangkabau",
+        "iso": "min"
+    },
+    {
+        "name": "Miskito",
+        "iso": "miq"
+    },
+    {
+        "name": "Mixe (Coatlán)",
+        "iso": "mco"
+    },
+    {
         "name": "Mixtec (Ayutla)",
         "iso": "miy"
     },
     {
+        "name": "Mixtec (Chalcatongo)",
+        "iso": "mig"
+    },
+    {
+        "name": "Mixtec (Chayuco)",
+        "iso": "mih"
+    },
+    {
+        "name": "Mixtec (Jamiltepec)",
+        "iso": "mxt"
+    },
+    {
+        "name": "Mixtec (Jicaltepec)",
+        "iso": "mio"
+    },
+    {
+        "name": "Mixtec (Ocotepec)",
+        "iso": "mie"
+    },
+    {
         "name": "Mizo",
         "iso": "lus"
+    },
+    {
+        "name": "Mocoví",
+        "iso": "moc"
     },
     {
         "name": "Mofu-Gudur",
@@ -1120,12 +2836,28 @@
         "iso": "moh"
     },
     {
+        "name": "Mojave",
+        "iso": "mov"
+    },
+    {
         "name": "Molala",
         "iso": "mbe"
     },
     {
         "name": "Moldavian",
         "iso": "ron"
+    },
+    {
+        "name": "Mon",
+        "iso": "mnw"
+    },
+    {
+        "name": "Mondunga",
+        "iso": "ndt"
+    },
+    {
+        "name": "Mongondow",
+        "iso": "mog"
     },
     {
         "name": "Mono (in United States)",
@@ -1136,12 +2868,44 @@
         "iso": "mte"
     },
     {
+        "name": "Montagnais",
+        "iso": "moe"
+    },
+    {
         "name": "Mooré",
         "iso": "mos"
     },
     {
+        "name": "Moraori",
+        "iso": "mok"
+    },
+    {
+        "name": "Mordvin (Erzya)",
+        "iso": "myv"
+    },
+    {
         "name": "Moro",
         "iso": "mor"
+    },
+    {
+        "name": "Mosetén",
+        "iso": "cas"
+    },
+    {
+        "name": "Motu",
+        "iso": "meu"
+    },
+    {
+        "name": "Motuna",
+        "iso": "siw"
+    },
+    {
+        "name": "Muinane",
+        "iso": "bmr"
+    },
+    {
+        "name": "Muisca",
+        "iso": "chb"
     },
     {
         "name": "Mumuye",
@@ -1156,8 +2920,24 @@
         "iso": "mua"
     },
     {
+        "name": "Mundurukú",
+        "iso": "myu"
+    },
+    {
         "name": "Mungaka",
         "iso": "muc"
+    },
+    {
+        "name": "Munsee",
+        "iso": "umu"
+    },
+    {
+        "name": "Muong",
+        "iso": "mtq"
+    },
+    {
+        "name": "Murle",
+        "iso": "mur"
     },
     {
         "name": "Muruwari",
@@ -1176,8 +2956,32 @@
         "iso": "emi"
     },
     {
+        "name": "Mwera",
+        "iso": "mwe"
+    },
+    {
+        "name": "Mündü",
+        "iso": "muh"
+    },
+    {
+        "name": "Nadëb",
+        "iso": "mbj"
+    },
+    {
+        "name": "Naga (Mao)",
+        "iso": "nbi"
+    },
+    {
+        "name": "Naga Pidgin",
+        "iso": "nag"
+    },
+    {
         "name": "Nahuatl",
         "iso": "nah"
+    },
+    {
+        "name": "Nahuatl (Central)",
+        "iso": "nhn"
     },
     {
         "name": "Nahuatl (Milpa Alta)",
@@ -1188,6 +2992,14 @@
         "iso": "nhg"
     },
     {
+        "name": "Nakanai",
+        "iso": "nak"
+    },
+    {
+        "name": "Nalik",
+        "iso": "nal"
+    },
+    {
         "name": "Nama",
         "iso": "naq"
     },
@@ -1196,20 +3008,72 @@
         "iso": "nab"
     },
     {
+        "name": "Nanai",
+        "iso": "gld"
+    },
+    {
+        "name": "Nande",
+        "iso": "nnb"
+    },
+    {
         "name": "Nanerge",
         "iso": "sen"
+    },
+    {
+        "name": "Nanumea",
+        "iso": "tvl"
     },
     {
         "name": "Nar-Phu",
         "iso": "npa"
     },
     {
+        "name": "Nara (in Ethiopia)",
+        "iso": "nrb"
+    },
+    {
+        "name": "Nasioi",
+        "iso": "nas"
+    },
+    {
         "name": "Navajo",
         "iso": "nav"
     },
     {
+        "name": "Ncàm",
+        "iso": "bud"
+    },
+    {
+        "name": "Ndebele",
+        "iso": "nde"
+    },
+    {
+        "name": "Ndonga",
+        "iso": "ndo"
+    },
+    {
         "name": "Ndyuka",
         "iso": "djk"
+    },
+    {
+        "name": "Nehan",
+        "iso": "nsn"
+    },
+    {
+        "name": "Nenets (Forest)",
+        "iso": "yrk"
+    },
+    {
+        "name": "Nengone",
+        "iso": "nen"
+    },
+    {
+        "name": "Neo-Aramaic (Persian Azerbaijan)",
+        "iso": "trg"
+    },
+    {
+        "name": "Nepali",
+        "iso": "npi"
     },
     {
         "name": "Nevome",
@@ -1228,16 +3092,32 @@
         "iso": "nez"
     },
     {
+        "name": "Ngad'a",
+        "iso": "nxg"
+    },
+    {
         "name": "Ngadjumaja",
         "iso": "nna"
+    },
+    {
+        "name": "Ngalakan",
+        "iso": "nig"
     },
     {
         "name": "Ngalkbun",
         "iso": "ngk"
     },
     {
+        "name": "Ngan'gityemerri",
+        "iso": "nam"
+    },
+    {
         "name": "Nganasan",
         "iso": "nio"
+    },
+    {
+        "name": "Ngbaka (Minagende)",
+        "iso": "nga"
     },
     {
         "name": "Ngbandi",
@@ -1252,6 +3132,10 @@
         "iso": "ngo"
     },
     {
+        "name": "Ngäbere",
+        "iso": "gym"
+    },
+    {
         "name": "Nhanda",
         "iso": "nha"
     },
@@ -1260,8 +3144,16 @@
         "iso": "nia"
     },
     {
+        "name": "Nicobarese",
+        "iso": "ncb"
+    },
+    {
         "name": "Nicobarese (Car)",
         "iso": "caq"
+    },
+    {
+        "name": "Nihon Shuwa (Japanese Sign Language)",
+        "iso": "jsl"
     },
     {
         "name": "Niuean",
@@ -1272,8 +3164,20 @@
         "iso": "niv"
     },
     {
+        "name": "Nkem",
+        "iso": "isi"
+    },
+    {
         "name": "Nkonya",
         "iso": "nko"
+    },
+    {
+        "name": "Nkore-Kiga",
+        "iso": "cgg"
+    },
+    {
+        "name": "Nomatsiguenga",
+        "iso": "not"
     },
     {
         "name": "Norwegian",
@@ -1284,8 +3188,32 @@
         "iso": "nse"
     },
     {
+        "name": "Ntomba",
+        "iso": "nto"
+    },
+    {
+        "name": "Nubi",
+        "iso": "kcn"
+    },
+    {
+        "name": "Nuer",
+        "iso": "nus"
+    },
+    {
+        "name": "Nukak",
+        "iso": "mbr"
+    },
+    {
+        "name": "Nukuoro",
+        "iso": "nkr"
+    },
+    {
         "name": "Nung",
         "iso": "nut"
+    },
+    {
+        "name": "Nunggubuyu",
+        "iso": "nuy"
     },
     {
         "name": "Nuosu",
@@ -1296,12 +3224,24 @@
         "iso": "nup"
     },
     {
+        "name": "Nusu",
+        "iso": "nuf"
+    },
+    {
         "name": "Nyimang",
         "iso": "nyi"
     },
     {
+        "name": "Nyishi",
+        "iso": "njz"
+    },
+    {
         "name": "Nyulnyul",
         "iso": "nyv"
+    },
+    {
+        "name": "Nyungar",
+        "iso": "nys"
     },
     {
         "name": "Nzakara",
@@ -1312,8 +3252,28 @@
         "iso": "ood"
     },
     {
+        "name": "Occitan",
+        "iso": "oci"
+    },
+    {
+        "name": "Ocuilteco",
+        "iso": "ocu"
+    },
+    {
+        "name": "Ogbia",
+        "iso": "ogb"
+    },
+    {
+        "name": "Olo",
+        "iso": "ong"
+    },
+    {
         "name": "Oloh Mangtangai",
         "iso": "nij"
+    },
+    {
+        "name": "Omaha",
+        "iso": "oma"
     },
     {
         "name": "Oneida",
@@ -1324,20 +3284,64 @@
         "iso": "mvf"
     },
     {
+        "name": "Orig",
+        "iso": "tag"
+    },
+    {
+        "name": "Oriya",
+        "iso": "ory"
+    },
+    {
+        "name": "Ormuri",
+        "iso": "oru"
+    },
+    {
+        "name": "Orok",
+        "iso": "oaa"
+    },
+    {
         "name": "Orokaiva",
         "iso": "okv"
+    },
+    {
+        "name": "Orokolo",
+        "iso": "oro"
     },
     {
         "name": "Oromo (Boraana)",
         "iso": "gax"
     },
     {
+        "name": "Oromo (West-Central)",
+        "iso": "gaz"
+    },
+    {
         "name": "Osage",
         "iso": "osa"
     },
     {
+        "name": "Ossetic",
+        "iso": "oss"
+    },
+    {
+        "name": "Otomí (Sierra)",
+        "iso": "otm"
+    },
+    {
+        "name": "Otoro",
+        "iso": "otr"
+    },
+    {
         "name": "Paamese",
         "iso": "ppo"
+    },
+    {
+        "name": "Paamese",
+        "iso": "pma"
+    },
+    {
+        "name": "Pacoh",
+        "iso": "pac"
     },
     {
         "name": "Paiute",
@@ -1356,12 +3360,32 @@
         "iso": "nad"
     },
     {
+        "name": "Panará",
+        "iso": "kre"
+    },
+    {
+        "name": "Pangasinan",
+        "iso": "pag"
+    },
+    {
         "name": "Panjabi",
         "iso": "pan"
     },
     {
+        "name": "Panyjima",
+        "iso": "pnw"
+    },
+    {
         "name": "Parauk",
         "iso": "prk"
+    },
+    {
+        "name": "Paresi",
+        "iso": "pab"
+    },
+    {
+        "name": "Passamaquoddy-Maliseet",
+        "iso": "pqm"
     },
     {
         "name": "Patep",
@@ -1380,6 +3404,10 @@
         "iso": "pwa"
     },
     {
+        "name": "Pero",
+        "iso": "pip"
+    },
+    {
         "name": "Persian",
         "iso": "fas"
     },
@@ -1388,8 +3416,28 @@
         "iso": "pes"
     },
     {
+        "name": "Pilagá",
+        "iso": "plg"
+    },
+    {
+        "name": "Pipil",
+        "iso": "ppl"
+    },
+    {
         "name": "Piraha",
         "iso": "myp"
+    },
+    {
+        "name": "Piratapuyo",
+        "iso": "pir"
+    },
+    {
+        "name": "Piro",
+        "iso": "pib"
+    },
+    {
+        "name": "Pisa",
+        "iso": "psa"
     },
     {
         "name": "Pitjantjatjara",
@@ -1400,36 +3448,136 @@
         "iso": "pit"
     },
     {
+        "name": "Plains-Indians Sign Language",
+        "iso": "psd"
+    },
+    {
+        "name": "Playero",
+        "iso": "gob"
+    },
+    {
+        "name": "Pohnpeian",
+        "iso": "pon"
+    },
+    {
+        "name": "Poko-Rawo",
+        "iso": "rwa"
+    },
+    {
+        "name": "Pokomchí",
+        "iso": "poh"
+    },
+    {
+        "name": "Pokot",
+        "iso": "pko"
+    },
+    {
         "name": "Polish",
         "iso": "pol"
+    },
+    {
+        "name": "Pomo (Southeastern)",
+        "iso": "pom"
+    },
+    {
+        "name": "Popoloca (San Juan Atzingo)",
+        "iso": "poe"
     },
     {
         "name": "Port Sandwich",
         "iso": "psw"
     },
     {
+        "name": "Portuguese",
+        "iso": "por"
+    },
+    {
+        "name": "Prasuni",
+        "iso": "prn"
+    },
+    {
+        "name": "Puinave",
+        "iso": "pui"
+    },
+    {
+        "name": "Puluwat",
+        "iso": "puw"
+    },
+    {
         "name": "Pumi",
         "iso": "pmi"
+    },
+    {
+        "name": "Purépecha",
+        "iso": "tsz"
     },
     {
         "name": "Páez",
         "iso": "pbb"
     },
     {
+        "name": "Qaqet",
+        "iso": "byx"
+    },
+    {
         "name": "Quechua",
         "iso": "que"
+    },
+    {
+        "name": "Quechua (Cochabamba)",
+        "iso": "quh"
     },
     {
         "name": "Quechua (Huallaga)",
         "iso": "qub"
     },
     {
+        "name": "Quechua (Imbabura)",
+        "iso": "qvi"
+    },
+    {
+        "name": "Quileute",
+        "iso": "qui"
+    },
+    {
+        "name": "Raji",
+        "iso": "rji"
+    },
+    {
         "name": "Rama",
         "iso": "rma"
     },
     {
+        "name": "Rao",
+        "iso": "rao"
+    },
+    {
         "name": "Rapanui",
         "iso": "rap"
+    },
+    {
+        "name": "Rashad",
+        "iso": "ras"
+    },
+    {
+        "name": "Rawang",
+        "iso": "raw"
+    },
+    {
+        "name": "Retuarã",
+        "iso": "tnc"
+    },
+    {
+        "name": "Ritharngu",
+        "iso": "rit"
+    },
+    {
+        "name": "Romani (Ajia Varvara)",
+        "iso": "rmn"
+    },
+    {
+        "name": "Romani (Burgenland)",
+        "iso": "rmo"
     },
     {
         "name": "Romani (Welsh)",
@@ -1444,8 +3592,16 @@
         "iso": "rng"
     },
     {
+        "name": "Rotuman",
+        "iso": "rtm"
+    },
+    {
         "name": "Roviana",
         "iso": "rug"
+    },
+    {
+        "name": "Rundi",
+        "iso": "run"
     },
     {
         "name": "Runyankore",
@@ -1456,8 +3612,20 @@
         "iso": "rus"
     },
     {
+        "name": "Russian Sign Language",
+        "iso": "rsl"
+    },
+    {
+        "name": "Rutul",
+        "iso": "rut"
+    },
+    {
         "name": "Sa'a",
         "iso": "apb"
+    },
+    {
+        "name": "Saami (Central-South)",
+        "iso": "sma"
     },
     {
         "name": "Saami (Northern)",
@@ -1466,6 +3634,10 @@
     {
         "name": "Sakao",
         "iso": "sku"
+    },
+    {
+        "name": "Saliba (in Papua New Guinea)",
+        "iso": "sbe"
     },
     {
         "name": "Salinan",
@@ -1480,6 +3652,10 @@
         "iso": "ndi"
     },
     {
+        "name": "Samoan",
+        "iso": "smo"
+    },
+    {
         "name": "Sandawe",
         "iso": "sad"
     },
@@ -1492,36 +3668,132 @@
         "iso": "san"
     },
     {
+        "name": "Santali",
+        "iso": "sat"
+    },
+    {
+        "name": "Sapuan",
+        "iso": "spu"
+    },
+    {
         "name": "Saramaccan",
         "iso": "srm"
+    },
+    {
+        "name": "Sarcee",
+        "iso": "srs"
+    },
+    {
+        "name": "Sare",
+        "iso": "dju"
+    },
+    {
+        "name": "Sawu",
+        "iso": "hvn"
+    },
+    {
+        "name": "Sedang",
+        "iso": "sed"
+    },
+    {
+        "name": "Selayar",
+        "iso": "sly"
+    },
+    {
+        "name": "Selepet",
+        "iso": "spl"
+    },
+    {
+        "name": "Selkup",
+        "iso": "sel"
     },
     {
         "name": "Sema",
         "iso": "nsm"
     },
     {
+        "name": "Semai",
+        "iso": "sea"
+    },
+    {
         "name": "Seme",
         "iso": "sqm"
+    },
+    {
+        "name": "Seneca",
+        "iso": "see"
+    },
+    {
+        "name": "Sentani",
+        "iso": "set"
     },
     {
         "name": "Serbian-Croatian",
         "iso": "hbs"
     },
     {
+        "name": "Seri",
+        "iso": "sei"
+    },
+    {
+        "name": "Serrano",
+        "iso": "ser"
+    },
+    {
+        "name": "Sesotho",
+        "iso": "sot"
+    },
+    {
+        "name": "Seychelles Creole",
+        "iso": "crs"
+    },
+    {
         "name": "Shabo",
         "iso": "sbf"
+    },
+    {
+        "name": "Shan",
+        "iso": "shn"
+    },
+    {
+        "name": "Shasta",
+        "iso": "sht"
+    },
+    {
+        "name": "Shilluk",
+        "iso": "shk"
     },
     {
         "name": "Shipibo-Konibo",
         "iso": "shp"
     },
     {
+        "name": "Shira Yughur",
+        "iso": "yuy"
+    },
+    {
+        "name": "Shiriana",
+        "iso": "shb"
+    },
+    {
         "name": "Shona",
         "iso": "sna"
     },
     {
+        "name": "Shuswap",
+        "iso": "shs"
+    },
+    {
         "name": "Sidaama",
         "iso": "sid"
+    },
+    {
+        "name": "Sikkimese",
+        "iso": "sip"
+    },
+    {
+        "name": "Sikule",
+        "iso": "skh"
     },
     {
         "name": "Simeulue",
@@ -1532,8 +3804,28 @@
         "iso": "snc"
     },
     {
+        "name": "Sinhala",
+        "iso": "sin"
+    },
+    {
+        "name": "Sio",
+        "iso": "xsi"
+    },
+    {
+        "name": "Siona",
+        "iso": "snn"
+    },
+    {
+        "name": "Sisiqa",
+        "iso": "baa"
+    },
+    {
         "name": "Skou",
         "iso": "skb"
+    },
+    {
+        "name": "Slave",
+        "iso": "den"
     },
     {
         "name": "Slovenian",
@@ -1556,12 +3848,40 @@
         "iso": "snk"
     },
     {
+        "name": "Sonsorol-Tobi",
+        "iso": "sov"
+    },
+    {
+        "name": "Sora",
+        "iso": "srb"
+    },
+    {
+        "name": "Sorbian (Upper)",
+        "iso": "hsb"
+    },
+    {
+        "name": "Sotho (Northern)",
+        "iso": "nso"
+    },
+    {
         "name": "Spanish",
         "iso": "spa"
     },
     {
         "name": "Squamish",
         "iso": "squ"
+    },
+    {
+        "name": "Sranan",
+        "iso": "srn"
+    },
+    {
+        "name": "Sudest",
+        "iso": "tgo"
+    },
+    {
+        "name": "Suena",
+        "iso": "sue"
     },
     {
         "name": "Sui",
@@ -1572,12 +3892,32 @@
         "iso": "skv"
     },
     {
+        "name": "Suki",
+        "iso": "sui"
+    },
+    {
+        "name": "Sukuma",
+        "iso": "suk"
+    },
+    {
+        "name": "Sulka",
+        "iso": "sua"
+    },
+    {
         "name": "Sumerian",
         "iso": "sux"
     },
     {
+        "name": "Sundanese",
+        "iso": "sun"
+    },
+    {
         "name": "Supyire",
         "iso": "spp"
+    },
+    {
+        "name": "Susu",
+        "iso": "sus"
     },
     {
         "name": "Swahili",
@@ -1588,8 +3928,24 @@
         "iso": "swh"
     },
     {
+        "name": "Swedish",
+        "iso": "swe"
+    },
+    {
+        "name": "Sáliba (in Colombia)",
+        "iso": "slc"
+    },
+    {
         "name": "Tabaru",
         "iso": "tby"
+    },
+    {
+        "name": "Tabassaran",
+        "iso": "tab"
+    },
+    {
+        "name": "Tabwa",
+        "iso": "tap"
     },
     {
         "name": "Tacana",
@@ -1600,8 +3956,20 @@
         "iso": "tgl"
     },
     {
+        "name": "Tagbanwa (Aborlan)",
+        "iso": "tbw"
+    },
+    {
+        "name": "Tahitian",
+        "iso": "tah"
+    },
+    {
         "name": "Taiof",
         "iso": "tie"
+    },
+    {
+        "name": "Taiof",
+        "iso": "sps"
     },
     {
         "name": "Taiwanese Sign Language (Ziran Shouyu)",
@@ -1616,12 +3984,28 @@
         "iso": "tly"
     },
     {
+        "name": "Tama",
+        "iso": "tma"
+    },
+    {
         "name": "Tamabo",
         "iso": "tmb"
     },
     {
+        "name": "Tamashek",
+        "iso": "taq"
+    },
+    {
         "name": "Tamil",
         "iso": "tam"
+    },
+    {
+        "name": "Tanaina",
+        "iso": "tfn"
+    },
+    {
+        "name": "Tangbe",
+        "iso": "skj"
     },
     {
         "name": "Tanglapui",
@@ -1636,6 +4020,30 @@
         "iso": "tar"
     },
     {
+        "name": "Tarahumara (Western)",
+        "iso": "tac"
+    },
+    {
+        "name": "Tarao",
+        "iso": "tro"
+    },
+    {
+        "name": "Tariana",
+        "iso": "tae"
+    },
+    {
+        "name": "Tashlhiyt",
+        "iso": "shi"
+    },
+    {
+        "name": "Tatar (Mishar)",
+        "iso": "tat"
+    },
+    {
+        "name": "Tati (Southern)",
+        "iso": "tks"
+    },
+    {
         "name": "Taulil",
         "iso": "tuh"
     },
@@ -1644,16 +4052,52 @@
         "iso": "tsg"
     },
     {
+        "name": "Tawala",
+        "iso": "tbo"
+    },
+    {
+        "name": "Tboli",
+        "iso": "tbl"
+    },
+    {
+        "name": "Tehuelche",
+        "iso": "teh"
+    },
+    {
         "name": "Telugu",
         "iso": "tel"
+    },
+    {
+        "name": "Temein",
+        "iso": "teq"
+    },
+    {
+        "name": "Temne",
+        "iso": "tem"
+    },
+    {
+        "name": "Tennet",
+        "iso": "tex"
+    },
+    {
+        "name": "Tepecano",
+        "iso": "tep"
     },
     {
         "name": "Tepehua",
         "iso": "tee"
     },
     {
+        "name": "Tepehua (Tlachichilco)",
+        "iso": "tpt"
+    },
+    {
         "name": "Tepehuan (Northern)",
         "iso": "ntp"
+    },
+    {
+        "name": "Tera",
+        "iso": "ttr"
     },
     {
         "name": "Terêna",
@@ -1668,12 +4112,20 @@
         "iso": "tet"
     },
     {
+        "name": "Thai",
+        "iso": "tha"
+    },
+    {
         "name": "Thakali",
         "iso": "ths"
     },
     {
         "name": "Thompson",
         "iso": "thp"
+    },
+    {
+        "name": "Thulung",
+        "iso": "tdh"
     },
     {
         "name": "Tibetan",
@@ -1684,12 +4136,40 @@
         "iso": "tca"
     },
     {
+        "name": "Tidore",
+        "iso": "tvo"
+    },
+    {
+        "name": "Tigak",
+        "iso": "tgc"
+    },
+    {
+        "name": "Tigrinya",
+        "iso": "tir"
+    },
+    {
         "name": "Tigré (Beni Amer)",
         "iso": "tig"
     },
     {
+        "name": "Tikar",
+        "iso": "tik"
+    },
+    {
+        "name": "Tindi",
+        "iso": "tin"
+    },
+    {
+        "name": "Tiriyo",
+        "iso": "tri"
+    },
+    {
         "name": "Tirmaga",
         "iso": "suq"
+    },
+    {
+        "name": "Tiruray",
+        "iso": "tiy"
     },
     {
         "name": "Tiv",
@@ -1700,8 +4180,36 @@
         "iso": "tiw"
     },
     {
+        "name": "Tlapanec",
+        "iso": "tcf"
+    },
+    {
+        "name": "Tlingit",
+        "iso": "tli"
+    },
+    {
+        "name": "Toba",
+        "iso": "tob"
+    },
+    {
+        "name": "Tofa",
+        "iso": "kim"
+    },
+    {
+        "name": "Tok Pisin",
+        "iso": "tpi"
+    },
+    {
+        "name": "Tokelauan",
+        "iso": "tkl"
+    },
+    {
         "name": "Tol",
         "iso": "jic"
+    },
+    {
+        "name": "Tondano",
+        "iso": "tdn"
     },
     {
         "name": "Tonga (in Zambia)",
@@ -1720,8 +4228,16 @@
         "iso": "rth"
     },
     {
+        "name": "Torwali",
+        "iso": "trw"
+    },
+    {
         "name": "Trique (Copala)",
         "iso": "trc"
+    },
+    {
+        "name": "Tsat",
+        "iso": "huq"
     },
     {
         "name": "Tsez",
@@ -1736,12 +4252,32 @@
         "iso": "tsi"
     },
     {
+        "name": "Tsonga",
+        "iso": "tso"
+    },
+    {
+        "name": "Tsou",
+        "iso": "tsu"
+    },
+    {
+        "name": "Tubar",
+        "iso": "tbu"
+    },
+    {
         "name": "Tukang Besi",
         "iso": "txn"
     },
     {
+        "name": "Tulu",
+        "iso": "tcy"
+    },
+    {
         "name": "Tunica",
         "iso": "tun"
+    },
+    {
+        "name": "Tupuri",
+        "iso": "tui"
     },
     {
         "name": "Turkana",
@@ -1752,12 +4288,28 @@
         "iso": "tur"
     },
     {
+        "name": "Turkmen",
+        "iso": "tuk"
+    },
+    {
+        "name": "Tuscarora",
+        "iso": "tus"
+    },
+    {
         "name": "Tutelo",
         "iso": "tta"
     },
     {
+        "name": "Tuvan",
+        "iso": "tyv"
+    },
+    {
         "name": "Tuyuca",
         "iso": "tue"
+    },
+    {
+        "name": "Twana",
+        "iso": "twa"
     },
     {
         "name": "Twi",
@@ -1768,6 +4320,10 @@
         "iso": "tzh"
     },
     {
+        "name": "Tzotzil",
+        "iso": "tzo"
+    },
+    {
         "name": "Tzutujil",
         "iso": "tzj"
     },
@@ -1776,8 +4332,20 @@
         "iso": "tub"
     },
     {
+        "name": "Tümpisa Shoshone",
+        "iso": "par"
+    },
+    {
+        "name": "Türk Isaret Dili",
+        "iso": "tsm"
+    },
+    {
         "name": "Ubykh",
         "iso": "uby"
+    },
+    {
+        "name": "Udi",
+        "iso": "udi"
     },
     {
         "name": "Udihe",
@@ -1792,20 +4360,64 @@
         "iso": "ukr"
     },
     {
+        "name": "Ulithian",
+        "iso": "uli"
+    },
+    {
+        "name": "Uma",
+        "iso": "ppk"
+    },
+    {
         "name": "Una",
         "iso": "mtg"
+    },
+    {
+        "name": "Ungarinjin",
+        "iso": "ung"
+    },
+    {
+        "name": "Upper Kuskokwim",
+        "iso": "kuu"
     },
     {
         "name": "Ura",
         "iso": "uur"
     },
     {
+        "name": "Urak Lawoi'",
+        "iso": "urk"
+    },
+    {
         "name": "Urarina",
         "iso": "ura"
     },
     {
+        "name": "Urat",
+        "iso": "urt"
+    },
+    {
         "name": "Urdu",
         "iso": "urd"
+    },
+    {
+        "name": "Urubú-Kaapor",
+        "iso": "urb"
+    },
+    {
+        "name": "Usan",
+        "iso": "wnu"
+    },
+    {
+        "name": "Usarufa",
+        "iso": "usa"
+    },
+    {
+        "name": "Uyghur",
+        "iso": "uig"
+    },
+    {
+        "name": "Uzbek (Northern)",
+        "iso": "uzn"
     },
     {
         "name": "Vai",
@@ -1816,12 +4428,24 @@
         "iso": "vat"
     },
     {
+        "name": "Venda",
+        "iso": "ven"
+    },
+    {
         "name": "Vietnamese",
         "iso": "vie"
     },
     {
+        "name": "Vinmavis",
+        "iso": "vnm"
+    },
+    {
         "name": "Votic",
         "iso": "vot"
+    },
+    {
+        "name": "Wai Wai",
+        "iso": "waw"
     },
     {
         "name": "Wakhi",
@@ -1832,8 +4456,24 @@
         "iso": "wmb"
     },
     {
+        "name": "Wambule",
+        "iso": "wme"
+    },
+    {
+        "name": "Wan",
+        "iso": "wan"
+    },
+    {
         "name": "Wanman",
         "iso": "wbt"
+    },
+    {
+        "name": "Wantoat",
+        "iso": "wnc"
+    },
+    {
+        "name": "Wapishana",
+        "iso": "wap"
     },
     {
         "name": "Warao",
@@ -1842,6 +4482,18 @@
     {
         "name": "Waray-Waray",
         "iso": "war"
+    },
+    {
+        "name": "Wardaman",
+        "iso": "wrr"
+    },
+    {
+        "name": "Warembori",
+        "iso": "wsa"
+    },
+    {
+        "name": "Wari'",
+        "iso": "pav"
     },
     {
         "name": "Warluwara",
@@ -1854,6 +4506,10 @@
     {
         "name": "Warrgamay",
         "iso": "wgy"
+    },
+    {
+        "name": "Warrongo",
+        "iso": "wrg"
     },
     {
         "name": "Warrwa",
@@ -1872,6 +4528,14 @@
         "iso": "wat"
     },
     {
+        "name": "Waurá",
+        "iso": "wau"
+    },
+    {
+        "name": "Wayana",
+        "iso": "way"
+    },
+    {
         "name": "Wedau",
         "iso": "wed"
     },
@@ -1880,8 +4544,16 @@
         "iso": "cym"
     },
     {
+        "name": "Weri",
+        "iso": "wer"
+    },
+    {
         "name": "Western Armenian",
         "iso": "hyw"
+    },
+    {
+        "name": "Wetan",
+        "iso": "lex"
     },
     {
         "name": "Wichi",
@@ -1896,6 +4568,30 @@
         "iso": "yok"
     },
     {
+        "name": "Winnebago",
+        "iso": "win"
+    },
+    {
+        "name": "Wirangu",
+        "iso": "wgu"
+    },
+    {
+        "name": "Wiyot",
+        "iso": "wiy"
+    },
+    {
+        "name": "Wolaytta",
+        "iso": "wal"
+    },
+    {
+        "name": "Woleaian",
+        "iso": "woe"
+    },
+    {
+        "name": "Wolio",
+        "iso": "wlo"
+    },
+    {
         "name": "Wolof",
         "iso": "wol"
     },
@@ -1908,20 +4604,48 @@
         "iso": "kao"
     },
     {
+        "name": "Xavánte",
+        "iso": "xav"
+    },
+    {
         "name": "Xhosa",
         "iso": "xho"
+    },
+    {
+        "name": "Xârâcùù",
+        "iso": "ane"
     },
     {
         "name": "Yagaria",
         "iso": "ygr"
     },
     {
+        "name": "Yaghnobi",
+        "iso": "yai"
+    },
+    {
         "name": "Yahgan",
         "iso": "yag"
     },
     {
+        "name": "Yakan",
+        "iso": "yka"
+    },
+    {
+        "name": "Yakoma",
+        "iso": "yky"
+    },
+    {
         "name": "Yakut",
         "iso": "sah"
+    },
+    {
+        "name": "Yamba",
+        "iso": "yam"
+    },
+    {
+        "name": "Yami",
+        "iso": "tao"
     },
     {
         "name": "Yamphu",
@@ -1930,6 +4654,10 @@
     {
         "name": "Yao",
         "iso": "yao"
+    },
+    {
+        "name": "Yapese",
+        "iso": "yap"
     },
     {
         "name": "Yaqui",
@@ -1944,8 +4672,24 @@
         "iso": "jei"
     },
     {
+        "name": "Yelmek",
+        "iso": "jel"
+    },
+    {
+        "name": "Yessan-Mayo",
+        "iso": "yss"
+    },
+    {
+        "name": "Yeyi",
+        "iso": "yey"
+    },
+    {
         "name": "Yimas",
         "iso": "yee"
+    },
+    {
+        "name": "Yindjibarndi",
+        "iso": "yij"
     },
     {
         "name": "Yoruba",
@@ -1956,6 +4700,10 @@
         "iso": "yua"
     },
     {
+        "name": "Yuchi",
+        "iso": "yuc"
+    },
+    {
         "name": "Yucuna",
         "iso": "ycn"
     },
@@ -1964,20 +4712,52 @@
         "iso": "ykg"
     },
     {
+        "name": "Yuki",
+        "iso": "yuk"
+    },
+    {
+        "name": "Yukpa",
+        "iso": "yup"
+    },
+    {
         "name": "Yulu",
         "iso": "yul"
+    },
+    {
+        "name": "Yurok",
+        "iso": "yur"
     },
     {
         "name": "Yuruti",
         "iso": "yui"
     },
     {
+        "name": "Zande",
+        "iso": "zne"
+    },
+    {
+        "name": "Zaparo",
+        "iso": "zro"
+    },
+    {
         "name": "Zapotec",
         "iso": "zap"
     },
     {
+        "name": "Zapotec (Isthmus)",
+        "iso": "zai"
+    },
+    {
+        "name": "Zapotec (Zoogocho)",
+        "iso": "zpq"
+    },
+    {
         "name": "Zarma",
         "iso": "dje"
+    },
+    {
+        "name": "Zayse",
+        "iso": "zay"
     },
     {
         "name": "Zoque (Copainalá)",
@@ -1986,6 +4766,10 @@
     {
         "name": "Zulu",
         "iso": "zul"
+    },
+    {
+        "name": "Zuni",
+        "iso": "zun"
     },
     {
         "name": "rGyalrong",

@@ -54,6 +54,10 @@
             "iso": "ces"
         },
         {
+            "name": "Kanjobal (Eastern)",
+            "iso": "kjb"
+        },
+        {
             "name": "Kazakh",
             "iso": "kaz"
         },
@@ -88,6 +92,18 @@
         {
             "name": "Thai",
             "iso": "tha"
+        },
+        {
+            "name": "Tobelo",
+            "iso": "tlb"
+        },
+        {
+            "name": "Warlpiri",
+            "iso": "wbp"
+        },
+        {
+            "name": "Warumungu",
+            "iso": "wrm"
         },
         {
             "name": "Xam",
