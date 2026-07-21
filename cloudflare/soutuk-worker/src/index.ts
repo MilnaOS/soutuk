@@ -1,5 +1,6 @@
 export interface Env {
   OLLAMA_API_KEY: string;
+  VM_OLLAMA_SECRET: string;
 }
 
 interface TranslateRequestBody {
@@ -18,7 +19,14 @@ interface TranslationResponseDto {
 }
 
 const OLLAMA_CHAT_URL = 'https://ollama.com/v1/chat/completions';
-const OLLAMA_MODEL = 'gemma4:cloud';
+// 2026-07-21: routed off the Ollama Cloud account onto Jeremy's own VM
+// (instance-20260712-142919, us-west1-c) via a Cloudflare Tunnel + a
+// shared-secret auth proxy in front of its local Ollama — this is the
+// common-case (non-ancient-language) path, i.e. almost all real traffic, so
+// keeping it off the per-token-billed Cloud account is what actually matters
+// for cost. gemma4:12b is what's already pulled locally on that VM.
+const VM_OLLAMA_URL = 'https://ollama-vm.pb-aim.com/v1/chat/completions';
+const OLLAMA_MODEL = 'gemma4:12b';
 
 // gemma4:cloud is solid on modern languages (verified clean across 8 tested
 // via the app's text-box audit) but genuinely unstable on ancient/low-resource
@@ -29,19 +37,22 @@ const OLLAMA_MODEL = 'gemma4:cloud';
 // For this language set, run two independent isolates from different model
 // families and arbitrate between them rather than trust a single model's
 // output — same isolate+reconciler shape as the linguistics_blade pipeline,
-// applied to a single translation instead of research synthesis. Both
-// models were verified clean (no script contamination) on the sentences
-// that broke gemma4:cloud; qwen3.5:cloud was tried first but shares the
-// blade's reconciler_primary account and caused real contention timeouts,
-// so neither isolate here overlaps with anything else on this account.
-const ISOLATE_A_MODEL = 'nemotron-3-nano:30b-cloud';
-const ISOLATE_B_MODEL = 'gemma4:31b-cloud';
+// applied to a single translation instead of research synthesis.
+//
+// 2026-07-21: moved off Ollama Cloud onto the VM's own local models (Q8
+// quantized for a consistent quality/speed tier across all three roles) —
+// same cost motivation as the common-case model above. Isolates are
+// deliberately different families (Gemma vs Ministral) so they're not just
+// agreeing with themselves; the arbiter is Granite specifically because
+// IBM's Granite line is trained for document/structured-reasoning tasks,
+// which fits judging two candidate translations better than a general
+// chat model would.
+const ISOLATE_A_MODEL = 'gemma4:12b-it-q8_0';
+const ISOLATE_B_MODEL = 'ministral-3:14b-instruct-2512-q8_0';
 // The arbiter only judges two already-produced candidates for semantic
 // agreement — a much easier task than producing ancient-language text from
-// scratch — so the default (cheap, fast, proven-reliable-at-judging-tasks)
-// model is fine here even though it's not trusted to translate this
-// language set directly.
-const ARBITER_MODEL = 'gemma4:cloud';
+// scratch.
+const ARBITER_MODEL = 'granite4.1:8b-q8_0';
 const LOW_RESOURCE_LANGUAGES = new Set(['lat', 'vat', 'grc', 'arc', 'egy']);
 
 // Real, observed failure: models (isolates AND the arbiter alike) confused
@@ -204,13 +215,19 @@ async function callOllamaJson(
   system: string,
   userContent: string,
   env: Env,
+  backend: 'cloud' | 'vm' = 'cloud',
 ): Promise<Record<string, unknown> | null> {
+  const url = backend === 'vm' ? VM_OLLAMA_URL : OLLAMA_CHAT_URL;
+  const authHeaders: Record<string, string> =
+    backend === 'vm'
+      ? { 'X-Soutuk-Secret': env.VM_OLLAMA_SECRET }
+      : { Authorization: `Bearer ${env.OLLAMA_API_KEY}` };
   try {
-    const response = await fetch(OLLAMA_CHAT_URL, {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${env.OLLAMA_API_KEY}`,
+        ...authHeaders,
       },
       body: JSON.stringify({
         model,
@@ -246,9 +263,9 @@ async function handleSingleModelTranslate(
   model: string,
 ): Promise<Response> {
   const system = buildSystemPrompt(body.targetLanguageIso, body.targetCardContent ?? '');
-  const parsed = await callOllamaJson(model, system, body.text, env);
+  const parsed = await callOllamaJson(model, system, body.text, env, 'vm');
   if (!parsed) {
-    return Response.json({ error: 'Ollama Cloud call failed or returned unparseable JSON' }, { status: 502 });
+    return Response.json({ error: 'Ollama call failed or returned unparseable JSON' }, { status: 502 });
   }
   return Response.json(toTranslationDto(parsed, body.text));
 }
@@ -256,8 +273,8 @@ async function handleSingleModelTranslate(
 async function handleArbitratedTranslate(body: TranslateRequestBody, env: Env): Promise<Response> {
   const system = buildSystemPrompt(body.targetLanguageIso, body.targetCardContent ?? '');
   const [rawA, rawB] = await Promise.all([
-    callOllamaJson(ISOLATE_A_MODEL, system, body.text, env),
-    callOllamaJson(ISOLATE_B_MODEL, system, body.text, env),
+    callOllamaJson(ISOLATE_A_MODEL, system, body.text, env, 'vm'),
+    callOllamaJson(ISOLATE_B_MODEL, system, body.text, env, 'vm'),
   ]);
 
   // A single clean translation beats none — fall back to whichever isolate
@@ -277,7 +294,7 @@ async function handleArbitratedTranslate(body: TranslateRequestBody, env: Env): 
 
   const arbiterSystem = buildArbiterSystemPrompt(body.targetLanguageIso);
   const arbiterUser = JSON.stringify({ sourceText: body.text, candidateA, candidateB });
-  const arbiterParsed = await callOllamaJson(ARBITER_MODEL, arbiterSystem, arbiterUser, env);
+  const arbiterParsed = await callOllamaJson(ARBITER_MODEL, arbiterSystem, arbiterUser, env, 'vm');
 
   // Arbiter failing shouldn't sink an otherwise-successful request — both
   // isolates already produced a candidate, so fall back to A.
@@ -369,7 +386,7 @@ async function handleIdentify(request: Request, env: Env): Promise<Response> {
 
   const system = buildIdentifySystemPrompt();
   const userContent = JSON.stringify({ transcript: body.transcript });
-  const parsed = await callOllamaJson(OLLAMA_MODEL, system, userContent, env);
+  const parsed = await callOllamaJson(OLLAMA_MODEL, system, userContent, env, 'vm');
 
   if (!parsed) {
     return Response.json(

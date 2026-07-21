@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../app_theme.dart';
+import '../../feature_flags.dart';
 import '../state/translation_providers.dart';
 import 'widgets/speech_bubble.dart';
 import 'widgets/warning_banner.dart';
@@ -11,6 +12,8 @@ import 'conference_screen.dart';
 import 'conversation_mode_screen.dart';
 import 'settings_screen.dart';
 import '../../domain/dtos/language_option_dto.dart';
+
+enum _HeaderMenuAction { discovery, conference, settings }
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -200,7 +203,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       ),
                       const SizedBox(width: 6),
                       Text(
-                        state.isOnlineMode ? 'Online (Ollama Cloud Translate)' : 'Offline (Local Sandbox)',
+                        state.isOnlineMode ? 'Online (VM Translate)' : 'Offline (On-Device Artaxia)',
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                               fontSize: 11,
                               color: AppTheme.textSecondary,
@@ -211,75 +214,103 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   ),
                 ],
               ),
-              Row(
-                children: [
-                  // Mode Toggle Button (Online vs Offline)
-                  IconButton(
-                    icon: Icon(
-                      state.isOnlineMode ? Icons.cloud_queue : Icons.cloud_off_outlined,
-                      size: 20,
-                      color: state.isOnlineMode ? AppTheme.primary : AppTheme.textSecondary,
+              Flexible(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // Mode Toggle Button (Online vs Offline) — hidden while
+                    // offline mode is retired, see feature_flags.dart
+                    if (kOfflineModeEnabled)
+                      IconButton(
+                        padding: const EdgeInsets.all(6),
+                        constraints: const BoxConstraints(),
+                        icon: Icon(
+                          state.isOnlineMode ? Icons.cloud_queue : Icons.cloud_off_outlined,
+                          size: 20,
+                          color: state.isOnlineMode ? AppTheme.primary : AppTheme.textSecondary,
+                        ),
+                        tooltip: state.isOnlineMode ? 'Switch to Offline On-Device Artaxia' : 'Switch to Online Cloud Translate',
+                        onPressed: () => notifier.toggleOnlineMode(),
+                      ),
+                    // Clear History Button
+                    IconButton(
+                      padding: const EdgeInsets.all(6),
+                      constraints: const BoxConstraints(),
+                      icon: const Icon(Icons.refresh, size: 20, color: AppTheme.textSecondary),
+                      tooltip: 'Reset Conversation',
+                      onPressed: () => notifier.clearHistory(),
                     ),
-                    tooltip: state.isOnlineMode ? 'Switch to Offline Sandbox' : 'Switch to Online OpenAI Realtime',
-                    onPressed: () => notifier.toggleOnlineMode(),
-                  ),
-                  const SizedBox(width: 4),
-                  // Clear History Button
-                  IconButton(
-                    icon: const Icon(Icons.refresh, size: 20, color: AppTheme.textSecondary),
-                    tooltip: 'Reset Conversation',
-                    onPressed: () => notifier.clearHistory(),
-                  ),
-                  const SizedBox(width: 4),
-                  // Hands-Free Discovery Mode Trigger
-                  IconButton(
-                    icon: const Icon(Icons.travel_explore_rounded, color: AppTheme.primary, size: 22),
-                    tooltip: 'Hands-Free Discovery Mode',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const DiscoveryScreen()),
-                      );
-                    },
-                  ),
-                  const SizedBox(width: 4),
-                  // Conversation Mode Trigger — two-person interpreter
-                  IconButton(
-                    icon: const Icon(Icons.record_voice_over_rounded, color: AppTheme.primary, size: 22),
-                    tooltip: 'Conversation Mode',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const ConversationModeScreen()),
-                      );
-                    },
-                  ),
-                  const SizedBox(width: 4),
-                  // Cooperative Conference Mode Trigger
-                  IconButton(
-                    icon: const Icon(Icons.headset_mic_outlined, color: AppTheme.secondary, size: 22),
-                    tooltip: 'Cooperative Conference Mode',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const ConferenceScreen()),
-                      );
-                    },
-                  ),
-                  const SizedBox(width: 4),
-                  // API Key / Settings Trigger
-                  IconButton(
-                    icon: const Icon(Icons.vpn_key_outlined, color: AppTheme.textSecondary, size: 20),
-                    tooltip: 'API Key Settings',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SettingsScreen()),
-                      );
-                    },
-                  ),
-                ],
-              )
+                    // Conversation Mode Trigger — two-person interpreter
+                    IconButton(
+                      padding: const EdgeInsets.all(6),
+                      constraints: const BoxConstraints(),
+                      icon: const Icon(Icons.record_voice_over_rounded, color: AppTheme.primary, size: 22),
+                      tooltip: 'Conversation Mode',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ConversationModeScreen()),
+                        );
+                      },
+                    ),
+                    // Overflow menu — less-frequent actions. Kept as a
+                    // discoverable three-dot menu rather than a horizontally
+                    // scrollable icon row: a hidden swipe-to-reveal affordance
+                    // is easy to miss (confirmed on real hardware — the
+                    // Settings/API-key icon was invisible until told to swipe).
+                    PopupMenuButton<_HeaderMenuAction>(
+                      padding: const EdgeInsets.all(6),
+                      icon: const Icon(Icons.more_vert, size: 20, color: AppTheme.textSecondary),
+                      tooltip: 'More',
+                      onSelected: (action) {
+                        switch (action) {
+                          case _HeaderMenuAction.discovery:
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const DiscoveryScreen()),
+                            );
+                            break;
+                          case _HeaderMenuAction.conference:
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const ConferenceScreen()),
+                            );
+                            break;
+                          case _HeaderMenuAction.settings:
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const SettingsScreen()),
+                            );
+                            break;
+                        }
+                      },
+                      itemBuilder: (context) => const [
+                        PopupMenuItem(
+                          value: _HeaderMenuAction.discovery,
+                          child: ListTile(
+                            leading: Icon(Icons.travel_explore_rounded, color: AppTheme.primary),
+                            title: Text('Hands-Free Discovery Mode'),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          value: _HeaderMenuAction.conference,
+                          child: ListTile(
+                            leading: Icon(Icons.headset_mic_outlined, color: AppTheme.secondary),
+                            title: Text('Cooperative Conference Mode'),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          value: _HeaderMenuAction.settings,
+                          child: ListTile(
+                            leading: Icon(Icons.vpn_key_outlined, color: AppTheme.textSecondary),
+                            title: Text('API Key & Model Settings'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 12),
