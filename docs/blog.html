@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Updates — Soutuk</title>
+<style>
+  :root {
+    --bg: #0A0C16;
+    --surface: #13172E;
+    --surface-glass: rgba(24, 28, 63, 0.5);
+    --border-glass: rgba(0, 242, 254, 0.25);
+    --primary: #00F2FE;
+    --secondary: #9D4EDD;
+    --accent: #4EA8DE;
+    --success: #06D6A0;
+    --warning: #FFB703;
+    --text-primary: #F8F9FA;
+    --text-secondary: #ADB5BD;
+    --font-display: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+    --font-body: -apple-system, "Segoe UI", "Inter", Roboto, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  body {
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(0, 242, 254, 0.10), transparent 40%),
+      radial-gradient(circle at 85% 30%, rgba(157, 78, 221, 0.08), transparent 45%);
+  }
+
+  a { color: var(--primary); }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 72px 0;
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 12px 0;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 6vw, 52px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    margin: 0 0 18px 0;
+    text-wrap: balance;
+    background: linear-gradient(120deg, var(--text-primary) 40%, var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .lede {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 60ch;
+  }
+
+  .back-link {
+    font-family: var(--font-display);
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--text-secondary);
+  }
+  .back-link:hover { color: var(--primary); }
+
+  /* ---- Posts ---- */
+  .post {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 28px 26px;
+    margin-bottom: 24px;
+  }
+
+  .post-date {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px 0;
+  }
+
+  .post h2 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px 0;
+    color: var(--text-primary);
+  }
+
+  .post p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0 0 12px 0;
+  }
+
+  .post p:last-child { margin-bottom: 0; }
+
+  .post ul {
+    margin: 0 0 12px 0;
+    padding-left: 20px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .post ul:last-child { margin-bottom: 0; }
+
+  footer {
+    padding: 32px 0 60px 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 12px;
+  }
+
+  ::selection { background: rgba(0,242,254,0.25); }
+</style>
+</head>
+<body>
+
+<section style="padding-top: 96px; padding-bottom: 40px;">
+  <div class="wrap">
+    <a class="back-link" href="./">&larr; Back to Soutuk</a>
+    <p class="eyebrow" style="margin-top: 24px;">AIM Studio — Universal Translator</p>
+    <h1>Updates</h1>
+    <p class="lede">
+      What's actually changed, in plain language — new releases, real bugs
+      fixed, and honest notes on what's not there yet.
+    </p>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="wrap">
+
+    <!-- ============================================================
+         HOW TO ADD A NEW POST:
+         Copy one whole <div class="post">...</div> block (including
+         the comment above it), paste it right below this line, and
+         edit the date/title/text. Newest post goes first (top).
+         No other files need to change — this page is self-contained.
+    ============================================================= -->
+
+    <!-- POST TEMPLATE — copy this block for a new post -->
+    <!--
+    <div class="post">
+      <p class="post-date">Month DD, YYYY</p>
+      <h2>Short, plain-language title</h2>
+      <p>What changed and why it matters to someone using the app.</p>
+    </div>
+    -->
+
+    <div class="post">
+      <p class="post-date">July 21, 2026</p>
+      <h2>v1.2.0 Windows download fixed, translation now runs on our own hardware</h2>
+      <p>
+        The Windows download button was serving a broken file — it was missing
+        pieces it needed to actually run, so it would fail to open right after
+        downloading. That's fixed now; the download works.
+      </p>
+      <p>
+        Also, translation for both the Windows app and the Android app now
+        runs entirely on our own server instead of a third-party cloud AI
+        service. Same three-model cross-checking approach as before (two
+        independent translators plus a referee model that catches
+        disagreements between them), just running on hardware we control
+        instead of paying a cloud provider per request.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  Soutuk — an AIM Studio product. <a href="https://github.com/MilnaOS/soutuk">Source on GitHub</a>.
+</footer>
+
+</body>
+</html>
