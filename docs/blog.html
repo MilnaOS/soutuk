@@ -179,6 +179,32 @@
     -->
 
     <div class="post">
+      <p class="post-date">July 22, 2026</p>
+      <h2>Translation moved to cloud inference — a beta tradeoff, explained honestly</h2>
+      <p>
+        Quick follow-up to yesterday's note about moving translation onto our
+        own hardware: we tried it, and our own server's real-world response
+        time for a single translation came in around 50 seconds. That's not
+        usable for an app that's supposed to feel like a conversation.
+      </p>
+      <p>
+        So translation now runs on real, fast cloud inference instead —
+        three independent translators checking each other plus a referee
+        model, same approach as before, just hosted on hardware built for
+        speed rather than our own server. Responses are now well under two
+        seconds.
+      </p>
+      <p>
+        The honest tradeoff: this costs real money per translation instead
+        of being free to us. This app is in beta, and if usage ever grows
+        enough to make that cost a real problem, that's genuinely a good
+        problem to have — it means people are using it. We'll say so plainly
+        here if that ever happens, rather than quietly degrading quality or
+        adding something sketchy to cover it.
+      </p>
+    </div>
+
+    <div class="post">
       <p class="post-date">July 21, 2026</p>
       <h2>v1.2.0 Windows download fixed, translation now runs on our own hardware</h2>
       <p>

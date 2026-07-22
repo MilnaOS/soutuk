@@ -18,48 +18,65 @@ interface TranslationResponseDto {
   warningTokens: string[];
 }
 
-const OLLAMA_CHAT_URL = 'https://ollama.com/v1/chat/completions';
-// 2026-07-21: routed off the Ollama Cloud account onto Jeremy's own VM
-// (instance-20260712-142919, us-west1-c) via a Cloudflare Tunnel + a
-// shared-secret auth proxy in front of its local Ollama — this is the
-// common-case (non-ancient-language) path, i.e. almost all real traffic, so
-// keeping it off the per-token-billed Cloud account is what actually matters
-// for cost. gemma4:12b is what's already pulled locally on that VM.
-const VM_OLLAMA_URL = 'https://ollama-vm.pb-aim.com/v1/chat/completions';
-const OLLAMA_MODEL = 'gemma4:12b';
+// All real inference now goes through the VM's Cloudflare Tunnel + shared-
+// secret relay (cloud_relay_proxy.py), which forwards to whichever backend
+// the path prefix names. "vm-ollama" hits the VM's own local Ollama
+// (currently only used by /identify, a light task); fast1/fast2/fast3 hit
+// Groq/Cerebras/OpenRouter respectively using real API keys already
+// configured on the VM (see BACKENDS in cloud_relay_proxy.py).
+const VM_BASE_URL = 'https://ollama-vm.pb-aim.com';
+const VM_OLLAMA_MODEL = 'gemma4:12b-it-q8_0'; // /identify only — see handleIdentify
 
-// gemma4:cloud is solid on modern languages (verified clean across 8 tested
-// via the app's text-box audit) but genuinely unstable on ancient/low-resource
-// ones — repeated identical requests for Classical Greek came back with
-// random foreign-script tokens spliced in (Devanagari, Katakana, Sinhala
-// across different runs of the SAME sentence).
+// 2026-07-21: every translation (not just low-resource/ancient languages)
+// now runs three independent translators plus an arbiter, all on real fast
+// cloud inference (Groq LPU / Cerebras wafer-scale / OpenRouter) instead of
+// the VM's own CPU — CPU-only 12B inference measured at ~53s for a single
+// call, which is a non-starter for a live-feeling app. Decision: accept
+// real per-token cloud cost rather than fight VM hardware; if usage ever
+// gets expensive enough to matter, that means real adoption, and the blog
+// says so plainly (beta, compute-constrained).
 //
-// For this language set, run two independent isolates from different model
-// families and arbitrate between them rather than trust a single model's
-// output — same isolate+reconciler shape as the linguistics_blade pipeline,
-// applied to a single translation instead of research synthesis.
+// Each role is a BENCH (Bench Architecture, ported from shard-accelerator's
+// core/bench.py / D:\shard-accelerator\BENCH_ARCHITECTURE.md) rather than a
+// single fixed model: callBenchJson() below picks a random starting
+// candidate per call and fails over sequentially through the rest on error.
+// This isn't just error handling — every provider enforces real TPM (tokens
+// per minute) limits, and rotating a role across 2 candidates on different
+// providers means neither one takes every single call, buying real
+// breathing room under sustained traffic even with no errors at all.
 //
-// 2026-07-21: moved off Ollama Cloud onto the VM's own local models (Q8
-// quantized for a consistent quality/speed tier across all three roles) —
-// same cost motivation as the common-case model above. Isolates are
-// deliberately different families (Gemma vs Ministral) so they're not just
-// agreeing with themselves; the arbiter is Granite specifically because
-// IBM's Granite line is trained for document/structured-reasoning tasks,
-// which fits judging two candidate translations better than a general
-// chat model would.
-const ISOLATE_A_MODEL = 'gemma4:12b-it-q8_0';
-const ISOLATE_B_MODEL = 'ministral-3:14b-instruct-2512-q8_0';
-// The arbiter only judges two already-produced candidates for semantic
-// agreement — a much easier task than producing ancient-language text from
-// scratch.
-const ARBITER_MODEL = 'granite4.1:8b-q8_0';
-const LOW_RESOURCE_LANGUAGES = new Set(['lat', 'vat', 'grc', 'arc', 'egy']);
+// Roles are deliberately different model families where possible so the
+// three translators aren't just agreeing with themselves; the arbiter uses
+// gpt-oss-120b (OpenAI's open-weight model, explicitly documented as
+// multilingual-capable) hosted on two different providers as its own bench
+// — same weights both places, the safest possible fallback pairing.
+interface BenchCandidate {
+  backend: 'fast1' | 'fast2' | 'fast3'; // Groq / Cerebras / OpenRouter
+  model: string;
+}
+
+const ISOLATE_A_BENCH: BenchCandidate[] = [
+  { backend: 'fast1', model: 'llama-3.3-70b-versatile' }, // Groq
+  { backend: 'fast3', model: 'mistralai/mistral-small-2603' }, // OpenRouter rest partner
+];
+const ISOLATE_B_BENCH: BenchCandidate[] = [
+  { backend: 'fast2', model: 'gemma-4-31b' }, // Cerebras
+  { backend: 'fast1', model: 'llama-3.1-8b-instant' }, // Groq rest partner
+];
+const ISOLATE_C_BENCH: BenchCandidate[] = [
+  { backend: 'fast3', model: 'qwen/qwen3.6-flash' }, // OpenRouter
+  { backend: 'fast2', model: 'gemma-4-31b' }, // Cerebras rest partner
+];
+const ARBITER_BENCH: BenchCandidate[] = [
+  { backend: 'fast2', model: 'gpt-oss-120b' }, // Cerebras — ~3000 T/sec
+  { backend: 'fast1', model: 'openai/gpt-oss-120b' }, // Groq — same weights, different host
+];
 
 // Real, observed failure: models (isolates AND the arbiter alike) confused
 // 'arc' (Aramaic) with Arabic, and 'egy' (Ancient Egyptian) with Egyptian
 // Arabic (the unrelated modern dialect) — both are similar-looking codes
 // next to a much more famous language, and both isolates AND the arbiter
-// shared the same wrong assumption, so dual-isolate arbitration alone
+// shared the same wrong assumption, so multi-isolate arbitration alone
 // couldn't catch it: consensus among participants with the same
 // misunderstanding just produces confident wrong output. This needs
 // explicit disambiguation in the prompt, not more arbitration.
@@ -163,43 +180,55 @@ Output strictly JSON conforming to:
 }`;
 }
 
-// Judges two independently-produced candidate translations of the same
-// source sentence for substantive agreement. Word-order/synonym variation
-// is expected and fine — only a real difference in meaning, register (e.g.
-// one candidate isn't actually in the requested language/era), or a
-// grammatical error should count as disagreement.
+// Judges three independently-produced candidate translations of the same
+// source sentence. Word-order/synonym variation is expected and fine — only
+// a real difference in meaning, register (e.g. a candidate isn't actually in
+// the requested language/era), or a grammatical error should count as
+// disagreement. "consensus" replaces the old binary agree/disagree now that
+// there are three candidates instead of two: "full" (all three substantively
+// agree), "majority" (two of three agree, one is an outlier), or "split"
+// (no real agreement — all three differ or are unreliable).
 function buildArbiterSystemPrompt(targetLanguageIso: string): string {
-  return `You are an arbitration judge comparing two independently-produced translations of the same source sentence into the target language ${languageClause(targetLanguageIso)}.
-Determine whether they are substantively equivalent in meaning and each grammatically correct — differences in word order or synonym choice are FINE and do not count as disagreement.
-Set agree=false if there is a real difference in meaning, register, a grammatical error in one candidate, OR if either candidate is not coherent real text in the target language (gibberish, garbled characters, wrong language, nonsensical). Do not let a gibberish candidate "win" by default just because the other also has problems — if both are broken, still set agree=false and say so in reasoning.
-The user message is a JSON object: {"sourceText": "...", "candidateA": "...", "candidateB": "..."}.
-CRITICAL: "bestTranslation" must contain the ACTUAL FULL TRANSLATED TEXT you are recommending — copy the real sentence out of whichever candidate you prefer (or write your own corrected version). Never write the literal words "candidateA" or "candidateB" as the value — that is a field label, not a translation, and doing so is a critical error.
-When agree=false, also set "disputedSpan" to the SPECIFIC source-language word or short phrase the disagreement is actually about (e.g. "train station"), if the disagreement is localized to one term rather than the whole sentence — most disagreements are. Set it to null only if the whole sentence is genuinely unreliable (e.g. one candidate is a different language entirely) rather than a single disputed term.
+  return `You are an arbitration judge comparing three independently-produced translations of the same source sentence into the target language ${languageClause(targetLanguageIso)}.
+Determine how much they substantively agree in meaning and grammatical correctness — differences in word order or synonym choice are FINE and do not count as disagreement.
+Set consensus="full" if all three are substantively equivalent and each is coherent, correct text in the target language.
+Set consensus="majority" if two of the three substantively agree and the third is a real outlier (different meaning, wrong register, not real/coherent text in the target language, or wrong language entirely).
+Set consensus="split" if there is no real two-way agreement — all three differ substantively, or the ones that superficially match are each unreliable (gibberish, garbled characters, wrong language). Do not let a broken candidate "win" by default just because another is also broken.
+The user message is a JSON object: {"sourceText": "...", "candidateA": "...", "candidateB": "...", "candidateC": "..."}.
+CRITICAL: "bestTranslation" must contain the ACTUAL FULL TRANSLATED TEXT you are recommending — copy the real sentence out of whichever candidate you prefer (or write your own corrected version if none are fully right but the intent is clear). Never write the literal words "candidateA"/"candidateB"/"candidateC" as the value — those are field labels, not a translation, and doing so is a critical error.
+When consensus is "majority" or "split", also set "disputedSpan" to the SPECIFIC source-language word or short phrase the disagreement is actually about (e.g. "train station"), if the disagreement is localized to one term rather than the whole sentence — most disagreements are. Set it to null only if the whole sentence is genuinely unreliable (e.g. one or more candidates are a different language entirely) rather than a single disputed term.
 Output strictly JSON conforming to:
 {
-  "agree": true,
+  "consensus": "full",
   "bestTranslation": "...",
   "disputedSpan": null,
-  "reasoning": "short note, especially if agree is false",
+  "reasoning": "short note, especially if consensus is not full",
   "confidenceScore": 0.95
 }`;
 }
 
 // The arbiter model has, in testing, sometimes returned the literal string
-// "candidateA"/"candidateB" (the field label) instead of substituting the
-// actual translated text despite explicit prompt instructions not to. Guard
-// against that specific failure rather than trust the model's compliance.
-function resolveBestTranslation(raw: string | undefined, candidateA: string, candidateB: string): string {
+// "candidateA"/"candidateB"/"candidateC" (the field label) instead of
+// substituting the actual translated text despite explicit prompt
+// instructions not to. Guard against that specific failure rather than
+// trust the model's compliance.
+function resolveBestTranslation(
+  raw: string | undefined,
+  candidateA: string,
+  candidateB: string,
+  candidateC: string,
+): string {
   const trimmed = (raw ?? '').trim();
-  if (trimmed.toLowerCase() === 'candidatea') return candidateA;
-  if (trimmed.toLowerCase() === 'candidateb') return candidateB;
+  const lower = trimmed.toLowerCase();
+  if (lower === 'candidatea') return candidateA;
+  if (lower === 'candidateb') return candidateB;
+  if (lower === 'candidatec') return candidateC;
   return trimmed || candidateA;
 }
 
-// Ollama Cloud's OpenAI-compatible endpoint doesn't guarantee strict
-// response_format: json_object support the way OpenAI's own API does —
-// extract the first JSON object from the response text rather than assume
-// the whole message body is bare JSON.
+// Providers' OpenAI-compatible endpoints don't all guarantee strict
+// response_format: json_object support — extract the first JSON object from
+// the response text rather than assume the whole message body is bare JSON.
 function extractJson(text: string): Record<string, unknown> | null {
   const match = text.match(/\{[\s\S]*\}/);
   if (!match) return null;
@@ -210,24 +239,20 @@ function extractJson(text: string): Record<string, unknown> | null {
   }
 }
 
-async function callOllamaJson(
+async function callOnce(
+  backend: 'fast1' | 'fast2' | 'fast3' | 'ollama',
   model: string,
   system: string,
   userContent: string,
   env: Env,
-  backend: 'cloud' | 'vm' = 'cloud',
 ): Promise<Record<string, unknown> | null> {
-  const url = backend === 'vm' ? VM_OLLAMA_URL : OLLAMA_CHAT_URL;
-  const authHeaders: Record<string, string> =
-    backend === 'vm'
-      ? { 'X-Soutuk-Secret': env.VM_OLLAMA_SECRET }
-      : { Authorization: `Bearer ${env.OLLAMA_API_KEY}` };
+  const url = `${VM_BASE_URL}/${backend}/v1/chat/completions`;
   try {
     const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...authHeaders,
+        'X-Soutuk-Secret': env.VM_OLLAMA_SECRET,
       },
       body: JSON.stringify({
         model,
@@ -246,6 +271,27 @@ async function callOllamaJson(
   }
 }
 
+// Bench Architecture (ported from shard-accelerator, see comment above
+// ISOLATE_A_BENCH): pick a random starting candidate — a stateless
+// approximation of round-robin that still spreads load across a Worker's
+// concurrent, independent invocations — then fail over sequentially through
+// the rest of the bench if a candidate errors or a provider rate-limits.
+// Only returns null if every candidate in the bench failed.
+async function callBenchJson(
+  bench: BenchCandidate[],
+  system: string,
+  userContent: string,
+  env: Env,
+): Promise<Record<string, unknown> | null> {
+  const start = Math.floor(Math.random() * bench.length);
+  for (let i = 0; i < bench.length; i++) {
+    const candidate = bench[(start + i) % bench.length];
+    const result = await callOnce(candidate.backend, candidate.model, system, userContent, env);
+    if (result) return result;
+  }
+  return null;
+}
+
 function toTranslationDto(parsed: Record<string, unknown>, fallbackSource: string): TranslationResponseDto {
   return {
     sourceText: (parsed.sourceText as string) ?? fallbackSource,
@@ -257,61 +303,61 @@ function toTranslationDto(parsed: Record<string, unknown>, fallbackSource: strin
   };
 }
 
-async function handleSingleModelTranslate(
-  body: TranslateRequestBody,
-  env: Env,
-  model: string,
-): Promise<Response> {
-  const system = buildSystemPrompt(body.targetLanguageIso, body.targetCardContent ?? '');
-  const parsed = await callOllamaJson(model, system, body.text, env, 'vm');
-  if (!parsed) {
-    return Response.json({ error: 'Ollama call failed or returned unparseable JSON' }, { status: 502 });
-  }
-  return Response.json(toTranslationDto(parsed, body.text));
-}
-
 async function handleArbitratedTranslate(body: TranslateRequestBody, env: Env): Promise<Response> {
   const system = buildSystemPrompt(body.targetLanguageIso, body.targetCardContent ?? '');
-  const [rawA, rawB] = await Promise.all([
-    callOllamaJson(ISOLATE_A_MODEL, system, body.text, env, 'vm'),
-    callOllamaJson(ISOLATE_B_MODEL, system, body.text, env, 'vm'),
+  const [rawA, rawB, rawC] = await Promise.all([
+    callBenchJson(ISOLATE_A_BENCH, system, body.text, env),
+    callBenchJson(ISOLATE_B_BENCH, system, body.text, env),
+    callBenchJson(ISOLATE_C_BENCH, system, body.text, env),
   ]);
 
-  // A single clean translation beats none — fall back to whichever isolate
-  // succeeded if the other one errored outright, rather than failing the
-  // whole request.
-  if (!rawA && !rawB) {
+  const succeeded = [rawA, rawB, rawC].filter((r): r is Record<string, unknown> => r !== null);
+  if (succeeded.length === 0) {
     return Response.json(
-      { error: 'Both arbitration isolates failed to return a usable translation' },
+      { error: 'All three translation isolates failed to return a usable translation' },
       { status: 502 },
     );
   }
-  if (!rawA) return Response.json(toTranslationDto(rawB!, body.text));
-  if (!rawB) return Response.json(toTranslationDto(rawA!, body.text));
-
-  const candidateA = (rawA.translatedText as string) ?? '';
-  const candidateB = (rawB.translatedText as string) ?? '';
-
-  const arbiterSystem = buildArbiterSystemPrompt(body.targetLanguageIso);
-  const arbiterUser = JSON.stringify({ sourceText: body.text, candidateA, candidateB });
-  const arbiterParsed = await callOllamaJson(ARBITER_MODEL, arbiterSystem, arbiterUser, env, 'vm');
-
-  // Arbiter failing shouldn't sink an otherwise-successful request — both
-  // isolates already produced a candidate, so fall back to A.
-  if (!arbiterParsed) {
-    return Response.json(toTranslationDto(rawA, body.text));
+  // Fewer than two successful candidates means there's nothing to actually
+  // arbitrate between — a single clean translation beats none, so return it
+  // directly rather than sending one candidate to the arbiter to "judge"
+  // against itself.
+  if (succeeded.length === 1) {
+    return Response.json(toTranslationDto(succeeded[0], body.text));
   }
 
-  const agree = (arbiterParsed.agree as boolean) ?? false;
-  const combinedAppliedFlags = new Set<string>([
-    ...((rawA.appliedFlags as string[]) ?? []),
-    ...((rawB.appliedFlags as string[]) ?? []),
-  ]);
+  const candidateA = (rawA?.translatedText as string) ?? '';
+  const candidateB = (rawB?.translatedText as string) ?? '';
+  const candidateC = (rawC?.translatedText as string) ?? '';
 
-  if (agree) {
+  const arbiterSystem = buildArbiterSystemPrompt(body.targetLanguageIso);
+  const arbiterUser = JSON.stringify({ sourceText: body.text, candidateA, candidateB, candidateC });
+  const arbiterParsed = await callBenchJson(ARBITER_BENCH, arbiterSystem, arbiterUser, env);
+
+  // Arbiter failing shouldn't sink an otherwise-successful request — at
+  // least two isolates already produced a candidate, so fall back to the
+  // first successful one.
+  if (!arbiterParsed) {
+    return Response.json(toTranslationDto(succeeded[0], body.text));
+  }
+
+  const consensus = (arbiterParsed.consensus as string) ?? 'split';
+  const combinedAppliedFlags = new Set<string>([
+    ...((rawA?.appliedFlags as string[]) ?? []),
+    ...((rawB?.appliedFlags as string[]) ?? []),
+    ...((rawC?.appliedFlags as string[]) ?? []),
+  ]);
+  const bestTranslation = resolveBestTranslation(
+    arbiterParsed.bestTranslation as string | undefined,
+    candidateA,
+    candidateB,
+    candidateC,
+  );
+
+  if (consensus === 'full') {
     const result: TranslationResponseDto = {
       sourceText: body.text,
-      translatedText: resolveBestTranslation(arbiterParsed.bestTranslation as string | undefined, candidateA, candidateB),
+      translatedText: bestTranslation,
       confidenceScore: (arbiterParsed.confidenceScore as number) ?? 0.9,
       confidenceTier: 'CLEAN',
       appliedFlags: [...combinedAppliedFlags],
@@ -320,23 +366,22 @@ async function handleArbitratedTranslate(body: TranslateRequestBody, env: Env): 
     return Response.json(result);
   }
 
-  // Disagreement — escalate rather than silently pick a winner. Still
-  // return a usable translatedText so the app has something to display,
-  // but flag it so the app's warning banner surfaces the uncertainty
-  // instead of hiding it. Scope the warning to the specific disputed term
-  // when the arbiter identified one — most disagreements are localized to
-  // one anachronistic/ambiguous word, not the whole sentence, and treating
-  // the entire translation as suspect overstates the actual uncertainty.
+  // "majority" or "split" — escalate rather than silently pick a winner.
+  // Still return a usable translatedText so the app has something to
+  // display, but flag it so the app's warning banner surfaces the
+  // uncertainty instead of hiding it. Scope the warning to the specific
+  // disputed term when the arbiter identified one — most disagreements are
+  // localized to one anachronistic/ambiguous word, not the whole sentence.
   const disputedSpan = (arbiterParsed.disputedSpan as string | null) ?? null;
   const reasoning = (arbiterParsed.reasoning as string) ?? '';
   const warningMessage = disputedSpan
-    ? `Uncertain translation of "${disputedSpan}" — two independent attempts disagreed on this term. ${reasoning}`.trim()
-    : `Two independent translation attempts disagreed and could not be reconciled with confidence. Candidate A: "${candidateA}" | Candidate B: "${candidateB}". ${reasoning}`.trim();
+    ? `Uncertain translation of "${disputedSpan}" — independent attempts disagreed on this term. ${reasoning}`.trim()
+    : `Independent translation attempts disagreed and could not be reconciled with confidence. Candidate A: "${candidateA}" | Candidate B: "${candidateB}" | Candidate C: "${candidateC}". ${reasoning}`.trim();
 
   const result: TranslationResponseDto = {
     sourceText: body.text,
-    translatedText: resolveBestTranslation(arbiterParsed.bestTranslation as string | undefined, candidateA, candidateB),
-    confidenceScore: Math.min(0.6, (arbiterParsed.confidenceScore as number) ?? 0.5),
+    translatedText: bestTranslation,
+    confidenceScore: Math.min(consensus === 'majority' ? 0.75 : 0.6, (arbiterParsed.confidenceScore as number) ?? 0.5),
     confidenceTier: 'FLAG_FOR_REVIEW',
     appliedFlags: [...combinedAppliedFlags, 'TRANSLATION_DISAGREEMENT'],
     warningTokens: [warningMessage],
@@ -362,6 +407,11 @@ interface IdentifyResponseDto {
 // language field), then this identifies the language from the resulting
 // text. Kept as a separate text-based step rather than trying to coax a
 // language guess out of the transcription call itself.
+//
+// Left on the VM's own local Ollama rather than moved to the cloud benches
+// above — it's a light, quick task (not the translation-quality path this
+// session's cloud migration was actually about), and gemma4:12b-it-q8_0 is
+// already sitting there for it.
 function buildIdentifySystemPrompt(): string {
   return `You identify the language of a short transcribed utterance for a translation app's language-handshake step.
 Respond with your best-guess ISO 639-3 code and English name for the language, a confidence score, and whether the sample is long/distinctive enough to be confident at all.
@@ -386,7 +436,7 @@ async function handleIdentify(request: Request, env: Env): Promise<Response> {
 
   const system = buildIdentifySystemPrompt();
   const userContent = JSON.stringify({ transcript: body.transcript });
-  const parsed = await callOllamaJson(OLLAMA_MODEL, system, userContent, env, 'vm');
+  const parsed = await callOnce('ollama', VM_OLLAMA_MODEL, system, userContent, env);
 
   if (!parsed) {
     return Response.json(
@@ -416,11 +466,10 @@ async function handleTranslate(request: Request, env: Env): Promise<Response> {
   if (!body.text || !body.targetLanguageIso) {
     return Response.json({ error: 'text and targetLanguageIso are required' }, { status: 400 });
   }
-
-  if (LOW_RESOURCE_LANGUAGES.has(body.targetLanguageIso)) {
-    return await handleArbitratedTranslate(body, env);
-  }
-  return await handleSingleModelTranslate(body, env, OLLAMA_MODEL);
+  // Every language now goes through the three-translator + arbiter pipeline
+  // — see the comment above ISOLATE_A_BENCH for why the old single-model
+  // common-case path was retired.
+  return await handleArbitratedTranslate(body, env);
 }
 
 export default {
