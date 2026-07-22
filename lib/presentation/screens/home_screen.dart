@@ -22,7 +22,7 @@ class HomeScreen extends ConsumerStatefulWidget {
   ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends ConsumerState<HomeScreen> {
+class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObserver {
   final TextEditingController _textController = TextEditingController();
   final ScrollController _scrollController = ScrollController();
   final TextEditingController _sigController = TextEditingController();
@@ -35,12 +35,30 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _textController.dispose();
     _scrollController.dispose();
     _sigController.dispose();
     _langSearchController.dispose();
     super.dispose();
+  }
+
+  // Screen lock and backgrounding both fire AppLifecycleState.paused —
+  // invalidate any cached high-stakes signature so stepping away requires a
+  // fresh one next time, rather than trusting a signature from before the
+  // interruption. See ConversationNotifier.invalidateSignature().
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.paused) {
+      ref.read(conversationProvider.notifier).invalidateSignature();
+    }
   }
 
   void _scrollToBottom() {

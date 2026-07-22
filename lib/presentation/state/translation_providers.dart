@@ -6,10 +6,12 @@ import '../../domain/interfaces/i_mesh_coordinator.dart';
 import '../../domain/interfaces/i_dot_repository.dart';
 import '../../domain/dtos/language_option_dto.dart';
 import '../../domain/dtos/translation_dto.dart';
-import '../../data/services/mock_translation_service.dart';
 import '../../data/services/noop_mesh_coordinator.dart';
 import '../../data/repositories/dot_repository.dart';
 import '../../data/services/cloudflare_worker_service.dart';
+import '../../data/services/artaxia_dot_payload_source.dart';
+import '../../data/services/artaxia_translation_service.dart';
+import '../../data/services/on_device_model_registry.dart';
 import '../../data/services/domain_detection_service.dart';
 import '../../data/services/mic_audio_capture_service.dart';
 import '../../data/services/openai_audio_service.dart';
@@ -36,7 +38,16 @@ final translationServiceProvider = Provider.family<ITranslationService, bool>((r
     // decided.
     return CloudflareWorkerService();
   } else {
-    return MockTranslationService();
+    // Real on-device path — Milna OS: Artaxia. Two local translators
+    // (Qwen2.5-1.5B, DeepSeek-R1-Distill-1.5B) attempt the translation,
+    // Granite4.1:3b arbitrates, grounded by the same DOT cards the cloud
+    // path uses. Requires the three GGUF models to already be present on
+    // device (see OnDeviceModelRegistry) — model download UI is a separate,
+    // not-yet-built follow-up, so until then this throws a clear "models
+    // not downloaded" error rather than silently falling back to a fake
+    // demo response.
+    final dotSource = ArtaxiaDotPayloadSource(ref.read(dotRepositoryProvider));
+    return ArtaxiaTranslationService(dotSource, OnDeviceModelRegistry());
   }
 });
 
@@ -109,6 +120,13 @@ class UtteranceItem {
 /// knows both languages, so there's no auto-detection to do, just routing.
 enum MicDirection { oneToTwo, twoToOne }
 
+/// How long a captured high-stakes signature stays valid before a fresh
+/// utterance requires re-signing. Prevents re-typing a name before every
+/// single sentence in a real hospital/legal conversation — the signature is
+/// still unavoidable (real liability requirement), just not re-prompted on
+/// every utterance within one continuous session.
+const kSignatureValidityWindow = Duration(minutes: 20);
+
 class ConversationState {
   final List<UtteranceItem> utterances;
   final bool isListening;
@@ -119,6 +137,7 @@ class ConversationState {
   final String? activeWarning;
   final bool requiresSignature;
   final bool isSignatureCaptured;
+  final DateTime? signatureCapturedAt;
   final String? capturedSignatureName;
   final bool isOnlineMode;
 
@@ -132,11 +151,13 @@ class ConversationState {
     this.activeWarning,
     this.requiresSignature = false,
     this.isSignatureCaptured = false,
+    this.signatureCapturedAt,
     this.capturedSignatureName,
-    // Defaults to true: offline mode routes through MockTranslationService,
-    // which returns literal "Translated: $text" — a real user's first
-    // translation attempt must hit the real (free, dev-path) online
-    // translator, not a fake demo response they'd have no reason to expect.
+    // Defaults to true: offline mode now routes through ArtaxiaTranslationService,
+    // which requires the on-device GGUF models to already be downloaded (see
+    // OnDeviceModelRegistry) — until model-download UI exists, a real user's
+    // first translation attempt should hit the real (free, dev-path) online
+    // translator instead of an offline path that isn't usable yet.
     this.isOnlineMode = true,
   });
 
@@ -150,6 +171,7 @@ class ConversationState {
     String? Function()? activeWarning,
     bool? requiresSignature,
     bool? isSignatureCaptured,
+    DateTime? Function()? signatureCapturedAt,
     String? Function()? capturedSignatureName,
     bool? isOnlineMode,
   }) {
@@ -164,10 +186,18 @@ class ConversationState {
       activeWarning: activeWarning != null ? activeWarning() : this.activeWarning,
       requiresSignature: requiresSignature ?? this.requiresSignature,
       isSignatureCaptured: isSignatureCaptured ?? this.isSignatureCaptured,
+      signatureCapturedAt: signatureCapturedAt != null ? signatureCapturedAt() : this.signatureCapturedAt,
       capturedSignatureName: capturedSignatureName != null ? capturedSignatureName() : this.capturedSignatureName,
       isOnlineMode: isOnlineMode ?? this.isOnlineMode,
     );
   }
+
+  /// True if a signature was captured recently enough to still cover a new
+  /// high-stakes utterance without re-prompting.
+  bool get hasValidSignature =>
+      isSignatureCaptured &&
+      signatureCapturedAt != null &&
+      DateTime.now().difference(signatureCapturedAt!) < kSignatureValidityWindow;
 }
 
 // ==========================================
@@ -249,13 +279,20 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
       final hasHighStakes = mergedFlags.contains('MEDICAL_DOMAIN') ||
           mergedFlags.contains('LEGAL_DOMAIN');
 
+      // A recent, still-valid signature covers this utterance too — don't
+      // re-prompt for every single high-stakes sentence in one continuous
+      // session (see kSignatureValidityWindow). Only a genuinely new session
+      // (no valid signature on file) triggers the gate.
+      final needsFreshSignature = hasHighStakes && !state.hasValidSignature;
+
       state = state.copyWith(
         utterances: [...state.utterances, newItem],
         isTranslating: false,
         activeWarning: () => mergedWarnings.isNotEmpty ? mergedWarnings.first : null,
-        requiresSignature: hasHighStakes,
-        isSignatureCaptured: false, // Reset signature on new high-stakes match
-        capturedSignatureName: () => null,
+        requiresSignature: needsFreshSignature,
+        isSignatureCaptured: needsFreshSignature ? false : state.isSignatureCaptured,
+        signatureCapturedAt: needsFreshSignature ? () => null : () => state.signatureCapturedAt,
+        capturedSignatureName: needsFreshSignature ? () => null : () => state.capturedSignatureName,
       );
       return response;
     } catch (e) {
@@ -271,7 +308,23 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
     state = state.copyWith(
       isSignatureCaptured: true,
       requiresSignature: false, // Resolve the gating override
+      signatureCapturedAt: () => DateTime.now(),
       capturedSignatureName: () => name,
+    );
+  }
+
+  /// Called when the app is backgrounded or the device locks (see
+  /// _HomeScreenState's WidgetsBindingObserver) — invalidates any cached
+  /// signature so the next high-stakes utterance requires a fresh one,
+  /// rather than trusting a signature from before the user stepped away.
+  /// Lazy: doesn't pop the modal immediately on unlock, only on the next
+  /// actual high-stakes translation attempt.
+  void invalidateSignature() {
+    if (!state.isSignatureCaptured) return;
+    state = state.copyWith(
+      isSignatureCaptured: false,
+      signatureCapturedAt: () => null,
+      capturedSignatureName: () => null,
     );
   }
 
