@@ -141,6 +141,13 @@ class ConversationState {
   final String? capturedSignatureName;
   final bool isOnlineMode;
 
+  /// Off by default — typed/pasted text (the "text blocks ripped off pages"
+  /// box) translates silently, matching existing behavior. When on,
+  /// translateMessage() also speaks the translated result via TTS, same as
+  /// the mic-input path already does. Mic input's own TTS call is separate
+  /// and unaffected by this toggle either way.
+  final bool speakTypedTranslations;
+
   ConversationState({
     this.utterances = const [],
     this.isListening = false,
@@ -159,6 +166,7 @@ class ConversationState {
     // first translation attempt should hit the real (free, dev-path) online
     // translator instead of an offline path that isn't usable yet.
     this.isOnlineMode = true,
+    this.speakTypedTranslations = false,
   });
 
   ConversationState copyWith({
@@ -174,6 +182,7 @@ class ConversationState {
     DateTime? Function()? signatureCapturedAt,
     String? Function()? capturedSignatureName,
     bool? isOnlineMode,
+    bool? speakTypedTranslations,
   }) {
     return ConversationState(
       utterances: utterances ?? this.utterances,
@@ -189,6 +198,7 @@ class ConversationState {
       signatureCapturedAt: signatureCapturedAt != null ? signatureCapturedAt() : this.signatureCapturedAt,
       capturedSignatureName: capturedSignatureName != null ? capturedSignatureName() : this.capturedSignatureName,
       isOnlineMode: isOnlineMode ?? this.isOnlineMode,
+      speakTypedTranslations: speakTypedTranslations ?? this.speakTypedTranslations,
     );
   }
 
@@ -215,6 +225,10 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
 
   void changeLanguageTwo(String iso) {
     state = state.copyWith(languageTwoIso: iso);
+  }
+
+  void setSpeakTypedTranslations(bool value) {
+    state = state.copyWith(speakTypedTranslations: value);
   }
 
   /// Defaults to language-one -> language-two: typed input has no mic

@@ -1,0 +1,1293 @@
+{
+  "generated": "20260723_114848",
+  "source": "languages.json split, verified against Glottolog",
+  "counts": {
+    "clean_in_picker": 1104,
+    "moved_to_pending": 117
+  },
+  "pending": [
+    {
+      "iso": "alu",
+      "name": "'Are'are",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "alu",
+        "claimed_name": "Alamblak",
+        "real_ref_name": "'Are'are",
+        "similarity": 0.25
+      }
+    },
+    {
+      "iso": "acn",
+      "name": "Achang",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "acn",
+        "claimed_name": "Kachari",
+        "real_ref_name": "Longchuan Achang",
+        "similarity": 0.35
+      }
+    },
+    {
+      "iso": "ach",
+      "name": "Acholi",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "ach",
+        "claimed_name": "Achang",
+        "real_ref_name": "Acoli",
+        "similarity": 0.36
+      }
+    },
+    {
+      "iso": "adn",
+      "name": "Adang",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "adn",
+        "claimed_name": "Adynyamathanha",
+        "real_ref_name": "Adang",
+        "similarity": 0.42
+      }
+    },
+    {
+      "iso": "ady",
+      "name": "Adyghe (Temirgoy)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "ady",
+        "claimed_name": "Adynyamathanha",
+        "real_ref_name": "West Circassian",
+        "similarity": 0.21
+      }
+    },
+    {
+      "iso": "ajg",
+      "name": "Ajagbe",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "ajg",
+        "claimed_name": "Ajagbe",
+        "real_ref_name": "Aja (Benin)",
+        "similarity": 0.59
+      }
+    },
+    {
+      "iso": "aes",
+      "name": "Alsea",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "aes",
+        "claimed_name": "Alsea",
+        "real_ref_name": "Alsea-Yaquina",
+        "similarity": 0.56
+      }
+    },
+    {
+      "iso": "njo",
+      "name": "Ao",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "njo",
+        "claimed_name": "Ao",
+        "real_ref_name": "Ao Naga",
+        "similarity": 0.44
+      }
+    },
+    {
+      "iso": "ara",
+      "name": "Arabic",
+      "reason": "code_invalid",
+      "detail": {
+        "claimed_code": "ara",
+        "claimed_name": "Egyptian Arabic"
+      }
+    },
+    {
+      "iso": "acm",
+      "name": "Arabic (Iraqi)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "acm",
+        "claimed_name": "Acoma",
+        "real_ref_name": "Gilit Mesopotamian Arabic",
+        "similarity": 0.13
+      }
+    },
+    {
+      "iso": "arb",
+      "name": "Arabic (Modern Standard)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "arb",
+        "claimed_name": "Arabana",
+        "real_ref_name": "Standard Arabic",
+        "similarity": 0.36
+      }
+    },
+    {
+      "iso": "kwi",
+      "name": "Awa Pit",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "kwi",
+        "claimed_name": "Kwomtari",
+        "real_ref_name": "Awa-Cuaiquer",
+        "similarity": 0.3
+      }
+    },
+    {
+      "iso": "azb",
+      "name": "Azari (Iranian)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "azb",
+        "claimed_name": "Coahuilteco",
+        "real_ref_name": "South Azerbaijani",
+        "similarity": 0.21
+      }
+    },
+    {
+      "iso": "bas",
+      "name": "Basaá",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "bas",
+        "claimed_name": "Basa",
+        "real_ref_name": "Basa (Cameroon)",
+        "similarity": 0.42
+      }
+    },
+    {
+      "iso": "lua",
+      "name": "Bena-Lulua",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "lua",
+        "claimed_name": "Lua",
+        "real_ref_name": "Luba-Lulua",
+        "similarity": 0.46
+      }
+    },
+    {
+      "iso": "tzm",
+      "name": "Berber (Middle Atlas)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "tzm",
+        "claimed_name": "Berber",
+        "real_ref_name": "Central Moroccan Berber",
+        "similarity": 0.41
+      }
+    },
+    {
+      "iso": "cjo",
+      "name": "Campa Pajonal Asheninca",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "cjo",
+        "claimed_name": "Chocho",
+        "real_ref_name": "Ashéninka Pajonal",
+        "similarity": 0.17
+      }
+    },
+    {
+      "iso": "car",
+      "name": "Carib",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "car",
+        "claimed_name": "Nicobarese",
+        "real_ref_name": "Galibi Carib",
+        "similarity": 0.36
+      }
+    },
+    {
+      "iso": "cay",
+      "name": "Cayuga",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "cay",
+        "claimed_name": "Berber",
+        "real_ref_name": "Cayuga",
+        "similarity": 0.0
+      }
+    },
+    {
+      "iso": "cjm",
+      "name": "Cham (Eastern)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "cjm",
+        "claimed_name": "Cham",
+        "real_ref_name": "Eastern Cham",
+        "similarity": 0.5
+      }
+    },
+    {
+      "iso": "cha",
+      "name": "Chamorro",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "cha",
+        "claimed_name": "Chai",
+        "real_ref_name": "Chamorro",
+        "similarity": 0.5
+      }
+    },
+    {
+      "iso": "cjh",
+      "name": "Chehalis (Upper)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "cjh",
+        "claimed_name": "Chai",
+        "real_ref_name": "Upper Chehalis",
+        "similarity": 0.44
+      }
+    },
+    {
+      "iso": "cso",
+      "name": "Chinantec (Sochiapan)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "cso",
+        "claimed_name": "Candoshi",
+        "real_ref_name": "Sochiapam Chinantec",
+        "similarity": 0.22
+      }
+    },
+    {
+      "iso": "chh",
+      "name": "Chinook (Lower)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "chh",
+        "claimed_name": "Chontal",
+        "real_ref_name": "Clatsop-Shoalwater Chinook",
+        "similarity": 0.18
+      }
+    },
+    {
+      "iso": "wac",
+      "name": "Chinook (Upper)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "wac",
+        "claimed_name": "Koasati",
+        "real_ref_name": "Upper Chinook",
+        "similarity": 0.1
+      }
+    },
+    {
+      "iso": "cax",
+      "name": "Chiquitano",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "cax",
+        "claimed_name": "Campa",
+        "real_ref_name": "Lomeriano-Ignaciano Chiquitano",
+        "similarity": 0.17
+      }
+    },
+    {
+      "iso": "mus",
+      "name": "Creek",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mus",
+        "claimed_name": "Seminole",
+        "real_ref_name": "Creek",
+        "similarity": 0.31
+      }
+    },
+    {
+      "iso": "daa",
+      "name": "Dangaléat (Western)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "daa",
+        "claimed_name": "Da",
+        "real_ref_name": "Dangaleat",
+        "similarity": 0.36
+      }
+    },
+    {
+      "iso": "diz",
+      "name": "Ding",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "diz",
+        "claimed_name": "Dizi",
+        "real_ref_name": "Ding",
+        "similarity": 0.5
+      }
+    },
+    {
+      "iso": "dhv",
+      "name": "Drehu",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "dhv",
+        "claimed_name": "Dahalo",
+        "real_ref_name": "Dehu",
+        "similarity": 0.4
+      }
+    },
+    {
+      "iso": "kld",
+      "name": "Gamilaraay",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "kld",
+        "claimed_name": "Kiliwa",
+        "real_ref_name": "Yuwaalaraay-Gamilaraay",
+        "similarity": 0.21
+      }
+    },
+    {
+      "iso": "gis",
+      "name": "Giziga",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "gis",
+        "claimed_name": "Gitksan",
+        "real_ref_name": "North Giziga",
+        "similarity": 0.32
+      }
+    },
+    {
+      "iso": "guc",
+      "name": "Goajiro",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "guc",
+        "claimed_name": "Goajiro",
+        "real_ref_name": "Wayuu",
+        "similarity": 0.17
+      }
+    },
+    {
+      "iso": "kal",
+      "name": "Greenlandic",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "kal",
+        "claimed_name": "Greenlandic",
+        "real_ref_name": "Kalaallisut",
+        "similarity": 0.27
+      }
+    },
+    {
+      "iso": "gub",
+      "name": "Guajajara",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "gub",
+        "claimed_name": "Gumbaynggir",
+        "real_ref_name": "Guajajára",
+        "similarity": 0.4
+      }
+    },
+    {
+      "iso": "gum",
+      "name": "Guambiano",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "gum",
+        "claimed_name": "Guugu Yimidhirr",
+        "real_ref_name": "Guambiano",
+        "similarity": 0.25
+      }
+    },
+    {
+      "iso": "hur",
+      "name": "Halkomelem (Island)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "hur",
+        "claimed_name": "Hualapai",
+        "real_ref_name": "Halkomelem",
+        "similarity": 0.33
+      }
+    },
+    {
+      "iso": "huu",
+      "name": "Huitoto (Murui)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "huu",
+        "claimed_name": "Huichol",
+        "real_ref_name": "Murui Huitoto",
+        "similarity": 0.4
+      }
+    },
+    {
+      "iso": "jac",
+      "name": "Jakaltek",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "jac",
+        "claimed_name": "Jakaltek",
+        "real_ref_name": "Popti'",
+        "similarity": 0.14
+      }
+    },
+    {
+      "iso": "jiv",
+      "name": "Jivaro",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "jiv",
+        "claimed_name": "Jivaro",
+        "real_ref_name": "Shuar",
+        "similarity": 0.36
+      }
+    },
+    {
+      "iso": "kek",
+      "name": "K'ekchí",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "kek",
+        "claimed_name": "K",
+        "real_ref_name": "Q'eqchi'",
+        "similarity": 0.0
+      }
+    },
+    {
+      "iso": "kgp",
+      "name": "Kaingang",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "kgp",
+        "claimed_name": "Kugu Nganhcara",
+        "real_ref_name": "Kaingang",
+        "similarity": 0.45
+      }
+    },
+    {
+      "iso": "xal",
+      "name": "Kalmyk (Issyk-Kul)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "xal",
+        "claimed_name": "Kalmyk",
+        "real_ref_name": "Oirad-Kalmyk-Darkhat",
+        "similarity": 0.46
+      }
+    },
+    {
+      "iso": "krc",
+      "name": "Karachay-Balkar",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "krc",
+        "claimed_name": "Kara",
+        "real_ref_name": "Karachay-Balkar",
+        "similarity": 0.42
+      }
+    },
+    {
+      "iso": "krk",
+      "name": "Kerek",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "krk",
+        "claimed_name": "Kirikiri",
+        "real_ref_name": "Kerek",
+        "similarity": 0.46
+      }
+    },
+    {
+      "iso": "khm",
+      "name": "Khmer",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "khm",
+        "claimed_name": "Kham",
+        "real_ref_name": "Central Khmer",
+        "similarity": 0.35
+      }
+    },
+    {
+      "iso": "knn",
+      "name": "Konkani",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "knn",
+        "claimed_name": "Konni",
+        "real_ref_name": "Konkan Marathi",
+        "similarity": 0.53
+      }
+    },
+    {
+      "iso": "kqz",
+      "name": "Korana",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "kqz",
+        "claimed_name": "Hdi",
+        "real_ref_name": "Korana",
+        "similarity": 0.0
+      }
+    },
+    {
+      "iso": "ses",
+      "name": "Koyraboro Senni",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "ses",
+        "claimed_name": "Slave",
+        "real_ref_name": "Koyraboro Senni Songhai",
+        "similarity": 0.14
+      }
+    },
+    {
+      "iso": "koy",
+      "name": "Koyukon",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "koy",
+        "claimed_name": "Yale",
+        "real_ref_name": "Koyukon",
+        "similarity": 0.18
+      }
+    },
+    {
+      "iso": "kfy",
+      "name": "Kumauni",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "kfy",
+        "claimed_name": "Kairiru",
+        "real_ref_name": "Kumaoni",
+        "similarity": 0.43
+      }
+    },
+    {
+      "iso": "gwi",
+      "name": "Kutchin",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "gwi",
+        "claimed_name": "Gwari",
+        "real_ref_name": "Gwich'in",
+        "similarity": 0.46
+      }
+    },
+    {
+      "iso": "tnk",
+      "name": "Kwamera",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "tnk",
+        "claimed_name": "Tonkawa",
+        "real_ref_name": "Kwamera",
+        "similarity": 0.43
+      }
+    },
+    {
+      "iso": "laj",
+      "name": "Lango",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "laj",
+        "claimed_name": "Lai",
+        "real_ref_name": "Lango (Uganda)",
+        "similarity": 0.24
+      }
+    },
+    {
+      "iso": "agb",
+      "name": "Leggbó",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "agb",
+        "claimed_name": "Agarabi",
+        "real_ref_name": "Legbo",
+        "similarity": 0.33
+      }
+    },
+    {
+      "iso": "lti",
+      "name": "Leti",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "lti",
+        "claimed_name": "Leti",
+        "real_ref_name": "Leti (Indonesia)",
+        "similarity": 0.4
+      }
+    },
+    {
+      "iso": "lug",
+      "name": "Luganda",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "lug",
+        "claimed_name": "Lugbara",
+        "real_ref_name": "Ganda",
+        "similarity": 0.5
+      }
+    },
+    {
+      "iso": "lee",
+      "name": "Lyele",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "lee",
+        "claimed_name": "Lewo",
+        "real_ref_name": "Lyélé",
+        "similarity": 0.22
+      }
+    },
+    {
+      "iso": "mhi",
+      "name": "Ma'di",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mhi",
+        "claimed_name": "Ma",
+        "real_ref_name": "Ma'di",
+        "similarity": 0.57
+      }
+    },
+    {
+      "iso": "nmu",
+      "name": "Maidu (Northeast)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "nmu",
+        "claimed_name": "Sanuma",
+        "real_ref_name": "Northeast Maidu",
+        "similarity": 0.29
+      }
+    },
+    {
+      "iso": "mna",
+      "name": "Mangap-Mbula",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mna",
+        "claimed_name": "Manam",
+        "real_ref_name": "Mbula",
+        "similarity": 0.4
+      }
+    },
+    {
+      "iso": "mns",
+      "name": "Mansi",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mns",
+        "claimed_name": "Mansi",
+        "real_ref_name": "Northern Mansi",
+        "similarity": 0.53
+      }
+    },
+    {
+      "iso": "mpj",
+      "name": "Mantjiltjara",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mpj",
+        "claimed_name": "Murrinh‑Patha",
+        "real_ref_name": "Martu Wangka",
+        "similarity": 0.32
+      }
+    },
+    {
+      "iso": "mri",
+      "name": "Maori",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mri",
+        "claimed_name": "M",
+        "real_ref_name": "Maori",
+        "similarity": 0.33
+      }
+    },
+    {
+      "iso": "myb",
+      "name": "Mbay",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "myb",
+        "claimed_name": "Miya",
+        "real_ref_name": "Mbay",
+        "similarity": 0.5
+      }
+    },
+    {
+      "iso": "mni",
+      "name": "Meithei",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mni",
+        "claimed_name": "Meithei",
+        "real_ref_name": "Manipuri",
+        "similarity": 0.4
+      }
+    },
+    {
+      "iso": "mez",
+      "name": "Menomini",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mez",
+        "claimed_name": "Mae",
+        "real_ref_name": "Menominee",
+        "similarity": 0.33
+      }
+    },
+    {
+      "iso": "mco",
+      "name": "Mixe (Coatlán)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mco",
+        "claimed_name": "Mixtec",
+        "real_ref_name": "Coatlán Mixe",
+        "similarity": 0.44
+      }
+    },
+    {
+      "iso": "mig",
+      "name": "Mixtec (Chalcatongo)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mig",
+        "claimed_name": "Chalcatongo Mixtec",
+        "real_ref_name": "San Miguel El Grande Mixtec",
+        "similarity": 0.49
+      }
+    },
+    {
+      "iso": "mie",
+      "name": "Mixtec (Ocotepec)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mie",
+        "claimed_name": "Mixtec",
+        "real_ref_name": "Ocotepec Mixtec",
+        "similarity": 0.57
+      }
+    },
+    {
+      "iso": "mbe",
+      "name": "Molala",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mbe",
+        "claimed_name": "Mbere",
+        "real_ref_name": "Molale",
+        "similarity": 0.36
+      }
+    },
+    {
+      "iso": "mte",
+      "name": "Mono-Alu",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "mte",
+        "claimed_name": "Una",
+        "real_ref_name": "Mono-Alu",
+        "similarity": 0.18
+      }
+    },
+    {
+      "iso": "moe",
+      "name": "Montagnais",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "moe",
+        "claimed_name": "Moro",
+        "real_ref_name": "Montagnais",
+        "similarity": 0.29
+      }
+    },
+    {
+      "iso": "aoj",
+      "name": "Mufian",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "aoj",
+        "claimed_name": "Angolar",
+        "real_ref_name": "Mufian",
+        "similarity": 0.31
+      }
+    },
+    {
+      "iso": "myu",
+      "name": "Mundurukú",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "myu",
+        "claimed_name": "Burmese",
+        "real_ref_name": "Mundurukú",
+        "similarity": 0.25
+      }
+    },
+    {
+      "iso": "nbi",
+      "name": "Naga (Mao)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "nbi",
+        "claimed_name": "Southern Nambiku",
+        "real_ref_name": "Mao Naga",
+        "similarity": 0.33
+      }
+    },
+    {
+      "iso": "nhn",
+      "name": "Nahuatl (Central)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "nhn",
+        "claimed_name": "Nahuatl",
+        "real_ref_name": "Tlaxcala-Puebla-Central Nahuatl",
+        "similarity": 0.37
+      }
+    },
+    {
+      "iso": "nab",
+      "name": "Nambikuára (Southern)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "nab",
+        "claimed_name": "Nabak",
+        "real_ref_name": "Southern Nambikuára",
+        "similarity": 0.33
+      }
+    },
+    {
+      "iso": "sen",
+      "name": "Nanerge",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "sen",
+        "claimed_name": "Koyraboro Senni",
+        "real_ref_name": "Nanerigé Sénoufo",
+        "similarity": 0.26
+      }
+    },
+    {
+      "iso": "djk",
+      "name": "Ndyuka",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "djk",
+        "claimed_name": "Ndyuka",
+        "real_ref_name": "Aukan",
+        "similarity": 0.55
+      }
+    },
+    {
+      "iso": "yrk",
+      "name": "Nenets (Forest)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "yrk",
+        "claimed_name": "Yir Yoront",
+        "real_ref_name": "Tundra Nenets",
+        "similarity": 0.26
+      }
+    },
+    {
+      "iso": "ncb",
+      "name": "Nicobarese",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "ncb",
+        "claimed_name": "Nancowry",
+        "real_ref_name": "Central Nicobarese",
+        "similarity": 0.46
+      }
+    },
+    {
+      "iso": "nuy",
+      "name": "Nunggubuyu",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "nuy",
+        "claimed_name": "Nubian",
+        "real_ref_name": "Wubuy",
+        "similarity": 0.36
+      }
+    },
+    {
+      "iso": "ood",
+      "name": "O'odham",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "ood",
+        "claimed_name": "O",
+        "real_ref_name": "Tohono O'odham",
+        "similarity": 0.13
+      }
+    },
+    {
+      "iso": "ocu",
+      "name": "Ocuilteco",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "ocu",
+        "claimed_name": "Ocuilteco",
+        "real_ref_name": "Atzingo Matlatzinca",
+        "similarity": 0.14
+      }
+    },
+    {
+      "iso": "pan",
+      "name": "Panjabi",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "pan",
+        "claimed_name": "Pangwa",
+        "real_ref_name": "Eastern Panjabi",
+        "similarity": 0.38
+      }
+    },
+    {
+      "iso": "pab",
+      "name": "Paresi",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "pab",
+        "claimed_name": "Paamese",
+        "real_ref_name": "Parecís",
+        "similarity": 0.57
+      }
+    },
+    {
+      "iso": "poe",
+      "name": "Popoloca (San Juan Atzingo)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "poe",
+        "claimed_name": "Popoloca",
+        "real_ref_name": "San Juan Atzingo Popoloca",
+        "similarity": 0.48
+      }
+    },
+    {
+      "iso": "pui",
+      "name": "Puinave",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "pui",
+        "claimed_name": "Paiute",
+        "real_ref_name": "Puinave",
+        "similarity": 0.46
+      }
+    },
+    {
+      "iso": "qub",
+      "name": "Quechua (Huallaga)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "qub",
+        "claimed_name": "Quechua",
+        "real_ref_name": "Huallaga Huánuco Quechua",
+        "similarity": 0.45
+      }
+    },
+    {
+      "iso": "tnc",
+      "name": "Retuarã",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "tnc",
+        "claimed_name": "Taba",
+        "real_ref_name": "Tanimuca-Retuarã",
+        "similarity": 0.3
+      }
+    },
+    {
+      "iso": "nyn",
+      "name": "Runyankore",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "nyn",
+        "claimed_name": "Nkore‑Kiga",
+        "real_ref_name": "Nyankole",
+        "similarity": 0.44
+      }
+    },
+    {
+      "iso": "sku",
+      "name": "Sakao",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "sku",
+        "claimed_name": "Skou",
+        "real_ref_name": "Wanohe",
+        "similarity": 0.2
+      }
+    },
+    {
+      "iso": "sln",
+      "name": "Salinan",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "sln",
+        "claimed_name": "Seminole",
+        "real_ref_name": "Salinan",
+        "similarity": 0.4
+      }
+    },
+    {
+      "iso": "ndi",
+      "name": "Samba Leko",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "ndi",
+        "claimed_name": "Nandi",
+        "real_ref_name": "Samba Leko",
+        "similarity": 0.13
+      }
+    },
+    {
+      "iso": "srs",
+      "name": "Sarcee",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "srs",
+        "claimed_name": "Sarcee",
+        "real_ref_name": "Sarsi",
+        "similarity": 0.55
+      }
+    },
+    {
+      "iso": "sei",
+      "name": "Seri",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "sei",
+        "claimed_name": "Sentani",
+        "real_ref_name": "Seri",
+        "similarity": 0.55
+      }
+    },
+    {
+      "iso": "ser",
+      "name": "Serrano",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "ser",
+        "claimed_name": "Seediq",
+        "real_ref_name": "Serrano",
+        "similarity": 0.31
+      }
+    },
+    {
+      "iso": "snc",
+      "name": "Sinaugoro",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "snc",
+        "claimed_name": "Sisiqa",
+        "real_ref_name": "Sinaugoro",
+        "similarity": 0.4
+      }
+    },
+    {
+      "iso": "srn",
+      "name": "Sranan",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "srn",
+        "claimed_name": "Sirion",
+        "real_ref_name": "Sranan Tongo",
+        "similarity": 0.44
+      }
+    },
+    {
+      "iso": "swa",
+      "name": "Swahili",
+      "reason": "code_invalid",
+      "detail": {
+        "claimed_code": "swa",
+        "claimed_name": "Swahili"
+      }
+    },
+    {
+      "iso": "slc",
+      "name": "Sáliba (in Colombia)",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "slc",
+        "claimed_name": "S",
+        "real_ref_name": "Sáliba",
+        "similarity": 0.29
+      }
+    },
+    {
+      "iso": "tab",
+      "name": "Tabassaran",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "tab",
+        "claimed_name": "Tabwa",
+        "real_ref_name": "Tabasaran",
+        "similarity": 0.57
+      }
+    },
+    {
+      "iso": "tam",
+      "name": "Tamil",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "tam",
+        "claimed_name": "Tamashek",
+        "real_ref_name": "Tamil",
+        "similarity": 0.46
+      }
+    },
+    {
+      "iso": "tep",
+      "name": "Tepecano",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "tep",
+        "claimed_name": "Teop",
+        "real_ref_name": "Tepecano",
+        "similarity": 0.5
+      }
+    },
+    {
+      "iso": "ths",
+      "name": "Thakali",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "ths",
+        "claimed_name": "Thai Sign Language",
+        "real_ref_name": "Thakali",
+        "similarity": 0.32
+      }
+    },
+    {
+      "iso": "bod",
+      "name": "Tibetan",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "bod",
+        "claimed_name": "Standard Spoken Tibetan",
+        "real_ref_name": "Tibetan",
+        "similarity": 0.47
+      }
+    },
+    {
+      "iso": "tcf",
+      "name": "Tlapanec",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "tcf",
+        "claimed_name": "Takelma",
+        "real_ref_name": "Malinaltepec Me'phaa",
+        "similarity": 0.15
+      }
+    },
+    {
+      "iso": "jic",
+      "name": "Tol",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "jic",
+        "claimed_name": "X",
+        "real_ref_name": "Tol",
+        "similarity": 0.0
+      }
+    },
+    {
+      "iso": "war",
+      "name": "Waray-Waray",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "war",
+        "claimed_name": "Waorani",
+        "real_ref_name": "Waray (Philippines)",
+        "similarity": 0.38
+      }
+    },
+    {
+      "iso": "wrp",
+      "name": "Waropen",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "wrp",
+        "claimed_name": "Wathawurrung",
+        "real_ref_name": "Waropen",
+        "similarity": 0.42
+      }
+    },
+    {
+      "iso": "win",
+      "name": "Winnebago",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "win",
+        "claimed_name": "Winnebago",
+        "real_ref_name": "Ho-Chunk",
+        "similarity": 0.12
+      }
+    },
+    {
+      "iso": "kao",
+      "name": "Xasonga",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "kao",
+        "claimed_name": "Kar",
+        "real_ref_name": "Xaasongaxango",
+        "similarity": 0.12
+      }
+    },
+    {
+      "iso": "yky",
+      "name": "Yakoma",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "yky",
+        "claimed_name": "Yukaghir",
+        "real_ref_name": "Yakoma",
+        "similarity": 0.43
+      }
+    },
+    {
+      "iso": "sah",
+      "name": "Yakut",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "sah",
+        "claimed_name": "Yakut",
+        "real_ref_name": "Sakha",
+        "similarity": 0.4
+      }
+    },
+    {
+      "iso": "yui",
+      "name": "Yuruti",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "yui",
+        "claimed_name": "Salt‑Yui",
+        "real_ref_name": "Yurutí",
+        "similarity": 0.29
+      }
+    },
+    {
+      "iso": "zay",
+      "name": "Zayse",
+      "reason": "name_mismatch",
+      "detail": {
+        "claimed_code": "zay",
+        "claimed_name": "Zapotec",
+        "real_ref_name": "Zayse-Zergulla",
+        "similarity": 0.29
+      }
+    }
+  ]
+}

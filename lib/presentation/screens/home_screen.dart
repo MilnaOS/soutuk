@@ -560,6 +560,21 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObse
           // Keyboard text input trigger fallback
           Row(
             children: [
+              IconButton(
+                key: const Key('speakTypedTranslationsToggle'),
+                tooltip: state.speakTypedTranslations
+                    ? 'Speak translated text: on'
+                    : 'Speak translated text: off',
+                icon: Icon(
+                  state.speakTypedTranslations ? Icons.volume_up : Icons.volume_off,
+                  color: state.speakTypedTranslations
+                      ? AppTheme.primary
+                      : AppTheme.textSecondary.withOpacity(0.5),
+                  size: 20,
+                ),
+                onPressed: () =>
+                    notifier.setSpeakTypedTranslations(!state.speakTypedTranslations),
+              ),
               Expanded(
                 child: Container(
                   decoration: BoxDecoration(
@@ -580,7 +595,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObse
                     style: GoogleFonts.inter(color: AppTheme.textPrimary, fontSize: 14),
                     onSubmitted: (val) {
                       if (val.trim().isNotEmpty) {
-                        notifier.translateMessage(val);
+                        _submitTypedText(notifier, state, val);
                         _textController.clear();
                       }
                     },
@@ -598,7 +613,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObse
                       : () {
                           final val = _textController.text;
                           if (val.trim().isNotEmpty) {
-                            notifier.translateMessage(val);
+                            _submitTypedText(notifier, state, val);
                             _textController.clear();
                           }
                         },
@@ -639,6 +654,22 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with WidgetsBindingObse
         ],
       ),
     );
+  }
+
+  /// Submits typed/pasted text for translation, then optionally speaks the
+  /// result — gated by the speakTypedTranslations toggle (off by default,
+  /// see ConversationState). Mic input's TTS is separate/unconditional and
+  /// untouched by this; deliberately not folded into translateMessage()
+  /// itself to avoid double-speaking on the mic path.
+  Future<void> _submitTypedText(
+    ConversationNotifier notifier,
+    ConversationState state,
+    String text,
+  ) async {
+    final response = await notifier.translateMessage(text);
+    if (response == null || !state.speakTypedTranslations) return;
+    final ttsService = ref.read(ttsServiceProvider);
+    await ttsService.speak(response.translatedText, voice: state.languageTwoIso);
   }
 
   Widget _buildMicButton({

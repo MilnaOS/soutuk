@@ -1,6 +1,7 @@
 export interface Env {
   OLLAMA_API_KEY: string;
   VM_OLLAMA_SECRET: string;
+  OPENROUTER_API_KEY: string;
 }
 
 interface TranslateRequestBody {
@@ -461,6 +462,47 @@ async function handleIdentify(request: Request, env: Env): Promise<Response> {
   return Response.json(result);
 }
 
+// Speech-to-text for Conversation Mode's handshake phase (see handleIdentify
+// above for the text-based language-ID step that follows this). Was
+// previously a direct client-side call to api.openai.com with an exposed
+// OpenAI key (gpt-4o-transcribe) -- moved server-side 2026-07-23 for two
+// reasons: (1) OpenRouter's Whisper Large V3 costs $0.0015/min vs metered
+// per-request OpenAI pricing, and (2) this finally closes out the "revisit
+// before real launch" TODO that flagged the client-side key as a dev-only
+// compromise. Uses its own dedicated OPENROUTER_API_KEY (separate from the
+// VM pipeline's key) so app STT spend shows up as its own line item and a
+// leaked Worker secret can't touch anything beyond transcription.
+async function handleTranscribe(request: Request, env: Env): Promise<Response> {
+  const incomingForm = await request.formData();
+  const file = incomingForm.get('file');
+  if (!file || !(file instanceof File)) {
+    return Response.json({ error: 'file is required' }, { status: 400 });
+  }
+
+  const outgoingForm = new FormData();
+  outgoingForm.append('model', 'openai/whisper-large-v3');
+  outgoingForm.append('file', file, file.name || 'utterance.wav');
+
+  try {
+    const response = await fetch('https://openrouter.ai/api/v1/audio/transcriptions', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${env.OPENROUTER_API_KEY}` },
+      body: outgoingForm,
+    });
+    if (!response.ok) {
+      return Response.json({ error: `OpenRouter transcription returned ${response.status}` }, { status: 502 });
+    }
+    const decoded = (await response.json()) as { text?: string };
+    const text = (decoded.text ?? '').trim();
+    if (!text) {
+      return Response.json({ error: 'empty transcript' }, { status: 200 });
+    }
+    return Response.json({ text });
+  } catch (e) {
+    return Response.json({ error: String(e) }, { status: 500 });
+  }
+}
+
 async function handleTranslate(request: Request, env: Env): Promise<Response> {
   const body = (await request.json()) as TranslateRequestBody;
   if (!body.text || !body.targetLanguageIso) {
@@ -486,6 +528,9 @@ export default {
       }
       if (url.pathname === '/identify') {
         return await handleIdentify(request, env);
+      }
+      if (url.pathname === '/transcribe') {
+        return await handleTranscribe(request, env);
       }
       return new Response('Not found', { status: 404 });
     } catch (e) {

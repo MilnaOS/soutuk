@@ -46,6 +46,18 @@ dependencies:
   flutter_secure_storage: ^9.2.2
   flutter_tts: ^4.2.2
   speech_to_text: ^7.0.0
+  # llm_llamacpp temporarily removed (2026-07-20) — its bundled
+  # libggml-base.so collides with llama_cpp_dart's at Gradle native-lib
+  # merge time (both packages ship their own compiled core llama.cpp
+  # library, pinned to different upstream versions, at the same jniLibs
+  # path). Can't coexist in one APK; forcing a pickFirst/pickLast merge
+  # risks a silent ABI mismatch. Re-add once the llama_cpp_dart spike is
+  # evaluated and a final call is made. See memory artaxia_llamacpp_binding_path.
+  # llm_llamacpp: ^0.1.8
+  # llm_core: ^0.1.9
+  llama_cpp_dart: 0.9.0-dev.9
+  kilonova_ondevice:
+    path: ../Runtime/kilonova/kilonova_ondevice
 
 dev_dependencies:
   flutter_test:

@@ -1,8 +1,6 @@
 import 'dart:convert';
-import 'dart:io';
 import 'dart:typed_data';
 import 'package:http/http.dart' as http;
-import 'secure_key_store.dart';
 
 enum SttFailureReason { noApiKey, networkError, emptyTranscript }
 
@@ -16,56 +14,22 @@ class SttResult {
 
 /// Speech-to-text only now — voice synthesis moved to FlutterTtsService
 /// (on-device, free, the actual "screen reader" mechanism).
+///
+/// Moved server-side 2026-07-23: was a direct client-side call to
+/// api.openai.com with an exposed OpenAI key (gpt-4o-transcribe, metered
+/// per-request pricing). Now goes through the Cloudflare Worker's
+/// /transcribe route, which holds its own dedicated OpenRouter key
+/// server-side and calls Whisper Large V3 ($0.0015/min) — cheaper, and the
+/// key never touches the client at all. Same shape as CloudflareWorkerService
+/// (translate/identify) but kept as its own class since this one deals with
+/// multipart audio, not JSON.
 class OpenAiAudioService {
-  final SecureKeyStore _keyStore = SecureKeyStore();
-
-  /// Same lookup order as OnlineOpenAiRealtimeTranslationService._getApiKey():
-  /// on-device secure storage, then environment variable, then a local .env file.
-  Future<String?> _getApiKey() async {
-    final storedKey = await _keyStore.getOpenAiKey();
-    if (storedKey != null && storedKey.isNotEmpty) {
-      return storedKey;
-    }
-
-    final envKey = Platform.environment['OPENAI_API_KEY'];
-    if (envKey != null && envKey.isNotEmpty) {
-      return envKey;
-    }
-
-    try {
-      final paths = [
-        '.env',
-        '${Platform.environment['HOME'] ?? Platform.environment['USERPROFILE']}/.env',
-      ];
-      for (final path in paths) {
-        final file = File(path);
-        if (await file.exists()) {
-          final lines = await file.readAsLines();
-          for (final line in lines) {
-            final trimmed = line.trim();
-            if (trimmed.startsWith('OPENAI_API_KEY=')) {
-              final val = trimmed.split('=').sublist(1).join('=').trim();
-              if (val.isNotEmpty) return val;
-            }
-          }
-        }
-      }
-    } catch (_) {
-      // Gracefully swallow file read issues
-    }
-
-    return null;
-  }
+  static const String _workerBaseUrl = 'https://soutuk-worker.pb-aim.workers.dev';
 
   Future<SttResult> transcribe(Uint8List audioBytes, {String filename = 'utterance.wav'}) async {
-    final apiKey = await _getApiKey();
-    if (apiKey == null) return SttResult.failure(SttFailureReason.noApiKey);
-
     try {
-      final uri = Uri.parse('https://api.openai.com/v1/audio/transcriptions');
+      final uri = Uri.parse('$_workerBaseUrl/transcribe');
       final request = http.MultipartRequest('POST', uri)
-        ..headers['Authorization'] = 'Bearer $apiKey'
-        ..fields['model'] = 'gpt-4o-transcribe'
         ..files.add(http.MultipartFile.fromBytes('file', audioBytes, filename: filename));
 
       final streamedResponse = await request.send().timeout(const Duration(seconds: 30));

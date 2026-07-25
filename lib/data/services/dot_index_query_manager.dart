@@ -4,6 +4,19 @@ import '../datasources/linguistics_memory_alpha.dart';
 import '../datasources/real_dot_knowledge.dart';
 
 class DotIndexQueryManager {
+  // Real measurement (2026-07-20) of all 1,216 real DOT language cards
+  // (assets/data/dot_language_cards.json): p99 combined source+target card
+  // size is ~5,150 chars, and the true worst-case pairing in the dataset
+  // (Turkish + Russian, the two largest cards) is ~7,971 chars. This cap
+  // sits comfortably above both with real headroom, while still leaving
+  // most of the 4096-token context (~14,336 chars minus the 512-token
+  // generation budget) free for task/source-text/chat-template overhead.
+  // Indexing already ensures everything included is genuinely relevant —
+  // this only guards against the rare case where relevant content still
+  // adds up to more than the model's context can hold. See memory
+  // artaxia_llamacpp_binding_path.
+  static const int _combinedCardCharBudget = 9000;
+
   // Store custom vocabulary chunks injected during Discovery elicitation
   final List<DotWriteChunkDto> _customChunks = [];
 
@@ -90,26 +103,73 @@ class DotIndexQueryManager {
       }
     }
 
-    // 6. Construct final contents
+    // 6. Trim safeguard: indexing already guarantees everything matched is
+    // genuinely relevant, but relevance doesn't bound size — a dense
+    // language pair's cards plus many vocabulary matches can still add up
+    // to more than the model's context can hold (see _combinedCardCharBudget
+    // doc comment). Drop matched vocabulary first (lowest priority, purely
+    // additive) since the grammar cards are the stable baseline every turn
+    // needs; only truncate the grammar cards themselves in the rare case
+    // where they alone exceed budget.
+    var effectiveSourceGrammar = sourceGrammar;
+    var effectiveTargetGrammar = targetGrammar;
+    final trimmedSourceVocab = List<String>.from(sourceMatchedVocab);
+    final trimmedTargetVocab = List<String>.from(targetMatchedVocab);
+
+    int currentTotal() =>
+        effectiveSourceGrammar.length +
+        effectiveTargetGrammar.length +
+        trimmedSourceVocab.fold<int>(0, (sum, v) => sum + v.length) +
+        trimmedTargetVocab.fold<int>(0, (sum, v) => sum + v.length);
+
+    // Drop vocab entries alternately from whichever side is currently
+    // larger, least-relevant-last-added first, until under budget or out
+    // of vocab to drop.
+    while (currentTotal() > _combinedCardCharBudget &&
+        (trimmedSourceVocab.isNotEmpty || trimmedTargetVocab.isNotEmpty)) {
+      if (trimmedSourceVocab.length >= trimmedTargetVocab.length &&
+          trimmedSourceVocab.isNotEmpty) {
+        trimmedSourceVocab.removeLast();
+      } else if (trimmedTargetVocab.isNotEmpty) {
+        trimmedTargetVocab.removeLast();
+      }
+    }
+
+    // Rare fallback: even the bare grammar cards (no vocab at all) exceed
+    // budget — truncate proportionally with a clear marker rather than let
+    // the prompt silently blow the context window.
+    if (currentTotal() > _combinedCardCharBudget) {
+      final grammarBudget = (_combinedCardCharBudget / 2).floor();
+      if (effectiveSourceGrammar.length > grammarBudget) {
+        effectiveSourceGrammar =
+            '${effectiveSourceGrammar.substring(0, grammarBudget)}\n[...truncated: card exceeded context budget...]';
+      }
+      if (effectiveTargetGrammar.length > grammarBudget) {
+        effectiveTargetGrammar =
+            '${effectiveTargetGrammar.substring(0, grammarBudget)}\n[...truncated: card exceeded context budget...]';
+      }
+    }
+
+    // 7. Construct final contents
     final sourceContentBuffer = StringBuffer()
-      ..writeln(sourceGrammar);
-    if (sourceMatchedVocab.isNotEmpty) {
+      ..writeln(effectiveSourceGrammar);
+    if (trimmedSourceVocab.isNotEmpty) {
       sourceContentBuffer.writeln('\nMatched Sliced Vocabulary:');
-      for (final vocab in sourceMatchedVocab) {
+      for (final vocab in trimmedSourceVocab) {
         sourceContentBuffer.writeln('- $vocab');
       }
     }
 
     final targetContentBuffer = StringBuffer()
-      ..writeln(targetGrammar);
-    if (targetMatchedVocab.isNotEmpty) {
+      ..writeln(effectiveTargetGrammar);
+    if (trimmedTargetVocab.isNotEmpty) {
       targetContentBuffer.writeln('\nMatched Sliced Vocabulary:');
-      for (final vocab in targetMatchedVocab) {
+      for (final vocab in trimmedTargetVocab) {
         targetContentBuffer.writeln('- $vocab');
       }
     }
 
-    // 7. Check high-stakes hazards
+    // 8. Check high-stakes hazards
     String hazardContent = 'No active safety hazard rules triggered for this context.';
     bool isHazardTriggered = false;
 
