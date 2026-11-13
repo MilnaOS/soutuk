@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Artaxia AI: Offline Private AI (ai.milna.artaxia)</title>
+  <meta name="description" content="Official Privacy Policy and Google Play Data Safety disclosure for Artaxia AI: Offline Private AI (ai.milna.artaxia) by Grom Milna Industries LLC." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <style>
+    :root {
+      --bg: #050A14;
+      --surface: #0A1324;
+      --teal: #00E5CC;
+      --gold: #FAC72E;
+      --text: #F2F5FF;
+      --muted: #A6B1D0;
+      --border: rgba(0, 229, 204, 0.22);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-bottom: 64px;
+    }
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 19, 36, 0.85);
+      padding: 16px 24px;
+    }
+    .nav-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none !important;
+    }
+    main {
+      max-width: 860px;
+      margin: 44px auto 0;
+      padding: 0 24px;
+    }
+    .policy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+    }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.24rem;
+      color: var(--teal);
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+    p, li { color: var(--muted); font-size: 0.98rem; }
+    p + p { margin-top: 10px; }
+    ul { padding-left: 22px; margin-top: 8px; }
+    li + li { margin-top: 6px; }
+    strong { color: var(--text); }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #D2F2FF;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="./">
+        <span>Artaxia AI: Offline Private AI</span>
+      </a>
+      <a href="./">&larr; Back to Home</a>
+    </div>
+  </header>
+  <main>
+    <div class="policy-card">
+      <h1>Privacy Policy</h1>
+      <div class="meta">
+        <strong>Effective Date:</strong> November 13, 2026<br />
+        <strong>Developer / Legal Entity:</strong> Grom Milna Industries LLC (d/b/a PB-AIM &middot; Oregon Registry #254869598)<br />
+        <strong>Application Name:</strong> Artaxia AI: Offline Private AI<br />
+        <strong>Android Package ID:</strong> <code>ai.milna.artaxia</code>
+      </div>
+
+      <p>
+        <strong>Artaxia AI: Offline Private AI</strong> (<code>ai.milna.artaxia</code>) is engineered to run <strong>100% offline and airgapped on your device</strong>. We collect <strong>zero personal data</strong>, require <strong>zero user accounts</strong>, embed <strong>zero third-party advertising or analytics SDKs</strong>, and never transmit your prompts, conversations, or biometric data off your handset.
+      </p>
+
+      <h2>1. 100% On-Device AI Inference (Zero Cloud Data Collection)</h2>
+      <ul>
+        <li>All large language model (LLM) inference, 8-Channel <code>O_DIRECT</code> UFS storage streaming, prompt processing, and text-to-speech voice synthesis execute strictly locally in your phone's physical RAM and UFS storage.</li>
+        <li>Your prompts, responses, and conversation history never leave your device and are never transmitted to Grom Milna Industries LLC or any third party.</li>
+      </ul>
+
+      <h2>2. Network Permission (One-Time Local Model Weight Download Only)</h2>
+      <ul>
+        <li>Artaxia AI requests <code>android.permission.INTERNET</code> solely so you can download the open-weight neural core (<code>.gguf</code> model file) directly onto your handset's local UFS storage when you tap <strong>INITIALIZE ENGINE</strong>.</li>
+        <li>Once the model weights are stored locally on your device, Artaxia AI operates at full capability in Airplane Mode with zero internet connection.</li>
+      </ul>
+
+      <h2>3. Hardware Biometric &amp; 2-Person Pulse-Ox Vault (100% Local Processing)</h2>
+      <ul>
+        <li>Artaxia AI includes an optional, user-toggleable <strong>1-Person Hardware Biometric Lock</strong> and <strong>2-Person Integrity (TPI) + Pulse-Ox Liveness Vault</strong> gated by our 72-Byte Cryptographic Glyph architecture.</li>
+        <li>All cryptographic key unsealing (via Android Hardware Keystore / TEE) and biometric/liveness checks occur strictly inside your device's local hardware security module and memory. Zero biometric templates, physiological readings, or cryptographic shares are ever stored externally or transmitted over any network.</li>
+      </ul>
+
+      <h2>4. Local Storage, Data Retention &amp; Instant Deletion</h2>
+      <ul>
+        <li>All downloaded model weights and chat sessions reside exclusively inside the app's private sandbox storage on your phone.</li>
+        <li>Clearing your chat session or uninstalling Artaxia AI permanently erases all local app data from your device.</li>
+      </ul>
+
+      <h2>5. Contact Information</h2>
+      <ul>
+        <li>Questions regarding privacy or Google Play Data Safety can be directed to <strong>Grom Milna Industries LLC</strong> at <a href="mailto:Jeremy@pb-aim.com">Jeremy@pb-aim.com</a> or <a href="mailto:contact@pb-aim.com">contact@pb-aim.com</a>.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
